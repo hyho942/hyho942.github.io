@@ -319,7 +319,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 623 words)
+                    4 minutes read (About 642 words)
                 </span>
                 
                 
@@ -332,71 +332,12 @@
             
         </h1>
         <div class="content">
-            <h2 id="1일차-0401"><a href="#1일차-0401" class="headerlink" title="1일차(0401)"></a>1일차(0401)</h2><h3 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h3><p>XML은 Extensible Markup Language의 약자이며, W3C에서 개발된 표준 권고안 마크업 언어이다. XML은 데이터를 저장하고 전달할 목적으로만 만들어졌습니다. HTML과 다르게 미리 정의되어 있는 구조가 아닌, 사용자가 직접 정의해서 사용할 수 있습니다.</p>
-<h3 id="HTML-4-01-vs-HTML-5-0"><a href="#HTML-4-01-vs-HTML-5-0" class="headerlink" title="HTML 4.01 vs HTML 5.0"></a>HTML 4.01 vs HTML 5.0</h3><h3 id="WHATWG"><a href="#WHATWG" class="headerlink" title="WHATWG"></a>WHATWG</h3><p>Web Hypertext Application Technology Working Group의 약자로 인터넷이 보급화 되면서, 무분별한 웹 형식과 액티브 X같은 플러그인으로 인해 웹 페이지가 무거워 졌습니다. 그래서 W3C에서 제안한 표준안으로 만들어진 그룹이다.</p>
-<h3 id="HTML-기본-구조"><a href="#HTML-기본-구조" class="headerlink" title="HTML 기본 구조"></a>HTML 기본 구조</h3><p>3단 Structure</p>
-<pre>
-< html >
-  < head >
-    < /head >
-  < body >
-      (content)
-    < /body >
-  < footer >
-    < /footer >
-< /html >
-</pre>
-
-<p>4단 Structure</p>
-<pre>
-< html >
-  < head > 
-    < /head >
-  < nav > 
-    < /nav >
-  < body >
-    (content)
-    < /body >
-  < footer > 
-    < /footer >
-< /html >
-</pre>
-
-<h3 id="선형화-단계-Linearization-Step"><a href="#선형화-단계-Linearization-Step" class="headerlink" title="선형화 단계 (Linearization Step)"></a>선형화 단계 (Linearization Step)</h3><p>논리적으로 HTML을 구성하기 위해 마크업은 규칙에 따라 콘텐츠를 설계하는 단계이다. 선형화 단계를 거치면 전체적은 웹 페이지에 구성을 보기 쉽게 정리할 수 있고, CSS 작업시 좀더 간결한 작업을 할 수 있다.</p>
-<h3 id="시맨틱-요소-Semantic-Element"><a href="#시맨틱-요소-Semantic-Element" class="headerlink" title="시맨틱 요소 (Semantic Element)"></a>시맨틱 요소 (Semantic Element)</h3><h5 id="header"><a href="#header" class="headerlink" title="header"></a>header</h5><pre><code>&lt;div id=”header”&gt;
-&lt;header class=&quot;header&quot;&gt;
-</code></pre><p>header는 html 문서에 첫 머리말로 사용이 가능하여 여러번 사용이 가능하다. 즉 section, body 안에 header을 사용하여 구분을 짓기 위해 사용이 가능하다.</p>
-<h5 id="footer"><a href="#footer" class="headerlink" title="footer"></a>footer</h5><pre><code>&lt;div id=&quot;footer&quot;&gt;
-&lt;footer class=&quot;footer&quot;&gt;
-</code></pre><p>Webpage의 Copyright이나 회사 주소 정보를 사용 할 수 있다.<br>section에 꼬리말로 사용하고 html 내에서 다수 사용이 가능하다.</p>
-<h5 id="section"><a href="#section" class="headerlink" title="section"></a>section</h5><pre><code>&lt;div id=&quot;section&quot; class=&quot;section&quot;&gt;&lt;/div&gt;
-&lt;section id=&quot;#&quot; class=&quot;#&quot;&gt;&lt;/section&gt;
-</code></pre><p>콘텐츠를 grouping 할 때 사용. Section 안에 section을 사용 할 수 있어서 중첩 사용이 가능하다.</p>
-<h5 id="nav"><a href="#nav" class="headerlink" title="nav"></a>nav</h5><pre><code>&lt;div id=&quot;nav&quot; class=&quot;nav&quot;&gt;&lt;/div&gt;
-&lt;nav id=&quot;#&quot; class=&quot;#&quot;&gt;&lt;/nav&gt;
-</code></pre><p>Navigation의 줄임말. navigation 메뉴를 나타낸다. 주로 헤딩 부분에 사용하지만, body 내부에 navigation 섹션에도 사용이 가능하다.</p>
-<h5 id="article"><a href="#article" class="headerlink" title="article"></a>article</h5><pre><code>&lt;div id=&quot;article&quot; class=&quot;article&quot;&gt;&lt;/div&gt;
-&lt;article id=&quot;#&quot; class=&quot;#&quot;&gt;&lt;/article&gt;
-</code></pre><p>독립적인 글들을 나타낼 때 사용. 블로그 포스팅 표현 할 때 사용하지만, RSS feed로 배포할 가치가 있는 컨텐츠에 사용한다.</p>
-<h5 id="aside"><a href="#aside" class="headerlink" title="aside"></a>aside</h5><pre><code>&lt;div id=&quot;aside&quot; class=&quot;aside&quot;&gt;&lt;/div&gt;
-&lt;aside id=&quot;#&quot; class=&quot;#&quot;&gt;&lt;/aside&gt;
-</code></pre><p>콘텐츠와 관계 있는 부가 정보들을 표시 할 때 사용한다. 주로 side-bar콘텐츠들을 담기 위해 사용하기도 한다.</p>
-<h5 id="main"><a href="#main" class="headerlink" title="main"></a>main</h5><pre><code>&lt;div id=&quot;main&quot; class=&quot;main&quot;&gt;&lt;/div&gt;
-&lt;main id=&quot;#&quot; class=&quot;#&quot;&gt;&lt;/main&gt;
-</code></pre><p>주로 웹 페이지를 구성하는 메인 콘텐츠를 담는 태그이다. body 태그를 사용하여 구분할 수 있다.</p>
+            <h2 id="1일차-0401"><a href="#1일차-0401" class="headerlink" title="1일차(0401)"></a>1일차(0401)</h2><ul>
+<li><p>HTML / CSS 강의 및 공부</p>
 <ul>
-<li>네이밍</li>
-<li>WAI-ARIA</li>
-<li>CSS - Box model</li>
-<li>normal flow</li>
-<li>flex</li>
-<li>float</li>
-<li>clear</li>
-<li>Pseudo-Element(가상요소)<ul>
-<li>::before, ::after, :hover</li>
-</ul>
-</li>
-</ul>
+<li>html의 기본 구조</li>
+<li>시맨틱 마크업</li>
+<li><p>박스 모델</p></li></ul></li></ul>
         </div>
         
         
@@ -498,10 +439,10 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        Tag
                     </p>
                     <p class="title has-text-weight-normal">
-                        0
+                        1
                     </p>
                 </div>
             </div>
@@ -629,6 +570,15 @@
 </div>
     
         
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/html-web/" style="font-size: 10px;">html, web</a>
+    </div>
+</div>
+
     
         
 <div class="card widget">
@@ -767,6 +717,13 @@
                 Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/html-web/">
+                        <span class="tag">html, web</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
                 
             </div>
         </div>
