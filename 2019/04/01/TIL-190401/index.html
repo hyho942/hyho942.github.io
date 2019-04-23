@@ -16,7 +16,7 @@
 <meta property="og:description" content="1일차(0401) HTML / CSS 강의 및 공부  html의 기본 구조 시맨틱 마크업 박스 모델">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-04-23T05:42:43.033Z">
+<meta property="og:updated_time" content="2019-04-23T10:50:17.918Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL_190401">
 <meta name="twitter:description" content="1일차(0401) HTML / CSS 강의 및 공부  html의 기본 구조 시맨틱 마크업 박스 모델">
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 minutes read (About 719 words)
+                    8 minutes read (About 1140 words)
                 </span>
                 
                 
@@ -231,24 +231,57 @@
 <h5 id="lt-main-gt"><a href="#lt-main-gt" class="headerlink" title="&lt; main &gt;"></a>&lt; main &gt;</h5><pre><code>&lt;div id=&quot;main&quot; class=&quot;main&quot;&gt;&lt;/div&gt;
 &lt;main id=&quot;#&quot; class=&quot;#&quot;&gt;&lt;/main&gt;
 </code></pre><p>주로 웹 페이지를 구성하는 메인 콘텐츠를 담는 태그이다. body 태그를 사용하여 구분할 수 있다.</p>
-<h3 id="HTML-네이밍"><a href="#HTML-네이밍" class="headerlink" title="HTML 네이밍"></a>HTML 네이밍</h3><h4 id="selector"><a href="#selector" class="headerlink" title="[selector]"></a>[selector]</h4><ul>
+<h3 id="HTML-네이밍"><a href="#HTML-네이밍" class="headerlink" title="HTML 네이밍"></a>HTML 네이밍</h3><h4 id="selector"><a href="#selector" class="headerlink" title="- [selector]"></a>- [selector]</h4><ul>
 <li><p>id<br>스타일을 지정할 때 한 가지만 지정해서 사용한다. ( # selector)<br>하나의 문서에 고유한 id 하나밖에 쓸 수 없다.</p>
 </li>
 <li><p>class<br>그룹으로 묶어서 스타일을 지정할 때 사용한다. ( . selector)</p>
+<p>| id / class는 숫자로 시작해서는 안된다.|</p>
 </li>
 </ul>
-<p>= id / class는 숫자로 시작해서는 안된다.</p>
-<ul>
-<li>WAI-ARIA</li>
-<li>CSS - Box model</li>
-<li>normal flow</li>
-<li>flex</li>
-<li>float</li>
-<li>clear</li>
-<li>Pseudo-Element(가상요소)</li>
-<li>::before, ::after, :hover</li>
+<h4 id="Naming-convention"><a href="#Naming-convention" class="headerlink" title="- [Naming convention]"></a>- [Naming convention]</h4><ul>
+<li>식별자의 명칭이 되는 문자열에 방식을 결정하기 위한 규칙.</li>
+<li>가독성, 시인성, 효울성에 목적을 가진다.</li>
+<li>프로젝트, 프로그래밍 언어, 개발도구에 따라 방식을 결정한다.</li>
 </ul>
-
+<h4 id="Coding-Conventions"><a href="#Coding-Conventions" class="headerlink" title="- [Coding Conventions]"></a>- [Coding Conventions]</h4><ul>
+<li>프로그래밍 스타일에 관한 가이드 라인 모음.</li>
+</ul>
+<h4 id="표기법"><a href="#표기법" class="headerlink" title="- [표기법]"></a>- [표기법]</h4><ul>
+<li><p>카멜 표기법 / “camel<b>C</b>ase”</p>
+<ul>
+<li>각 단어의 첫문자는 대문자로 표기. 단 맨 처음 단어는 소문자로 시작.(띄어쓰기 대신 대문자로 구문함)</li>
+</ul>
+</li>
+<li><p>파스칼 표기법 / “<b>P</b>ascal<b>C</b>ase”</p>
+<ul>
+<li>모든 단어의 첫문자를 대문자로 시작.</li>
+</ul>
+</li>
+<li><p>스네이크 표기법 / “snake_case”</p>
+<ul>
+<li>단어를 밑줄문자로 구분하는 표기법<ul>
+<li>Perl, PHP, Python, Ruby, Rust 언어는 주로 스네이크 표기법을 사용한다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>헝가리언 표기법 / “<b>str</b>Hungarian”</p>
+<ul>
+<li>접두어를 사용하는 표기법</li>
+<li>접두어 예시<ul>
+<li>b / 불리언 (boolean)</li>
+<li>ch / 문자 (char)</li>
+<li>f / float</li>
+<li>sz / NULL로 끝나는 문자열 (string+zero)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="WAI-ARIA"><a href="#WAI-ARIA" class="headerlink" title="WAI-ARIA"></a>WAI-ARIA</h3><h4 id="정의"><a href="#정의" class="headerlink" title="정의"></a>정의</h4><p>Web Accessibility Initiative-Accessible Rich Internet Applications.<br>WAI-ARIA는 접근성 및 상호 운용성을 향상시키기 위해 마크업에 역할 (Role), 속성 (Property), 상태 (State) 추가하여 스크린리더 및 음성지원 보조기기 사용을 용이하게 해준다.</p>
+<h3 id="CSS-Box-model"><a href="#CSS-Box-model" class="headerlink" title="CSS - Box model"></a>CSS - Box model</h3><p>박스 앨리먼트의 hight와 width로 사각형 박스 모양을 가지고 있다. 박스 모델은 마진(margin), 패딩(padding), 보더(border)로 구성되어 있다.</p>
+<h4 id="normal-flow"><a href="#normal-flow" class="headerlink" title="normal flow"></a>normal flow</h4><p>일반적인 상황에서 각각의 요소들이 배치되는 순서를 뜻하는 말로서 기본 페이지 레이아웃에서 블록요소들은 기본적으로 상하 배치된다.</p>
+<h4 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h4><h4 id="float"><a href="#float" class="headerlink" title="float"></a>float</h4><h4 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h4><h3 id="Pseudo-Element-가상요소"><a href="#Pseudo-Element-가상요소" class="headerlink" title="Pseudo-Element(가상요소)"></a>Pseudo-Element(가상요소)</h3><h4 id="before-after-hover"><a href="#before-after-hover" class="headerlink" title="::before, ::after, :hover"></a>::before, ::after, :hover</h4>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -333,7 +366,7 @@
             <div class="level-item has-text-centered">
                 <div>
                     
-                        <img class="image is-128x128 has-mb-6" src="/images/avatar.png" alt="HYUN HO LEE">
+                        <img class="image is-128x128 has-mb-6" src="/images/Hyun&#39;s_Logo.png" alt="HYUN HO LEE">
                     
                     
                     <p class="is-size-4 is-block">
@@ -361,7 +394,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        19
+                        20
                     </p>
                 </div>
             </div>
@@ -508,7 +541,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">15</span>
+                <span class="level-item tag">16</span>
             </span>
         </a></li>
             </ul>
@@ -647,7 +680,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">19</span>
+                    <span class="level-item tag">20</span>
                 </span>
             </a>
         </li>
