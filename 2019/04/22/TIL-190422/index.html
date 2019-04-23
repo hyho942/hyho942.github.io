@@ -16,7 +16,7 @@
 <meta property="og:description" content="3일차 (0422)Python - What I learn… Call by object reference Call by reference Call by value">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-04-22T09:04:18.307Z">
+<meta property="og:updated_time" content="2019-04-23T08:47:46.570Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL-190422">
 <meta name="twitter:description" content="3일차 (0422)Python - What I learn… Call by object reference Call by reference Call by value">
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 minutes read (About 798 words)
+                    5 minutes read (About 799 words)
                 </span>
                 
                 
@@ -171,9 +171,9 @@
             <h2 id="3일차-0422"><a href="#3일차-0422" class="headerlink" title="3일차 (0422)"></a>3일차 (0422)</h2><h3 id="Python-What-I-learn…"><a href="#Python-What-I-learn…" class="headerlink" title="Python - What I learn…"></a>Python - What I learn…</h3><ul>
 <li>Call by object reference</li>
 <li>Call by reference</li>
-<li>Call by value</li>
+<li>Call by value<a id="more"></a>
+</li>
 </ul>
-<a id="more"></a>
 <h3 id="함수란"><a href="#함수란" class="headerlink" title="함수란?"></a>함수란?</h3><ul>
 <li>어떤 입력에 대한 작업의 결과를 출력해 주는 것</li>
 </ul>
@@ -184,40 +184,38 @@
 <h3 id="Name-space"><a href="#Name-space" class="headerlink" title="Name space"></a>Name space</h3><p>소속을 나타내는 역할을 합니다. 즉 변수 이름이나 함수 이름과 같이 명칭을 사용하는 공간에 의미로 변수가 저장되어 있는 공간.</p>
 <pre> <br> [namespace]::[변수 혹은 함수] <br> </pre>
 
-<p>그러나 네임스페이스는 소속 공간에 따라서 변수나 함수가 같은 이름임에도 다른 식으로 구분이 될 수 있다.</p>
+<p>그러나 네임스페이스는 소속 공간에 따라서 변수나 함수가 같은 이름임에도 다른 식으로 구분이 될 수 있다.ㄴ</p>
 <h3 id="Stack-frame"><a href="#Stack-frame" class="headerlink" title="Stack frame"></a>Stack frame</h3><p>이름 객체에 쌓이는 func frame메모리 공간</p>
 <p>함수를 실행할 때 인자(parameter)를 어떻게 전달할 것인가?<br>Call by value // stack frame이 분리되어져 있어 바깥으로 값을 뺄 수 없다<br>Call by reference // stack frame 바깥으로 주소 값을 접근 및 수정이 가능하다.</p>
 <p>Immutable object =&gt; 함수 내부에서 값을 변경할 수 없다.<br>Mutable object =&gt; 새로운 객체를 할당하는 것이 아니라면 함수 내부에서 값을 변경할 수 있다</p>
-<p>Call by object reference</p>
-<p>함수 내부에서 튜플 값을 바꿔야 한다면<br>tu = (1,2,3)<br>def change_tu(tu, e1, e2, e3):<br>tu=(e1,e2,e3)<br>print(tu, ‘in change_tu’)<br>return tu</p>
+<h3 id="Call-by-object-reference"><a href="#Call-by-object-reference" class="headerlink" title="Call by object reference"></a>Call by object reference</h3><p>함수 내부에서 튜플 값을 바꿔야 한다면<br>tu = (1,2,3)<br>def change_tu(tu, e1, e2, e3):<br>tu=(e1,e2,e3)<br>print(tu, ‘in change_tu’)<br>return tu</p>
 <p>tu=change_tu(tu,4,5,6)<br>print(tu)</p>
-<p>Nonlocal</p>
-<p>first function class</p>
-<h2 id="1-함수를-인자-argument-로-전달"><a href="#1-함수를-인자-argument-로-전달" class="headerlink" title="1. 함수를 인자(argument)로 전달"></a>1. 함수를 인자(argument)로 전달</h2><pre><code>def f(func, a, b):
-        return func(a,b)
+<h3 id="Nonlocal"><a href="#Nonlocal" class="headerlink" title="Nonlocal"></a>Nonlocal</h3><p>first function class</p>
+<h3 id="1-함수를-인자-argument-로-전달"><a href="#1-함수를-인자-argument-로-전달" class="headerlink" title="1. 함수를 인자(argument)로 전달"></a>1. 함수를 인자(argument)로 전달</h3><pre><code>def f(func, a, b):
+  return func(a,b)
 def g(a,b):
-        return a+b
+  return a+b
 a=10
 </code></pre><p>b=20<br>f(g,a,b)<br>output =30</p>
-<h2 id="2-함수를-리턴-return-값으로-전달"><a href="#2-함수를-리턴-return-값으로-전달" class="headerlink" title="2. 함수를 리턴(return) 값으로 전달"></a>2. 함수를 리턴(return) 값으로 전달</h2><pre><code>def calc(kind):
-        if kind==&quot;add&quot;:
-                def add(a,b):
-                        return a+b
-                return add
-        elif kind==&quot;sub&quot;:
-                def sub(a,b):
-                        return a-b
-                return sub
+<h3 id="2-함수를-리턴-return-값으로-전달"><a href="#2-함수를-리턴-return-값으로-전달" class="headerlink" title="2. 함수를 리턴(return) 값으로 전달"></a>2. 함수를 리턴(return) 값으로 전달</h3><pre><code>def calc(kind):
+  if kind==&quot;add&quot;:
+    def add(a,b):
+      return a+b
+        return add
+  elif kind==&quot;sub&quot;:
+    def sub(a,b):
+      return a-b
+        return sub
 </code></pre><p>adder=calc(‘add’)<br>adder (10,20)<br>output = 30</p>
-<h2 id="3-함수를-변수에-전달"><a href="#3-함수를-변수에-전달" class="headerlink" title="3. 함수를 변수에 전달"></a>3. 함수를 변수에 전달</h2><p>함수를 다른 함수의 전달 인자 로 사용하고, 함수에서 함수를 리턴 하거나 변수의 값으로 함수를 할당 가능</p>
-<p>익명 함수(lambda)<br>def func(a,b)<br>return a+b<br>f=lambda a, b: a+b //람다는 반드시 리턴한다.</p>
+<h3 id="3-함수를-변수에-전달"><a href="#3-함수를-변수에-전달" class="headerlink" title="3. 함수를 변수에 전달"></a>3. 함수를 변수에 전달</h3><p>함수를 다른 함수의 전달 인자 로 사용하고, 함수에서 함수를 리턴 하거나 변수의 값으로 함수를 할당 가능</p>
+<h3 id="익명-함수-lambda"><a href="#익명-함수-lambda" class="headerlink" title="익명 함수(lambda)"></a>익명 함수(lambda)</h3><p>def func(a,b)<br>return a+b<br>f=lambda a, b: a+b //람다는 반드시 리턴한다.</p>
 <p>Javascript lambda =<br>Function( ){<br>}</p>
 <p>함수 =&gt; lazy evaluation = 내가 필요할 때<br>Map (func, iterable) // 사상 맵핑을 한다<br>Filter (<br>Reduce 리스트에 모든 값을 더한다. (reduce(lambda a, b: a+b, li))</p>
 <p>List comprehension</p>
 <p>삼항연산자<br>A=10<br>If a &gt; 7:<br>String=“big”<br>Else<br>String=”smaill”</p>
 <p>String “big” If a &gt; 7 else “smaill” // 참일 때 값 if 조건문 else 거짓일때 값</p>
 <p>Dic.get[“e”] // 값이 없으면 none<br>Dic [“e”] // 값이 없으면 에러<br>Dic.update</p>
-<p>Closure<br>함수 내부에 상태 정보를 저장해 두고 함수 결과가 이 내부의 상태 정보에 따라 출력 값이 달라진다.<br>OOP를 쓸 수 없을떄<br> 로컬 변수<br> 함수가 실행 도중에 데이터를 저장하기 위해서<br> 상태 정보: 특정한 데이터의 현제 상태<br>문법:</p>
+<h3 id="Closure"><a href="#Closure" class="headerlink" title="Closure"></a>Closure</h3><p>함수 내부에 상태 정보를 저장해 두고 함수 결과가 이 내부의 상태 정보에 따라 출력 값이 달라진다.<br>OOP를 쓸 수 없을떄<br> 로컬 변수<br> 함수가 실행 도중에 데이터를 저장하기 위해서<br> 상태 정보: 특정한 데이터의 현제 상태<br>문법:</p>
 <p>계좌 클로져 함수:<br>Def account(cus_name, balance):<br>Def inner (money):<br>Balance += money<br>Return cus_name, balance<br>Return inner<br>My_acnt=account(‘greg. 5000)<br>Your_acnt = account (“john”, 300)</p>
 <p>Linear search (선형 탐색)<br>N -&gt; t(n) = n</p>
 <p>Binary search<br>타겟을 찾았다면 인덱스 반환/ 찾지 못하면 none<br>N -&gt; t(n)= log^2n</p>
@@ -269,6 +267,13 @@ a=10
 
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/23/TIL-190423/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">TIL-190423</span>
+            </a>
+        </div>
         
         
         <div class="level-end">
@@ -472,7 +477,7 @@ a=10
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">14</span>
+                <span class="level-item tag">15</span>
             </span>
         </a></li>
             </ul>
@@ -497,6 +502,25 @@ a=10
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/23/TIL-190423/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190423">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-23T08:38:31.000Z">2019-04-23</time></div>
+                    <a href="/2019/04/23/TIL-190423/" class="has-link-black-ter is-size-6">TIL-190423</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -569,25 +593,6 @@ a=10
                     <a href="/2019/04/18/git-협업-프로젝트-시작하기/" class="has-link-black-ter is-size-6">HOW TO START GIT COOPERATIVE WORK.</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Project/">Project</a> / <a class="has-link-grey -link" href="/categories/Project/drunk-code-협업-Project/">drunk_code 협업 Project</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/18/TIL-190418/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190418">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-18T12:08:18.000Z">2019-04-18</time></div>
-                    <a href="/2019/04/18/TIL-190418/" class="has-link-black-ter is-size-6">TIL-190418</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
                 </div>
             </div>

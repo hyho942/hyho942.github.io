@@ -2,24 +2,24 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Hello World - Hexo</title>
+<title>TIL-190423 - Hexo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="4일차 (0424)Python - What I learn… 이진 탐색. big O Process vs thread Recursion 재귀">
 <meta name="keywords" content="Developer skill blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://hyho942.github.io/2019/04/17/hello-world/index.html">
+<meta property="og:title" content="TIL-190423">
+<meta property="og:url" content="https://hyho942.github.io/2019/04/23/TIL-190423/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="4일차 (0424)Python - What I learn… 이진 탐색. big O Process vs thread Recursion 재귀">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-04-17T08:57:03.877Z">
+<meta property="og:updated_time" content="2019-04-23T08:48:04.311Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="TIL-190423">
+<meta name="twitter:description" content="4일차 (0424)Python - What I learn… 이진 탐색. big O Process vs thread Recursion 재귀">
 <meta name="twitter:image" content="https://hyho942.github.io/images/og_image.png">
 
 
@@ -94,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/Hyun's_Logo.png" alt="Hello World" height="28">
+                <img src="/images/Hyun's_Logo.png" alt="TIL-190423" height="28">
             
             </a>
         </div>
@@ -145,13 +145,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-17T08:57:03.877Z">2019-04-17</time>
+                <time class="level-item has-text-grey" datetime="2019-04-23T08:38:31.000Z">2019-04-23</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 121 words)
+                    6 minutes read (About 902 words)
                 </span>
                 
                 
@@ -160,20 +164,104 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Hello World
+                TIL-190423
             
         </h1>
         <div class="content">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="hljs-string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <h2 id="4일차-0424"><a href="#4일차-0424" class="headerlink" title="4일차 (0424)"></a>4일차 (0424)</h2><h3 id="Python-What-I-learn…"><a href="#Python-What-I-learn…" class="headerlink" title="Python - What I learn…"></a>Python - What I learn…</h3><ul>
+<li>이진 탐색.</li>
+<li>big O</li>
+<li>Process vs thread</li>
+<li>Recursion 재귀<a id="more"></a>
+</li>
+</ul>
+<h3 id="Binary-search-이진-탐색"><a href="#Binary-search-이진-탐색" class="headerlink" title="Binary search 이진 탐색"></a>Binary search 이진 탐색</h3><p>이진 검색은 정렬된 리스트에서 원하는 항목을 찾기에 효율적인 알고리즘 입니다. 리스트를 반으로 나누고 타겟 값이 나올 때까지 항목을 좁혀갑니다.<br>선형 검색(linear search)는 모든 항목을 하나씩 검사해야 하는 문제가 있어 항목이 많다면 이진 탐색이 적절합니다.</p>
+<p>이진 탐색 절차</p>
+<ol>
+<li>Low = 0, high = n-1 로 초기화</li>
+<li>Mid는 (low + high)을 2로 나눈 몫으로 결정합니다.</li>
+<li>Data[mid]와 target이 서로 같으면 탐색 종료</li>
+<li>만약 target &lt; data[mid]이면 high = mid-1로 업데이트 한 후, 2회 돌아갑니다</li>
+</ol>
+<p>“ &lt;- “ 할당의 의미<br>Segmentation  가상메모리 – page / page frame / page fault<br>(구조)<br>Code<br>Data<br>Heap<br>Stack</p>
+<p>Cache =&gt; 지역성 원리 = principle of locality<br>Cache hit<br>Cache miss</p>
+<p>Big (o)</p>
+<ol>
+<li>O(1) 상수 시간 (속도가 빠르다) / =&gt; arr [0] / linked-list insert, delete</li>
+<li>O(log n) 로그 시간 / =&gt; BST</li>
+<li>O(n) 선형 시간 / =&gt; linked-list search 배열 삽입, 삭제</li>
+<li>O(n log n) 선형 로그 시간 / =&gt; quick sort, merge sort<br>a. Comparism sorting (비교 정렬)</li>
+<li>O(n^2) 지수 시간 / 버블 sort, 선택 정렬, 삽입 정렬</li>
+</ol>
+<p>Compiler vs interpreter</p>
+<p>Process =&gt;<br>OS<br>a. Job scheduling and scheduler<br>i. Context switching<br>b. Process status<br>i. Tread =&gt; multithreading</p>
+<ol start="2">
+<li><p>Concurrency programming (동시성 프로그래밍)<br>a. Multi-threading =&gt; CPU (bound) 작업이 많을 떄 사용<br>i. Race-condition<br>ii. Dead-lock<br>b. Asynchronous I/O (I/O bound)</p>
+<pre><code>Multi-threading
+    메모리, 성능에  매우 우월함
 
+Race condition
+
+Program(image)
+    하드 디스크에 저장되어 있는 “하나”의 이미지(code/data)
+
+Process
+    메인 메모리에 올라와서 실행을 시작한 프로그램
+
+PID (process ID)
+
+선정형 스케줄러 : preemptive scheduling (Preemption) =&gt; multi-tasking 가능
+
+비선정형 스케줄러: non- preemptive scheduling
+
+Process status (infographic)
+
+알고리즘 구성
+</code></pre><p>• Priority algorithm<br>• Round-robin algorithm<br>o 정해진 시간 동안 실행<br> Time slice<br> Quantum<br>I/O 작업 =&gt; 네트워크<br>속도가 느리지만 CPU가 필요 없다</p>
+</li>
+</ol>
+<p>Thread =&gt;<br>Context-switching =&gt;<br>CPU에 저장 되어있는 레지스터 값을 PCB 레지스터에서 교체 되는 행위</p>
+<p>= 라운드 로빈에서 타임 슬라이스가 지날 때마다 일어난다<br>Instruction Register (IR)<br>현재 실행되고 있는<br>Program counter (PC)</p>
+<pre><code>PCB
+</code></pre><p>Process vs thread<br>실행 흐름 – Instruction인스트럭션(기계어)에 나열</p>
+<pre><code>VAS = visual address space 가상 주소 공간
+</code></pre><p>GIL = global interpreter lock</p>
+<p>Parallel programming /<br>하드웨어가 다수 필요함</p>
+<p>Concurrency programming<br>한개의 하드웨어로</p>
+<p>Single core multithreading</p>
+<p>Multi core multithreading</p>
+<p>Multithreading =&gt; 공유 자원이 필요하다<br>Race condition이 발생함<br>: 한정된 자원을 여러 개의 프로세스다 동시에 이용이 될 때 프로세스가 자원 이용을 위해 경쟁을 벌이는 현상</p>
+<p>Critical Section<br>임계영역<br>어떤 스레드에서 공유 자원에 접근한 후<br>수정, 변경 하려는 코드<br>$ lock=threading.Lock()<br>        $ lock.release()<br>Recursion 재귀</p>
+<ol>
+<li>함수 호출 도중에 자기 자신을 다시 호출하는 것</li>
+<li>Base case //기저 조건, 종료 조건, 탈출 조건<br>\$ def func(n):<br>// Print (n) =&gt; I/O작업<br>#base case<br>If n &lt;= 0;<br>Return<br>Func(n-1)</li>
+</ol>
+<p>재귀함수 만드는법</p>
+<ol>
+<li>패턴을 찾는다  점화식을 만든다</li>
+<li>기저 조건을 만든다</li>
+</ol>
+<p>Factorial (계승)<br>3! = 3<em>2</em>1<br> 3!= 3<em>2!<br> 2!=2</em>1!</p>
+<pre><code>5! = 5*4*3*2*1
+
+점화식
+Fac(n) = fac(n-1)*n
+
+기저 조건
+n==1 or n==0 return 1
+
+test)
+</code></pre><p>def factorial (n):<br>if n==0 or n==1:<br>return 1<br>return factorial (n-1) *n<br>for i in range (1,6):<br>print (factorial(i))<br>fibonacci series피보나치<br>점화식<br>fibo(n) = fibo(n-2) + fibo (n-1)<br>기저 조건<br>if n==1 then 0<br>If n==2 then 1</p>
+<pre><code>Def fibo(n):
+    If n==1:
+        Return 0
+    elIf n==2:
+        Return 1
+Return fibo(n-2) + fibo(n-1)
+
+For i in range (1, 11):
+    Print (fibo(i), end=’ ’)
+</code></pre>
         </div>
         
         
@@ -222,17 +310,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/17/TIL-190417/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">TIL-190417</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/16/TIL-190416/">
-                <span class="level-item">TIL-190416</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/22/TIL-190422/">
+                <span class="level-item">TIL-190422</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -431,7 +512,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">14</span>
+                <span class="level-item tag">15</span>
             </span>
         </a></li>
             </ul>
@@ -456,6 +537,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/23/TIL-190423/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190423">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-23T08:38:31.000Z">2019-04-23</time></div>
+                    <a href="/2019/04/23/TIL-190423/" class="has-link-black-ter is-size-6">TIL-190423</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -533,25 +633,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/04/18/TIL-190418/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190418">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-18T12:08:18.000Z">2019-04-18</time></div>
-                    <a href="/2019/04/18/TIL-190418/" class="has-link-black-ter is-size-6">TIL-190418</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -617,7 +698,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/Hyun's_Logo.png" alt="Hello World" height="28">
+                    <img src="/images/Hyun's_Logo.png" alt="TIL-190423" height="28">
                 
                 </a>
                 <p class="is-size-7">
