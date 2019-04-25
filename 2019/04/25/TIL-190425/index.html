@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="7일차 (0425) - 컴퓨터 공학Python - What I learn… Network 알고리즘">
+    <meta name="description" content="7일차 (0425) - 컴퓨터 공학Python - What I learn… Network TCP/IP 알고리즘">
 <meta name="keywords" content="Developer skill blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIL-190425">
 <meta property="og:url" content="https://hyho942.github.io/2019/04/25/TIL-190425/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="7일차 (0425) - 컴퓨터 공학Python - What I learn… Network 알고리즘">
+<meta property="og:description" content="7일차 (0425) - 컴퓨터 공학Python - What I learn… Network TCP/IP 알고리즘">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-04-25T09:09:52.501Z">
+<meta property="og:updated_time" content="2019-04-25T11:44:30.468Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL-190425">
-<meta name="twitter:description" content="7일차 (0425) - 컴퓨터 공학Python - What I learn… Network 알고리즘">
+<meta name="twitter:description" content="7일차 (0425) - 컴퓨터 공학Python - What I learn… Network TCP/IP 알고리즘">
 <meta name="twitter:image" content="https://hyho942.github.io/images/og_image.png">
 
 
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 384 words)
+                    4 minutes read (About 611 words)
                 </span>
                 
                 
@@ -169,30 +169,26 @@
         </h1>
         <div class="content">
             <h2 id="7일차-0425-컴퓨터-공학"><a href="#7일차-0425-컴퓨터-공학" class="headerlink" title="7일차 (0425) - 컴퓨터 공학"></a>7일차 (0425) - 컴퓨터 공학</h2><h3 id="Python-What-I-learn…"><a href="#Python-What-I-learn…" class="headerlink" title="Python - What I learn…"></a>Python - What I learn…</h3><ul>
-<li>Network</li>
+<li>Network TCP/IP</li>
 <li>알고리즘</li>
 </ul>
 <a id="more"></a>
-<p>Network</p>
-<p>WAN port<br>LAN port<br>사설망 (private network)</p>
-<p>IP routing table</p>
-<pre><code>Application
-    http =메세지 기반에 “문자열”
-    https = SSL / TLS을 포함한 보안이 개선된 웹 통신 방식
-    FTP
-    SMTP
-    DNS = domain name service
-        사람이 읽기 쉽다
-         DNS를 =&gt; IP로 바꾼다
-Translate (전송) / port =&gt; 특정process에 저장
-Internet / IP (ip routing) – ip address
-Network Interface / ethernet (mac address)
-</code></pre><blockquote>
-<p>book tcp/ip 완벽 가이드</p>
-</blockquote>
-<p>Sever &gt; port = socket에 부여된 숫자 (0~2^16-1 정수)<br>Socket = listening socket / data socket<br>Client 프로세스</p>
-<p>TCP<br>=신뢰도가 높다 -&gt; 패킷이 유실 되면 재전송을 해준다(관리)<br>= 네크워크에 부담을 준다.</p>
-<p>UDP<br>=신뢰도가 낮다 -&gt; 패킷 전송후 재전송을 안해준다<br>= 통신속도가 빠르다</p>
+<h2 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h2><h3 id="WAN-Port"><a href="#WAN-Port" class="headerlink" title="WAN Port"></a>WAN Port</h3><p>Wide Area Network - Local Network들을 통신하게 해주는 네트워크로 자신을 포함하지 않는 큰 범위에 네트워크.</p>
+<h3 id="LAN-port"><a href="#LAN-port" class="headerlink" title="LAN port"></a>LAN port</h3><p>Local Area Network 지역 네트워크로 이더넷 프로토콜을 사용하며 자신을 포함한 작은 네트워크 단위를 구성하는 네크워크망.</p>
+<h3 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h3><h4 id="Public-IP-공인-IP-주소"><a href="#Public-IP-공인-IP-주소" class="headerlink" title="Public IP (공인 IP 주소)"></a>Public IP (공인 IP 주소)</h4><p>Globally Unique IP</p>
+<h4 id="Private-IP-사설-IP-주소"><a href="#Private-IP-사설-IP-주소" class="headerlink" title="Private IP (사설 IP 주소)"></a>Private IP (사설 IP 주소)</h4><p>Private Network 상에 존재하며 NAT를 통해 인터넷에 연결이 가능하다. 하지만 인테닛 상에서 Private IP address로 연결이 불가능하다.</p>
+<h3 id="IP-routing-table"><a href="#IP-routing-table" class="headerlink" title="IP routing table"></a>IP routing table</h3><p>라우터가 경로를 찾을 때 사용하는 것으로, 패킷을 전송할 때 인터페이스의 데이터 링크 프레임 안에 IP 패킷을 캡슐화된 네트워크에 대한 정보를 포함하고 있다.</p>
+<ul>
+<li>Application<br>http =메세지 기반에 “문자열”<br>https = SSL / TLS을 포함한 보안이 개선된 웹 통신 방식<br>FTP<br>SMTP<br>DNS = domain name service<br>사람이 읽기 쉽다<br>DNS를 =&gt; IP로 바꾼다</li>
+<li>Translate (전송) / port =&gt; 특정process에 저장</li>
+<li>Internet / IP (ip routing) – ip address</li>
+<li>Network Interface / ethernet (mac address)</li>
+</ul>
+<h3 id="Port-Translate-section"><a href="#Port-Translate-section" class="headerlink" title="Port (Translate section)"></a>Port (Translate section)</h3><p>socket에 부여된 주소 숫자로서 특정 프로세스로 데이터를 전달할 수 있다.<br>(0~2^16-1 정수)<br>Socket = listening socket / data socket<br>Client 프로세스</p>
+<h3 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h3><ul>
+<li>연결 지향형 Protocol로서 신뢰도가 높다 -&gt; 패킷이 유실 되면 재전송을 해준다(관리)<br>= 네크워크에 부담을 준다.</li>
+</ul>
+<h3 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h3><p>=신뢰도가 낮다 -&gt; 패킷 전송후 재전송을 안해준다<br>= 통신속도가 빠르다</p>
 <p>HTTP<br>URL =&gt; http://<user>:<password>@<host>:<port>/<urlpath>?<query>#<bookmark></bookmark></query></urlpath></port></host></password></user></p>
 <p>v1.0 = 일시적 연결<br>: TCP 연결 후 하나의 요청/ 응답 후 연결을 끊는다.</p>
 <p>v1.1 = 지속적인 연결 (persistent connection)<br>: TCP 연결을 그대로 유지한다.<br>: connetion: close 헤더를 포함해 일시적 연결을 끊는다.<br>효율적인 캐싱과 프록싱<br>컨텐트 협상</p>
