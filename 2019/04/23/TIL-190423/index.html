@@ -16,7 +16,7 @@
 <meta property="og:description" content="5일차 (0423) - 컴퓨터 공학Python - What I learn… 이진 탐색. big O Process vs thread Recursion 재귀">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-04-24T08:23:00.977Z">
+<meta property="og:updated_time" content="2019-04-24T12:10:48.390Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL-190423">
 <meta name="twitter:description" content="5일차 (0423) - 컴퓨터 공학Python - What I learn… 이진 탐색. big O Process vs thread Recursion 재귀">
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    9 minutes read (About 1386 words)
+                    9 minutes read (About 1418 words)
                 </span>
                 
                 
@@ -266,8 +266,10 @@ Process status (infographic)
 <p>Critical Section<br>임계영역<br>어떤 스레드에서 공유 자원에 접근한 후<br>수정, 변경 하려는 코드<br>$ lock=threading.Lock()<br>        $ lock.release()<br>Recursion 재귀</p>
 <ol>
 <li>함수 호출 도중에 자기 자신을 다시 호출하는 것</li>
-<li>Base case //기저 조건, 종료 조건, 탈출 조건<br>\$ def func(n):<br>// Print (n) =&gt; I/O작업<br>#base case<br>If n &lt;= 0;<br>Return<br>Func(n-1)</li>
 </ol>
+<h2 id="Base-case-기저-조건"><a href="#Base-case-기저-조건" class="headerlink" title="Base case (기저 조건)"></a>Base case (기저 조건)</h2><p>재귀 호출에 빠지거나, 재귀 호출을 일으키지 않는 함수의 기본 케이스 이다.</p>
+<h2 id="Terminal-case-종료-조건-탈출-조건"><a href="#Terminal-case-종료-조건-탈출-조건" class="headerlink" title="Terminal case (종료 조건, 탈출 조건)"></a>Terminal case (종료 조건, 탈출 조건)</h2><p>\$ def func(n):<br>// Print (n) =&gt; I/O작업</p>
+<p>#base case<br>If n &lt;= 0;<br>Return<br>Func(n-1)</p>
 <p>재귀함수 만드는법</p>
 <ol>
 <li>패턴을 찾는다  점화식을 만든다</li>
@@ -404,7 +406,7 @@ For i in range (1, 11):
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        21
+                        22
                     </p>
                 </div>
             </div>
@@ -551,7 +553,7 @@ For i in range (1, 11):
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">17</span>
+                <span class="level-item tag">18</span>
             </span>
         </a></li>
             </ul>
@@ -576,6 +578,25 @@ For i in range (1, 11):
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/25/TIL-190425/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190425">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-25T09:06:44.000Z">2019-04-25</time></div>
+                    <a href="/2019/04/25/TIL-190425/" class="has-link-black-ter is-size-6">TIL-190425</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -653,25 +674,6 @@ For i in range (1, 11):
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/04/19/TIL-190419/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190419">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-19T12:10:50.000Z">2019-04-19</time></div>
-                    <a href="/2019/04/19/TIL-190419/" class="has-link-black-ter is-size-6">TIL-190419</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -690,7 +692,7 @@ For i in range (1, 11):
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">21</span>
+                    <span class="level-item tag">22</span>
                 </span>
             </a>
         </li>

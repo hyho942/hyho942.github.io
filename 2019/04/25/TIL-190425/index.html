@@ -2,20 +2,24 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Archives: 2019 - Hexo</title>
+<title>TIL-190425 - Hexo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="keywords" content="Developer skill blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://hyho942.github.io/archives/2019/index.html">
+    <meta name="description" content="7일차 (0425) - 컴퓨터 공학Python - What I learn… Network 알고리즘">
+<meta name="keywords" content="Developer skill blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TIL-190425">
+<meta property="og:url" content="https://hyho942.github.io/2019/04/25/TIL-190425/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="7일차 (0425) - 컴퓨터 공학Python - What I learn… Network 알고리즘">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
+<meta property="og:updated_time" content="2019-04-25T09:09:52.501Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="TIL-190425">
+<meta name="twitter:description" content="7일차 (0425) - 컴퓨터 공학Python - What I learn… Network 알고리즘">
 <meta name="twitter:image" content="https://hyho942.github.io/images/og_image.png">
 
 
@@ -90,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/Hyun's_Logo.png" alt="Hexo" height="28">
+                <img src="/images/Hyun's_Logo.png" alt="TIL-190425" height="28">
             
             </a>
         </div>
@@ -135,231 +139,126 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-25T09:06:44.000Z">2019-04-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 384 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                TIL-190425
+            
+        </h1>
+        <div class="content">
+            <h2 id="7일차-0425-컴퓨터-공학"><a href="#7일차-0425-컴퓨터-공학" class="headerlink" title="7일차 (0425) - 컴퓨터 공학"></a>7일차 (0425) - 컴퓨터 공학</h2><h3 id="Python-What-I-learn…"><a href="#Python-What-I-learn…" class="headerlink" title="Python - What I learn…"></a>Python - What I learn…</h3><ul>
+<li>Network</li>
+<li>알고리즘</li>
+</ul>
+<a id="more"></a>
+<p>Network</p>
+<p>WAN port<br>LAN port<br>사설망 (private network)</p>
+<p>IP routing table</p>
+<pre><code>Application
+    http =메세지 기반에 “문자열”
+    https = SSL / TLS을 포함한 보안이 개선된 웹 통신 방식
+    FTP
+    SMTP
+    DNS = domain name service
+        사람이 읽기 쉽다
+         DNS를 =&gt; IP로 바꾼다
+Translate (전송) / port =&gt; 특정process에 저장
+Internet / IP (ip routing) – ip address
+Network Interface / ethernet (mac address)
+</code></pre><blockquote>
+<p>book tcp/ip 완벽 가이드</p>
+</blockquote>
+<p>Sever &gt; port = socket에 부여된 숫자 (0~2^16-1 정수)<br>Socket = listening socket / data socket<br>Client 프로세스</p>
+<p>TCP<br>=신뢰도가 높다 -&gt; 패킷이 유실 되면 재전송을 해준다(관리)<br>= 네크워크에 부담을 준다.</p>
+<p>UDP<br>=신뢰도가 낮다 -&gt; 패킷 전송후 재전송을 안해준다<br>= 통신속도가 빠르다</p>
+<p>HTTP<br>URL =&gt; http://<user>:<password>@<host>:<port>/<urlpath>?<query>#<bookmark></bookmark></query></urlpath></port></host></password></user></p>
+<p>v1.0 = 일시적 연결<br>: TCP 연결 후 하나의 요청/ 응답 후 연결을 끊는다.</p>
+<p>v1.1 = 지속적인 연결 (persistent connection)<br>: TCP 연결을 그대로 유지한다.<br>: connetion: close 헤더를 포함해 일시적 연결을 끊는다.<br>효율적인 캐싱과 프록싱<br>컨텐트 협상</p>
+<p>에러 메세지<br>200번대<br>: 성공 메세지<br>300번대<br>400번대 / 401, 404, 406<br>: Client 에러<br>500번대<br>: server 에러</p>
+<p>알고리즘<br>Comparison sort<br>Quick sort<br>Random pivot<br>: 피벗이 1이나 왔을때 n^2이된다. 이를 막기 위해 피벗과 가장 왼쪽에 값을 교체한다<br>Big O -&gt; average<br>Insertion sort<br>삽입 정열<br>Selection sort<br>선택 정열<br>Merge sort<br>연산 리스트<br>배열과 연결 리스트<br>스택, 큐<br>Tree<br>순회<br>전위<br>중위<br>후위<br>레벨순서</p>
 
-<div class="card widget">
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
     <div class="card-content">
-        <h3 class="tag is-link">
-        2019
-        </h3>
-        <div class="timeline">
-        
-            <article class="media">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-04-25T09:06:44.000Z">2019-04-25</time>
-                        <a href="/2019/04/25/TIL-190425/" class="has-link-black-ter is-size-6">TIL-190425</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
+</div>
+
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-04-24T08:22:09.000Z">2019-04-24</time>
-                        <a href="/2019/04/24/TIL-190424/" class="has-link-black-ter is-size-6">TIL-190424</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-04-23T08:38:31.000Z">2019-04-23</time>
-                        <a href="/2019/04/23/TIL-190423/" class="has-link-black-ter is-size-6">TIL-190423</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
+
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-04-22T08:42:34.000Z">2019-04-22</time>
-                        <a href="/2019/04/22/TIL-190422/" class="has-link-black-ter is-size-6">TIL-190422</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<div class="notification is-danger">
+    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
+</div>
+
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-04-22T08:36:07.000Z">2019-04-22</time>
-                        <a href="/2019/04/22/Algorithm-study-01/" class="has-link-black-ter is-size-6">Algorithm study_01</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Algorithm-Study/">Algorithm Study</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-04-19T12:10:50.000Z">2019-04-19</time>
-                        <a href="/2019/04/19/TIL-190419/" class="has-link-black-ter is-size-6">TIL-190419</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
+<div class="notification is-danger">
+    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
+</div>
+
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-04-18T12:47:45.000Z">2019-04-18</time>
-                        <a href="/2019/04/18/git-협업-프로젝트-시작하기/" class="has-link-black-ter is-size-6">HOW TO START GIT COOPERATIVE WORK.</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Project/">Project</a> / <a class="has-link-grey -link" href="/categories/Project/drunk-code-협업-Project/">drunk_code 협업 Project</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-04-18T12:08:18.000Z">2019-04-18</time>
-                        <a href="/2019/04/18/TIL-190418/" class="has-link-black-ter is-size-6">TIL-190418</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-04-17T12:03:54.000Z">2019-04-17</time>
-                        <a href="/2019/04/17/TIL-190417/" class="has-link-black-ter is-size-6">TIL-190417</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-04-16T11:53:31.000Z">2019-04-16</time>
-                        <a href="/2019/04/16/TIL-190416/" class="has-link-black-ter is-size-6">TIL-190416</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
         </div>
     </div>
 </div>
 
 
 
-    
 <div class="card card-transparent">
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-        <div class="pagination-previous is-invisible is-hidden-mobile">
-            <a class="is-flex-grow has-text-black-ter" href="/archives/2019/page/0/">Previous</a>
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/24/TIL-190424/">
+                <span class="level-item">TIL-190424</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
         </div>
-        <div class="pagination-next">
-            <a class="is-flex-grow has-text-black-ter" href="/archives/2019/page/2/">Next</a>
-        </div>
-        <ul class="pagination-list is-hidden-mobile">
-            
-            <li><a class="pagination-link is-current" href="/archives/2019/">1</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/archives/2019/page/2/">2</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/archives/2019/page/3/">3</a></li>
-            
-        </ul>
-    </nav>
+        
+    </div>
 </div>
+
+
 </div>
                 
 
@@ -736,7 +635,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/Hyun's_Logo.png" alt="Hexo" height="28">
+                    <img src="/images/Hyun's_Logo.png" alt="TIL-190425" height="28">
                 
                 </a>
                 <p class="is-size-7">

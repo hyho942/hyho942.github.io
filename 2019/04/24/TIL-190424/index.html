@@ -16,7 +16,7 @@
 <meta property="og:description" content="6일차 (0424) - 컴퓨터 공학Python - What I learn… OOP Network Hanoi tower Sorting Quick sort">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-04-24T08:26:52.693Z">
+<meta property="og:updated_time" content="2019-04-24T12:10:49.376Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL-190424">
 <meta name="twitter:description" content="6일차 (0424) - 컴퓨터 공학Python - What I learn… OOP Network Hanoi tower Sorting Quick sort">
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 625 words)
+                    6 minutes read (About 908 words)
                 </span>
                 
                 
@@ -176,15 +176,19 @@
 <li>Quick sort<a id="more"></a>
 </li>
 </ul>
-<p>OOP</p>
-<ol>
-<li>캡슐화 (encapsulation): 정보 은닉을 포함</li>
-<li>정보은닉(information hiding)</li>
-<li>다형성 (Polymorphism): 상속(inheritance)<br>a. 메서드 오버라이딩 (method overriding)<br>b. 함수 오버로딩 (function overloading)</li>
-<li>디자이 패턴 (solid)<br>S – single responsibility principle (단일 책임)<br>O – open-closed principle (확장 폐쇠)<br>L – liskov substitution principle (리스트프 치환)<br>I – interface segregation principle (인터페이스 분리)<br>D – Depending intorsion principle (의존 역전)</li>
-</ol>
-<p>Hanoi game<br>def hanoi(n, _from, _by, _to):</p>
-<p>#base case<br>if n==1:<br>print(f’{n}번쨰 쟁반을 {_from}에서 {_to}로 이동’)<br>return</p>
+<h3 id="OOP"><a href="#OOP" class="headerlink" title="OOP"></a>OOP</h3><p>객체지향프로그래밍 OOP(Object Oriented Programming)</p>
+<h4 id="캡슐화-encapsulation"><a href="#캡슐화-encapsulation" class="headerlink" title="캡슐화 (encapsulation)"></a>캡슐화 (encapsulation)</h4><p>하나의 객체가 특정한 목적을 가지고 필요한 변수나 메소드를 하나로 묶는 것을 의미한다.<br>주된 목적으로 정보을 은닉화(information hiding) 하기 때문에 함수를 관련성 있게 클래스에 구성해야한다.</p>
+<h4 id="추상화-Abstraction"><a href="#추상화-Abstraction" class="headerlink" title="추상화 (Abstraction)"></a>추상화 (Abstraction)</h4><p>공통된 속성이나 기능을 묶어 이름을 붙이는 것으로 객체 지향적 관점에서 클래스를 정의한는 행동이 추상적이라고 할 수 있다.</p>
+<h4 id="다형성-Polymorphism"><a href="#다형성-Polymorphism" class="headerlink" title="다형성 (Polymorphism)"></a>다형성 (Polymorphism)</h4><p>부모 클래스에서 물려받은 가상의 함수를 자식 클래스 안에서 메서드가 오버라이딩(method overriding)+함수 오버로딩 (function overloading) 되어 사용되는 것을 말한다. 상속된 객체를 확장, 변경을 간능하게 해주며, 이를 통해 코드를 재사용 및 코드 간결화 되어 코드 관리가 편하다.</p>
+<h4 id="상속성-Inheritance"><a href="#상속성-Inheritance" class="headerlink" title="상속성 (Inheritance)"></a>상속성 (Inheritance)</h4><p>상위 특징을 하위가 물려받는 것으로 상위 클래스에 근거하여 새롭게 클래스 행위를 정의 할 수 있게 도와준다. 즉 상위 클래스에 기능을 재사용할 수 있지만 새로운 기능을 추가할 수 있다.</p>
+<h3 id="디자이-패턴-solid"><a href="#디자이-패턴-solid" class="headerlink" title="디자이 패턴 (solid)"></a>디자이 패턴 (solid)</h3><ul>
+<li>S – single responsibility principle (단일 책임)</li>
+<li>O – open-closed principle (확장 폐쇠)</li>
+<li>L – liskov substitution principle (리스트프 치환)</li>
+<li>I – interface segregation principle (인터페이스 분리)</li>
+<li>D – Depending intorsion principle (의존 역전)</li>
+</ul>
+<p>Hanoi game<br>def hanoi(n, _from, _by, _to):<br>Base Caseㄴ<br>if n==1:<br>print(f’{n}번쨰 쟁반을 {_from}에서 {_to}로 이동’)<br>return</p>
 <p>hanoi(n-1, _from, _to, _by)<br>print(f’{n}번쨰 쟁반을 {_from}에서 {_to}로 이동’)<br>hanoi(n-1, _by, _from, _to)</p>
 <p>= hanoi(n, “A”, “B”, “C”)</p>
 <p>버블 정렬<br>데이터 갯 수<br>If 4 = 3+2+1<br>If 6 = 5+4+3+2+1</p>
@@ -192,7 +196,7 @@
 <p>[등차 수열 방식]<br>def sumation(n):<br>return n*(1+n)//2</p>
 <p>절차지향<br> 함수= 함수 시그니처 // 기능, 구현</p>
 <p>객체지향<br> 객체(object) /<br>= (관련있는) +변수 상태정보(데이터) / 특성값 +함수 (메서드) 기능 ( input + 상태 정보(맴버) -&gt; output</p>
-<p>Network<br>OSI 7 계층</p>
+<h3 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h3><p>OSI 7 계층</p>
 <ol>
 <li>응용 계층 (Application Layer)</li>
 <li>표현 계층 (Presentation Layer)</li>
@@ -274,6 +278,13 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/25/TIL-190425/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">TIL-190425</span>
+            </a>
+        </div>
+        
         
         <div class="level-end">
             <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/23/TIL-190423/">
@@ -329,7 +340,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        21
+                        22
                     </p>
                 </div>
             </div>
@@ -476,7 +487,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">17</span>
+                <span class="level-item tag">18</span>
             </span>
         </a></li>
             </ul>
@@ -501,6 +512,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/25/TIL-190425/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190425">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-25T09:06:44.000Z">2019-04-25</time></div>
+                    <a href="/2019/04/25/TIL-190425/" class="has-link-black-ter is-size-6">TIL-190425</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -578,25 +608,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/04/19/TIL-190419/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190419">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-19T12:10:50.000Z">2019-04-19</time></div>
-                    <a href="/2019/04/19/TIL-190419/" class="has-link-black-ter is-size-6">TIL-190419</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -615,7 +626,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">21</span>
+                    <span class="level-item tag">22</span>
                 </span>
             </a>
         </li>
