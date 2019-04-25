@@ -16,7 +16,7 @@
 <meta property="og:description" content="7일차 (0425) - 컴퓨터 공학Python - What I learn… Network TCP/IP 알고리즘">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-04-25T11:44:30.468Z">
+<meta property="og:updated_time" content="2019-04-25T12:06:07.863Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL-190425">
 <meta name="twitter:description" content="7일차 (0425) - 컴퓨터 공학Python - What I learn… Network TCP/IP 알고리즘">
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 611 words)
+                    4 minutes read (About 668 words)
                 </span>
                 
                 
@@ -185,15 +185,42 @@
 <li>Network Interface / ethernet (mac address)</li>
 </ul>
 <h3 id="Port-Translate-section"><a href="#Port-Translate-section" class="headerlink" title="Port (Translate section)"></a>Port (Translate section)</h3><p>socket에 부여된 주소 숫자로서 특정 프로세스로 데이터를 전달할 수 있다.<br>(0~2^16-1 정수)<br>Socket = listening socket / data socket<br>Client 프로세스</p>
-<h3 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h3><ul>
-<li>연결 지향형 Protocol로서 신뢰도가 높다 -&gt; 패킷이 유실 되면 재전송을 해준다(관리)<br>= 네크워크에 부담을 준다.</li>
+<h3 id="TCP-Transmission-Control-Protocol"><a href="#TCP-Transmission-Control-Protocol" class="headerlink" title="TCP (Transmission Control Protocol)"></a>TCP (Transmission Control Protocol)</h3><ul>
+<li>연결 지향형 Protocol로서 신뢰도가 높다.</li>
+<li>패킷이 유실 되면 일정 시간 후 데이터를 재전송 해준다.</li>
+<li>네크워크에 부담을 준다.</li>
 </ul>
-<h3 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h3><p>=신뢰도가 낮다 -&gt; 패킷 전송후 재전송을 안해준다<br>= 통신속도가 빠르다</p>
-<p>HTTP<br>URL =&gt; http://<user>:<password>@<host>:<port>/<urlpath>?<query>#<bookmark></bookmark></query></urlpath></port></host></password></user></p>
-<p>v1.0 = 일시적 연결<br>: TCP 연결 후 하나의 요청/ 응답 후 연결을 끊는다.</p>
-<p>v1.1 = 지속적인 연결 (persistent connection)<br>: TCP 연결을 그대로 유지한다.<br>: connetion: close 헤더를 포함해 일시적 연결을 끊는다.<br>효율적인 캐싱과 프록싱<br>컨텐트 협상</p>
-<p>에러 메세지<br>200번대<br>: 성공 메세지<br>300번대<br>400번대 / 401, 404, 406<br>: Client 에러<br>500번대<br>: server 에러</p>
-<p>알고리즘<br>Comparison sort<br>Quick sort<br>Random pivot<br>: 피벗이 1이나 왔을때 n^2이된다. 이를 막기 위해 피벗과 가장 왼쪽에 값을 교체한다<br>Big O -&gt; average<br>Insertion sort<br>삽입 정열<br>Selection sort<br>선택 정열<br>Merge sort<br>연산 리스트<br>배열과 연결 리스트<br>스택, 큐<br>Tree<br>순회<br>전위<br>중위<br>후위<br>레벨순서</p>
+<h3 id="UDP-User-Datagram-Protocol"><a href="#UDP-User-Datagram-Protocol" class="headerlink" title="UDP (User Datagram Protocol)"></a>UDP (User Datagram Protocol)</h3><ul>
+<li>비 연결 지향형 Protocol로서 신뢰도가 낮다.</li>
+<li>패킷 전송후 데이터 일부가 손실 되어도 재전송을 하지 않는다.</li>
+<li>통신 속도가 빠르다.</li>
+</ul>
+<h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><p>URL =&gt; http:// user : password @ host : port/urlpath ?query # bookmark</p>
+<ul>
+<li>port = 기본적으로 80을 쓰므로 일반적으로 생략이 가능</li>
+</ul>
+<h4 id="HTML-1-0-일시적-연결"><a href="#HTML-1-0-일시적-연결" class="headerlink" title="HTML/1.0 = 일시적 연결"></a>HTML/1.0 = 일시적 연결</h4><ul>
+<li>TCP 연결 후 하나의 요청/ 응답 후 연결을 끊는다.</li>
+</ul>
+<h4 id="HTML-1-1-지속적인-연결-persistent-connection"><a href="#HTML-1-1-지속적인-연결-persistent-connection" class="headerlink" title="HTML/1.1 = 지속적인 연결 (persistent connection)"></a>HTML/1.1 = 지속적인 연결 (persistent connection)</h4><ul>
+<li>TCP 연결을 그대로 유지한다.</li>
+<li>Connection: close 헤더를 포함해 일시적 연결을 끊는다.</li>
+<li>효율적인 캐싱과 프록싱</li>
+<li>컨텐트 협상</li>
+</ul>
+<h3 id="Error-메세지"><a href="#Error-메세지" class="headerlink" title="Error 메세지"></a>Error 메세지</h3><h5 id="200번대"><a href="#200번대" class="headerlink" title="200번대"></a>200번대</h5><p>: 성공 메세지</p>
+<h5 id="300번대"><a href="#300번대" class="headerlink" title="300번대"></a>300번대</h5><h5 id="400번대"><a href="#400번대" class="headerlink" title="400번대"></a>400번대</h5><p>: Client 에러</p>
+<h5 id="500번대"><a href="#500번대" class="headerlink" title="500번대"></a>500번대</h5><p>: server 에러</p>
+<h3 id="Comparison-Sort-종류"><a href="#Comparison-Sort-종류" class="headerlink" title="Comparison Sort 종류"></a>Comparison Sort 종류</h3><h5 id="Quick-sort"><a href="#Quick-sort" class="headerlink" title="Quick sort"></a>Quick sort</h5><h5 id="Random-pivot"><a href="#Random-pivot" class="headerlink" title="Random pivot"></a>Random pivot</h5><ul>
+<li>피벗이 1이나 왔을때 n^2이된다. 이를 막기 위해 피벗과 가장 왼쪽에 값을 교체한다</li>
+</ul>
+<h5 id="Big-O-gt-average"><a href="#Big-O-gt-average" class="headerlink" title="Big O -&gt; average"></a>Big O -&gt; average</h5><h5 id="Insertion-sort"><a href="#Insertion-sort" class="headerlink" title="Insertion sort"></a>Insertion sort</h5><ul>
+<li>삽입 정열</li>
+</ul>
+<h5 id="Selection-sort"><a href="#Selection-sort" class="headerlink" title="Selection sort"></a>Selection sort</h5><ul>
+<li>선택 정열</li>
+</ul>
+<h5 id="Merge-sort"><a href="#Merge-sort" class="headerlink" title="Merge sort"></a>Merge sort</h5><p>연산 리스트<br>배열과 연결 리스트<br>스택, 큐<br>Tree<br>순회<br>전위<br>중위<br>후위<br>레벨순서</p>
 
         </div>
         
