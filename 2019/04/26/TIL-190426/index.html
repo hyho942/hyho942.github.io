@@ -16,7 +16,7 @@
 <meta property="og:description" content="7일차 (0426) - 컴퓨터 공학Python - What I learn… 자료구조 Queue">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-04-29T01:31:16.036Z">
+<meta property="og:updated_time" content="2019-04-29T03:52:09.522Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL-190426">
 <meta name="twitter:description" content="7일차 (0426) - 컴퓨터 공학Python - What I learn… 자료구조 Queue">
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 525 words)
+                    6 minutes read (About 839 words)
                 </span>
                 
                 
@@ -174,10 +174,9 @@
 <a id="more"></a>
 </li>
 </ul>
-<p>ADT (abstract data type) 추상 자료형</p>
-<ul>
-<li>자료구조 의 인터페이스 (함수 시그니처)(오퍼레이션)을 명시해 놓은 것<br>= 자료구조의 함수 사용법</li>
-<li>구체적인 구현 설명이 들어가면 안된다.</li>
+<h3 id="ADT-abstract-data-type-추상-자료형"><a href="#ADT-abstract-data-type-추상-자료형" class="headerlink" title="ADT (abstract data type) 추상 자료형"></a>ADT (abstract data type) 추상 자료형</h3><ul>
+<li>구체적인 구현 설명을 언급하지 않는, 순수하게 기능을 나열한 것을 말한다.</li>
+<li>자료구조(연결리스트, 스택, 큐 등) 의 인터페이스(함수 시그니처),오퍼레이션을 명시해 놓은 것이다.<br><br>= 자료구조의 함수 사용법을 나타냄.</li>
 </ul>
 <ol>
 <li>배열</li>
@@ -190,15 +189,28 @@
 <li>S.pop() -&gt; data<br>스택 맨 위의 데이터를 삭제하면서 반환</li>
 <li>S.peek() -&gt; data<br>스택 맨 위 데이터를 반환</li>
 </ol>
-<p>Queue</p>
-<p>Linked list</p>
-<ol>
-<li><p>Sigle linked list<br>이전 데이터로 접근을 할 수 없다.</p>
-</li>
-<li><p>Double linked list<br>Dummy double linked list (이중 연결 리스트)<br>= 데이터를 가지지 않은 노드<br>= 구현 편의성이 높아진다.</p>
-</li>
+<h3 id="Queue-큐-Q-gt-자료구조"><a href="#Queue-큐-Q-gt-자료구조" class="headerlink" title="Queue 큐 \ (Q &gt; 자료구조)"></a>Queue 큐 \ (Q &gt; 자료구조)</h3><p>FIFO(First-In-First-Out) 방식으로 스택과 반대로 먼저 저장된 값이 제일 먼저 나온다. 즉 가장 최근에 저장된 값은 가장 먼저 나오게된다.<br><br>EX) 1,2,3 -&gt; 3,2,1</p>
+<ul>
+<li>Q.empty() -&gt; Boolean<br><br> - 큐가 비어 있을 때에 true를, 아니면 false 반환한다.</li>
+<li>Q.enqueue -&gt; None<br><br> - 큐의 맨 뒤에 데이터를 쌓는다.</li>
+<li>Q.dequeue -&gt; data<br><br> - 큐 맨 앞의 데이터를 삭제하면서 반환</li>
+<li>Q.peek -&gt; data<br><br> - 큐에서 가장 위(앞)에 있는 데이터을 반환한다.</li>
+</ul>
+<ul>
+<li>add(item): item을 리스트의 끝부분에 추가한다.</li>
+<li>remove(): 리스트의 첫 번째 항목을 제거한다.</li>
+</ul>
+<h3 id="Linked-list-연결-리스트"><a href="#Linked-list-연결-리스트" class="headerlink" title="Linked list 연결 리스트"></a>Linked list 연결 리스트</h3><p>노드를 단위를 한다. 노드는 데이터와 다음 노드를 가리키는 참조값으로 구성되어 있다.</p>
+<h4 id="Sigle-linked-list"><a href="#Sigle-linked-list" class="headerlink" title="Sigle linked list"></a>Sigle linked list</h4><p>= 이전 데이터로 접근을 할 수 없다.</p>
+<h5 id="Operations"><a href="#Operations" class="headerlink" title="Operations"></a>Operations</h5><ol>
+<li>S.empty() -&gt; Boolean<br><br> - 리스트가 비었다면 true, 아니면 false</li>
+<li>S.size() -&gt; None<br><br> - 리스트에 있는 요소 개수</li>
+<li>S.add() -&gt; None<br><br> - 노드를 리스트의 맨 앞에 추가</li>
+<li>S.search(target) -&gt; Node<br><br> - 리스트에서 target을 찾는다<br><br> - 찾으면 노드를, 못 찾으면 None 반환</li>
+<li>S.delete() -&gt; None<br><br> - 맨 앞 노드를 삭제</li>
 </ol>
-<p>구조</p>
+<h4 id="Double-linked-list"><a href="#Double-linked-list" class="headerlink" title="Double linked list"></a>Double linked list</h4><p><br> = Dummy double linked list (이중 연결 리스트)<br><br> = 데이터를 가지지 않은 노드<br><br> = 구현 편의성이 높아진다.</p>
+<h5 id="Operations-1"><a href="#Operations-1" class="headerlink" title="Operations"></a>Operations</h5><p>구조</p>
 <ol>
 <li>Head – 리스트 맨 앞에 있는 더미</li>
 <li>Tail – 리스트 맨 뒤에 있는 더미를 가리킨다.</li>
