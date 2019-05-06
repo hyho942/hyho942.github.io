@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="5일차 (0503) - JavascriptJavascript - What I learn… 제어문">
+    <meta name="description" content="5일차 (0503) - JavascriptJavascript - What I learn… 제어문 (if…else, switch, for, while, do…while, Break, Continue)">
 <meta name="keywords" content="Developer skill blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIL-190503">
 <meta property="og:url" content="https://hyho942.github.io/2019/05/03/TIL-190503/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="5일차 (0503) - JavascriptJavascript - What I learn… 제어문">
+<meta property="og:description" content="5일차 (0503) - JavascriptJavascript - What I learn… 제어문 (if…else, switch, for, while, do…while, Break, Continue)">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-05-02T02:08:23.650Z">
+<meta property="og:updated_time" content="2019-05-02T05:55:32.145Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL-190503">
-<meta name="twitter:description" content="5일차 (0503) - JavascriptJavascript - What I learn… 제어문">
+<meta name="twitter:description" content="5일차 (0503) - JavascriptJavascript - What I learn… 제어문 (if…else, switch, for, while, do…while, Break, Continue)">
 <meta name="twitter:image" content="https://hyho942.github.io/images/og_image.png">
 
 
@@ -151,7 +151,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 11 words)
+                    3 minutes read (About 515 words)
                 </span>
                 
                 
@@ -165,11 +165,25 @@
         </h1>
         <div class="content">
             <h2 id="5일차-0503-Javascript"><a href="#5일차-0503-Javascript" class="headerlink" title="5일차 (0503) - Javascript"></a>5일차 (0503) - Javascript</h2><h3 id="Javascript-What-I-learn…"><a href="#Javascript-What-I-learn…" class="headerlink" title="Javascript - What I learn…"></a>Javascript - What I learn…</h3><ul>
-<li><p>제어문</p>
+<li><p>제어문 (if…else, switch, for, while, do…while, Break, Continue)</p>
 <a id="more"></a>
 </li>
 </ul>
+<h2 id="제어문-Control-flow-statement"><a href="#제어문-Control-flow-statement" class="headerlink" title="제어문 (Control flow statement)"></a>제어문 (Control flow statement)</h2><p>코드의 실행 순서를 인위적으로 제어할 수 있으며(가독성이 떨어지고 오류를 발생시킨다) 일반적으로 코드는 위에서 아래로 순차적으로 신행된다. </p>
+<h4 id="1-블록문-Block-statement-Compound-statement"><a href="#1-블록문-Block-statement-Compound-statement" class="headerlink" title="1. 블록문 (Block statement / Compound statement)"></a>1. 블록문 (Block statement / Compound statement)</h4><p>0개 이상의 문을 중괄호로 묶은 것으로 블록(코드 블록)이며 이는 하나에 실행 단위를 갖는다. </p>
+<p>블록문은 단독으로 사용이 가능하지만, 제어문이나 함수 선언문에 주로 사용한다. 문의 끝에 세미 콜론(;)을 옵션으로 붙이는 것이 가능하다. </p>
+<h4 id="2-조건문-Conditional-statement"><a href="#2-조건문-Conditional-statement" class="headerlink" title="2. 조건문 (Conditional statement)"></a>2. 조건문 (Conditional statement)</h4><p>조건식 (conditional expression)은 불리언 값으로 평가되고 그 결과에 따라 코드 블럭의 실행을 결정한다. </p>
+<h4 id="2-1-if…else-문"><a href="#2-1-if…else-문" class="headerlink" title="2.1. if…else 문"></a>2.1. if…else 문</h4><p>참, 거짓에 따라 실행할 코드 블록을 결정하고 결과 값이 불리언이 아니라면 강제적으로 논리적 참과 거짓을 구별한다. </p>
+<p>만약 조건을 추가하려면 else if 문을 사용한다</p>
+<p><pre><br>if (조건식){<br>  // 참이면 해당 라인 코드가 실행된다.<br>} else if (조건식 2) {<br>  // 조건식 2가 참이면 실행된다.<br>} else {<br>  // 거짓이면 해당 라인 코드가 실행된다.<br>}</pre></p>
+<pre>
 
+<p>if, else는 2번 이상 사용이 불가능하지만 else if는 여러번 사용이 가능하다. 단 if문 안에 if는 사용이 가능하고, if가 끝난후 다음에 새로운 if문을 시작해야한다. </p>
+<p><pre><br>var num = 2;<br>var kind;</pre></p>
+<p>//if문<br>if (num &gt; 0){<br>  kind = ‘양수’; //음수를 구별할 수 없다<br>}<br>if (num &lt; 0){<br>  kind = ‘음수’; //양수를 구별할 수 없다<br>}<br>console.log(kind)</p>
+<p>//if..else문<br>if (num &gt; 0){<br>  kind = ‘양수’; //음수를 구별할 수 없다<br>} else {<br>  kind = ‘음수’: // 0은 음수가 안니다.<br>}<br>console.log(kind) //양수</p>
+<p>//if…else if문<br>if (num &gt; 0){<br>  kind = ‘ 양수’;<br>} else if (num &lt; 0){<br>  kind = ‘음수’;<br>} else<br>  kind = ‘영’;<br>}<br>console.log(kind) //양수<br></p></pre><p></p>
+<h4 id="2-2-switch-문"><a href="#2-2-switch-문" class="headerlink" title="2.2. switch 문"></a>2.2. switch 문</h4><h4 id="3-반복문"><a href="#3-반복문" class="headerlink" title="3. 반복문"></a>3. 반복문</h4><h4 id="3-1-for-문"><a href="#3-1-for-문" class="headerlink" title="3.1 for 문"></a>3.1 for 문</h4><h4 id="3-2-while-문"><a href="#3-2-while-문" class="headerlink" title="3.2 while 문"></a>3.2 while 문</h4><h4 id="3-3-do…while-문"><a href="#3-3-do…while-문" class="headerlink" title="3.3 do…while 문"></a>3.3 do…while 문</h4><h4 id="4-Break-문"><a href="#4-Break-문" class="headerlink" title="4. Break 문"></a>4. Break 문</h4><h4 id="5-Continue-문"><a href="#5-Continue-문" class="headerlink" title="5. Continue 문"></a>5. Continue 문</h4>
         </div>
         
         
