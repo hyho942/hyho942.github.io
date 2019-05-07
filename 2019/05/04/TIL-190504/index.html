@@ -16,7 +16,7 @@
 <meta property="og:description" content="6일차 (0504) - JavascriptJavascript - What I learn… 타입 변환과 단축 평가">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-05-02T02:08:48.014Z">
+<meta property="og:updated_time" content="2019-05-07T04:08:19.173Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL-190504">
 <meta name="twitter:description" content="6일차 (0504) - JavascriptJavascript - What I learn… 타입 변환과 단축 평가">
@@ -147,11 +147,15 @@
             <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-05-04T02:04:30.000Z">2019-05-04</time>
                 
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                </div>
+                
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 17 words)
+                    6 minutes read (About 938 words)
                 </span>
                 
                 
@@ -169,7 +173,57 @@
 <a id="more"></a>
 </li>
 </ul>
-
+<h2 id="타입-변환과-단축-평가"><a href="#타입-변환과-단축-평가" class="headerlink" title="타입 변환과 단축 평가"></a>타입 변환과 단축 평가</h2><h4 id="1-타입-변환이란"><a href="#1-타입-변환이란" class="headerlink" title="1. 타입 변환이란?"></a>1. 타입 변환이란?</h4><p><br></p>
+<p>자바스크립크는 개발자 의도에 의해 두가지 방시으로 값의 타입을 변경할 수 있다.<br>첫째, 명시적 타입 변환(Explicit coercion) 또는 타입 캐스팅(Type casting)이라 한다.</p>
+<ul>
+<li>개발자 의도에 따라 타입 값을 정의할 수 있다.</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">10</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> str = x.toString();</span><br></pre></td></tr></table></figure>
+<p>둘째, 암묵적 타입 변환(Implicit coercion) 또는 타입 강제 변환(Type coercion)이라 한다</p>
+<ul>
+<li>개발자 의도와 상관없이 자바스크립트 엔진에 의해 암묵적으로 타입 값이 변경 된다.</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">10</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> str = x + <span class="hljs-string">""</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="2-암묵적-타입-변환"><a href="#2-암묵적-타입-변환" class="headerlink" title="2. 암묵적 타입 변환"></a>2. 암묵적 타입 변환</h4><p>암묵적 타입 변환은 개발자 의도에 다르게 작동할 수 있으나, 차제적으로 에러를 최소화 하기 위해 자바스크립트 엔진은 타입 변환을 평가할 때 문맥을 고려해 변환을 실행한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 피연산자가 문자열 타입일 때 가능, 이때 숫자형 타입은 + 연산을 진행한다</span></span><br><span class="line"><span class="hljs-keyword">var</span> a = <span class="hljs-number">5</span> + <span class="hljs-string">'10'</span> <span class="hljs-comment">// =&gt; 510</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 피연산자가 모두 숫자 타입일 때 가능, 이때 문자형 피연산자는 * 을 할 수 없다.</span></span><br><span class="line"><span class="hljs-keyword">var</span> a = <span class="hljs-number">5</span> * <span class="hljs-string">'10'</span> <span class="hljs-comment">// =&gt; 50</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 피연산자 또는 표현식이 불리언 타입일 때 가능, 조건에 따라 값이 불리언일 때.</span></span><br><span class="line"><span class="hljs-keyword">var</span> a == !<span class="hljs-number">0</span> <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-keyword">if</span> (<span class="hljs-number">2</span>) &#123;&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-1-문자열-타입으로-변환"><a href="#2-1-문자열-타입으로-변환" class="headerlink" title="2.1 문자열 타입으로 변환"></a>2.1 문자열 타입으로 변환</h4><p>자바스크립트는 문자열 타입으로 강제 변환하기 위해서 i + ‘’ 을 한다.<br>이때 i는 숫자, 불리언, null, undefined, 심볼, 객체가될 수 있다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> a = <span class="hljs-number">5</span> + <span class="hljs-string">"10"</span>; <span class="hljs-comment">//=&gt; "12"</span></span><br></pre></td></tr></table></figure>
+<p>이때 피연산자중 하나 이상에 문자열이 존대한다면, 다른 숫자열 피연산자를 문자화 한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> e = <span class="hljs-string">`1+1 = <span class="hljs-subst">$&#123;<span class="hljs-number">2</span> + <span class="hljs-number">2</span>&#125;</span>`</span>;</span><br></pre></td></tr></table></figure>
+<p>문자열 인터폴레이션(String interpolation)은 표현식의 평가 결과를 문자열 타입으로 암묵적 타입 변환한다.</p>
+<h4 id="2-2-숫자-타입으로-변환"><a href="#2-2-숫자-타입으로-변환" class="headerlink" title="2.2 숫자 타입으로 변환"></a>2.2 숫자 타입으로 변환</h4><p>자바스크립트는 문자열 타입으로 강제 변환하기 위해서 + “i” 을 한다.<br>이때 i는 숫자, 불리언, null, 심볼, 객체(“[]”)가될 수 있다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> a = <span class="hljs-number">10</span> - <span class="hljs-string">"2"</span>; <span class="hljs-comment">// =&gt; 8</span></span><br><span class="line"><span class="hljs-keyword">var</span> a = -<span class="hljs-string">"10"</span> + <span class="hljs-number">2</span>; <span class="hljs-comment">// =&gt; -8</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> b = <span class="hljs-number">2</span> * <span class="hljs-string">"10"</span>; <span class="hljs-comment">// =&gt; 20</span></span><br><span class="line"><span class="hljs-keyword">var</span> b = -<span class="hljs-string">"2"</span> * <span class="hljs-string">"10"</span>; <span class="hljs-comment">// =&gt; -20</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> c = <span class="hljs-number">10</span> / <span class="hljs-string">"2"</span>; <span class="hljs-comment">// =&gt; 5</span></span><br><span class="line"><span class="hljs-keyword">var</span> c = <span class="hljs-number">2</span> / -<span class="hljs-string">"10"</span>; <span class="hljs-comment">// =&gt; -0.2</span></span><br></pre></td></tr></table></figure>
+<p>즉 문맥상 피연산자는 숫자 타입이여야 한다. 이때 만약 산술 연산을 수행할 수 없으면 결과는 NaN을 반환한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-string">"5"</span> &gt; <span class="hljs-number">0</span>; <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-number">1</span> &lt; i &lt; <span class="hljs-number">5</span>; <span class="hljs-comment">// false or true</span></span><br></pre></td></tr></table></figure>
+<p>비교연산자는 불리언 값을 만들어 낸다. 즉 이때에 피연산자는 숫자이여만 하고, 문자 값을 강제 변환 시킨다.</p>
+<h4 id="2-3-불리언-타입으로-변환"><a href="#2-3-불리언-타입으로-변환" class="headerlink" title="2.3 불리언 타입으로 변환"></a>2.3 불리언 타입으로 변환</h4><p>if문 for문 또는 삼항 연산자의 조건식(conditional expression)은 논리적 참, 거짓을 반환해야 한다. 즉 엔진은 결과를 불리언 값으로 변환한다.</p>
+<p>평가될 문맥중 false로 평다되는 값</p>
+<ul>
+<li>false</li>
+<li>undefined</li>
+<li>null</li>
+<li>0, -0</li>
+<li>NaN</li>
+<li>‘’(빈문자열)</li>
+</ul>
+<h4 id="3-명시적-타입-변환"><a href="#3-명시적-타입-변환" class="headerlink" title="3. 명시적 타입 변환"></a>3. 명시적 타입 변환</h4><p>래퍼 객체 생성자 함수 (String, Number, Boolean, object)를 new 연산자 없이 호출하거나 메소드를 사용하여 명시적으로 타입을 설정할 수 있다.</p>
+<h4 id="3-1-문자열-타입으로-변환"><a href="#3-1-문자열-타입으로-변환" class="headerlink" title="3.1 문자열 타입으로 변환"></a>3.1 문자열 타입으로 변환</h4><p>문자열 타입이 아닌 값을 문자열 타입으로 변환 방법</p>
+<ul>
+<li><ol>
+<li>String 생성자 함수를 new 연산자 없이 호출하는 방법</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>Object.Prototype.toString 메소드를 사용하는 방법</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>문자열 연결 연산자를 이용하는 방법</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// String 함수를 사용하기 (new 연산자 x)</span></span><br><span class="line"><span class="hljs-comment">// 숫자 타입 =&gt; 문자열 타입</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(string(<span class="hljs-number">5</span>)); <span class="hljs-comment">// =&gt; "5"</span></span><br><span class="line"><span class="hljs-comment">//불리언 타입 =&gt; 문자열 타입</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(string(<span class="hljs-literal">true</span>)); <span class="hljs-comment">// =&gt; "true"</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Object.prototype.toString 메소드 사용</span></span><br><span class="line"><span class="hljs-comment">// 숫자 타입 =&gt; 문자열</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log((<span class="hljs-number">1</span>).toString()); <span class="hljs-comment">// =&gt; "1"</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-2-숫자-타입으로-변환"><a href="#3-2-숫자-타입으로-변환" class="headerlink" title="3.2 숫자 타입으로 변환"></a>3.2 숫자 타입으로 변환</h4><h4 id="3-3-불리언-타입으로-변환"><a href="#3-3-불리언-타입으로-변환" class="headerlink" title="3.3 불리언 타입으로 변환"></a>3.3 불리언 타입으로 변환</h4><h4 id="4-단축-평가"><a href="#4-단축-평가" class="headerlink" title="4. 단축 평가"></a>4. 단축 평가</h4>
         </div>
         
         
@@ -427,7 +481,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">22</span>
+                <span class="level-item tag">26</span>
             </span>
         </a></li>
             </ul>
@@ -466,7 +520,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-05T02:04:49.000Z">2019-05-05</time></div>
                     <a href="/2019/05/05/TIL-190505/" class="has-link-black-ter is-size-6">TIL-190505</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
                 </div>
             </div>
@@ -485,7 +539,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-04T02:04:30.000Z">2019-05-04</time></div>
                     <a href="/2019/05/04/TIL-190504/" class="has-link-black-ter is-size-6">TIL-190504</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
                 </div>
             </div>
@@ -504,7 +558,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-03T02:04:14.000Z">2019-05-03</time></div>
                     <a href="/2019/05/03/TIL-190503/" class="has-link-black-ter is-size-6">TIL-190503</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
                 </div>
             </div>
@@ -523,7 +577,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-02T02:03:43.000Z">2019-05-02</time></div>
                     <a href="/2019/05/02/TIL-190502/" class="has-link-black-ter is-size-6">TIL-190502</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
                 </div>
             </div>

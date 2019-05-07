@@ -16,7 +16,7 @@
 <meta property="og:description" content="5일차 (0503) - JavascriptJavascript - What I learn… 제어문 (if…else, switch, for, while, do…while, Break, Continue)">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-05-02T05:55:32.145Z">
+<meta property="og:updated_time" content="2019-05-06T06:55:55.320Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL-190503">
 <meta name="twitter:description" content="5일차 (0503) - JavascriptJavascript - What I learn… 제어문 (if…else, switch, for, while, do…while, Break, Continue)">
@@ -147,11 +147,15 @@
             <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-05-03T02:04:14.000Z">2019-05-03</time>
                 
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                </div>
+                
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 515 words)
+                    12 minutes read (About 1809 words)
                 </span>
                 
                 
@@ -169,21 +173,103 @@
 <a id="more"></a>
 </li>
 </ul>
-<h2 id="제어문-Control-flow-statement"><a href="#제어문-Control-flow-statement" class="headerlink" title="제어문 (Control flow statement)"></a>제어문 (Control flow statement)</h2><p>코드의 실행 순서를 인위적으로 제어할 수 있으며(가독성이 떨어지고 오류를 발생시킨다) 일반적으로 코드는 위에서 아래로 순차적으로 신행된다. </p>
-<h4 id="1-블록문-Block-statement-Compound-statement"><a href="#1-블록문-Block-statement-Compound-statement" class="headerlink" title="1. 블록문 (Block statement / Compound statement)"></a>1. 블록문 (Block statement / Compound statement)</h4><p>0개 이상의 문을 중괄호로 묶은 것으로 블록(코드 블록)이며 이는 하나에 실행 단위를 갖는다. </p>
-<p>블록문은 단독으로 사용이 가능하지만, 제어문이나 함수 선언문에 주로 사용한다. 문의 끝에 세미 콜론(;)을 옵션으로 붙이는 것이 가능하다. </p>
-<h4 id="2-조건문-Conditional-statement"><a href="#2-조건문-Conditional-statement" class="headerlink" title="2. 조건문 (Conditional statement)"></a>2. 조건문 (Conditional statement)</h4><p>조건식 (conditional expression)은 불리언 값으로 평가되고 그 결과에 따라 코드 블럭의 실행을 결정한다. </p>
-<h4 id="2-1-if…else-문"><a href="#2-1-if…else-문" class="headerlink" title="2.1. if…else 문"></a>2.1. if…else 문</h4><p>참, 거짓에 따라 실행할 코드 블록을 결정하고 결과 값이 불리언이 아니라면 강제적으로 논리적 참과 거짓을 구별한다. </p>
+<h2 id="제어문-Control-flow-statement"><a href="#제어문-Control-flow-statement" class="headerlink" title="제어문 (Control flow statement)"></a>제어문 (Control flow statement)</h2><p>코드의 실행 순서를 인위적으로 제어할 수 있으며(가독성이 떨어지고 오류를 발생시킨다) 일반적으로 코드는 위에서 아래로 순차적으로 신행된다.</p>
+<h4 id="1-블록문-Block-statement-Compound-statement"><a href="#1-블록문-Block-statement-Compound-statement" class="headerlink" title="1. 블록문 (Block statement / Compound statement)"></a>1. 블록문 (Block statement / Compound statement)</h4><p>0개 이상의 문을 중괄호로 묶은 것으로 블록(코드 블록)이며 이는 하나에 실행 단위를 갖는다.</p>
+<p>블록문은 단독으로 사용이 가능하지만, 제어문이나 함수 선언문에 주로 사용한다. 문의 끝에 세미 콜론(;)을 옵션으로 붙이는 것이 가능하다.</p>
+<h4 id="2-조건문-Conditional-statement"><a href="#2-조건문-Conditional-statement" class="headerlink" title="2. 조건문 (Conditional statement)"></a>2. 조건문 (Conditional statement)</h4><p>조건식 (conditional expression)은 불리언 값으로 평가되고 그 결과에 따라 코드 블럭의 실행을 결정한다.</p>
+<h4 id="2-1-if…else-문"><a href="#2-1-if…else-문" class="headerlink" title="2.1. if…else 문"></a>2.1. if…else 문</h4><p>참, 거짓에 따라 실행할 코드 블록을 결정하고 결과 값이 불리언이 아니라면 강제적으로 논리적 참과 거짓을 구별한다.</p>
 <p>만약 조건을 추가하려면 else if 문을 사용한다</p>
-<p><pre><br>if (조건식){<br>  // 참이면 해당 라인 코드가 실행된다.<br>} else if (조건식 2) {<br>  // 조건식 2가 참이면 실행된다.<br>} else {<br>  // 거짓이면 해당 라인 코드가 실행된다.<br>}</pre></p>
-<pre>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span> (조건식)&#123;</span><br><span class="line">  <span class="hljs-comment">// 참이면 해당 라인 코드가 실행된다.</span></span><br><span class="line">&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (조건식 <span class="hljs-number">2</span>) &#123;</span><br><span class="line">  <span class="hljs-comment">// 조건식 2가 참이면 실행된다.</span></span><br><span class="line">&#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">  <span class="hljs-comment">// 거짓이면 해당 라인 코드가 실행된다.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>if, else는 2번 이상 사용이 불가능하지만 else if는 여러번 사용이 가능하다. 단 if문 안에 if는 사용이 가능하고, if가 끝난후 다음에 새로운 if문을 시작해야한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> num = <span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> kind;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//if문</span></span><br><span class="line"><span class="hljs-keyword">if</span> (num &gt; <span class="hljs-number">0</span>)&#123;</span><br><span class="line">  kind = <span class="hljs-string">'양수'</span>; <span class="hljs-comment">//음수를 구별할 수 없다</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">if</span> (num &lt; <span class="hljs-number">0</span>)&#123;</span><br><span class="line">  kind = <span class="hljs-string">'음수'</span>; <span class="hljs-comment">//양수를 구별할 수 없다</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(kind)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//if..else문</span></span><br><span class="line"><span class="hljs-keyword">if</span> (num &gt; <span class="hljs-number">0</span>)&#123;</span><br><span class="line">  kind = <span class="hljs-string">'양수'</span>; <span class="hljs-comment">//음수를 구별할 수 없다</span></span><br><span class="line">&#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">  kind = <span class="hljs-string">'음수'</span>: <span class="hljs-comment">// 0은 음수가 안니다.</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(kind) <span class="hljs-comment">//양수</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//if...else if문</span></span><br><span class="line"><span class="hljs-keyword">if</span> (num &gt; <span class="hljs-number">0</span>)&#123;</span><br><span class="line">  kind = <span class="hljs-string">' 양수'</span>;</span><br><span class="line">&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (num &lt; <span class="hljs-number">0</span>)&#123;</span><br><span class="line">  kind = <span class="hljs-string">'음수'</span>;</span><br><span class="line">&#125; <span class="hljs-keyword">else</span></span><br><span class="line">  kind = <span class="hljs-string">'영'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(kind) <span class="hljs-comment">//양수</span></span><br></pre></td></tr></table></figure>
+<p>만약 코드 블록 안에 문이 하나라면 중괄호 생략이 가능하다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> num = <span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> kind;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span> (num &gt; <span class="hljs-number">0</span>) kind = <span class="hljs-string">"양수"</span>;</span><br><span class="line"><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (num &lt; <span class="hljs-number">0</span>) kind = <span class="hljs-string">"음수"</span>;</span><br><span class="line"><span class="hljs-keyword">else</span> kind = <span class="hljs-string">"제로"</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(kind);</span><br></pre></td></tr></table></figure>
+<p>또한 대부분 if else 문은 삼항 조건 연산자로 바꿔 쓸 수 있다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// x가 짝수이면 짝수, 홀수이면 홀수를 반환</span></span><br><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> result;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span> (x % <span class="hljs-number">2</span>) &#123;</span><br><span class="line">  <span class="hljs-comment">// 2 % 2는 0이고 0은 false로 취급한다</span></span><br><span class="line">  result = <span class="hljs-string">"홀수"</span>;</span><br><span class="line">&#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">  result = <span class="hljs-string">"짝수"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(result);</span><br></pre></td></tr></table></figure>
+<p>다른 방식의 삼항 조건 연산자</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// x가 짝수이면 짝수를, 홀수 이면 홀수를 반환</span></span><br><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-comment">// 0은 false</span></span><br><span class="line"><span class="hljs-keyword">var</span> result = x % <span class="hljs-number">2</span> ? <span class="hljs-string">"홀수"</span> : <span class="hljs-string">"짝수"</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(result);</span><br></pre></td></tr></table></figure>
+<p>세가지 경우의 수 (양수, 음수, 제로)</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> num = <span class="hljs-number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 0은 false</span></span><br><span class="line"><span class="hljs-keyword">var</span> kind = num ? (num &gt; <span class="hljs-number">0</span> ? <span class="hljs-string">"양수"</span> : <span class="hljs-string">"음수"</span>) : <span class="hljs-string">"영"</span>;</span><br></pre></td></tr></table></figure>
+<p>if..else 문은 표현식이 아닌 문이다, 또한 값처럼 사용이 불가능하다. 삼항 조건 연산자는 값처럼 사용이 가능하다.</p>
+<h4 id="2-2-switch-문"><a href="#2-2-switch-문" class="headerlink" title="2.2. switch 문"></a>2.2. switch 문</h4><p>주어진 표현문을 평가하여 그 값과 일치하는 표현식을 갖는 case 문으로 실행 순서를 이동 시킨다. case을 의미하는 표현식이 끝난 후 콜론으로 마친다. 여기서 일치하는 표현식이 없다면 실행 순서는 default 문으로 이동한다 (default는 옵션으로 없다면 다음 case로 넘어간다)</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">switch</span> (표현식) &#123;</span><br><span class="line">  <span class="hljs-keyword">case</span> 표현식<span class="hljs-number">1</span>:</span><br><span class="line">    <span class="hljs-comment">//switch 표현식 + 표현식1이 일치하면 실행</span></span><br><span class="line">    <span class="hljs-keyword">break</span>;</span><br><span class="line">  <span class="hljs-keyword">case</span> 표현식<span class="hljs-number">2</span>:</span><br><span class="line">    <span class="hljs-comment">//switch 표현식 + 표현식2이 일치하면 실행</span></span><br><span class="line">    <span class="hljs-keyword">break</span>;</span><br><span class="line">  <span class="hljs-keyword">default</span>:</span><br><span class="line">  <span class="hljs-comment">//switch 표현식과 일치하는 case가 없다면 실행</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>switch 문은 표현식은 불리언 값보다 문자열, 숫자값인 경우가 많다. 즉 다양한 상황(case)에 따라 코드를 실행할 때 사용한다.</p>
+<blockquote>
+<p>폴스루(fall through)<br>모든 케이스에 문을 통과하여 마지막 default 문을 실행하기 때문에 나오는 결과.</p>
+</blockquote>
+<p>fall through를 막기위해 해당 case 마지막에 break 문을 넣어서 일치하는 값을 찾아 코드를 나오게 해줘야 한다.</p>
+<h4 id="3-반복문-Loop-statment"><a href="#3-반복문-Loop-statment" class="headerlink" title="3. 반복문 (Loop statment)"></a>3. 반복문 (Loop statment)</h4><p>주어진 조건에 결과가 참일 경우만 실행한다. 반복문은 조건이 거짓이 될때까지 무한 반복 된다(시스템, 메모리 에러가 경우 실행이 중지 될수 있다).</p>
+<h4 id="3-1-for-문"><a href="#3-1-for-문" class="headerlink" title="3.1 for 문"></a>3.1 for 문</h4><p>for (변수 선언 또는 할당; 조건식; 증감식) {<br>실행 구문<br>}</p>
+<p>for문의 구조 및 실행 순서</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) &#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><ol>
+<li>var i = 0 으로 i 값을 선언하고, 1번만 실행된다.</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>조건식으로 i 값을 평가한다. i는 0이므로 true.</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>(i++)는 후위연산자로서 조건문을 빠져 나간다.</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>console.log(i)에 i 값 0이 콘솔로 출력된다.</li>
+</ol>
+</li>
+<li><ol start="5">
+<li>코드 블록이 실행이 종료되면서 증감식 i++가 실행되어 i = 1이된다.</li>
+</ol>
+</li>
+<li><ol start="6">
+<li>조건에서 false가 나오지 않았으므로 다시 조건문으로 돌아간다.</li>
+</ol>
+</li>
+<li><ol start="7">
+<li>i(1) &lt; 2의 조건에 true.</li>
+</ol>
+</li>
+<li><ol start="8">
+<li>(i++)는 후위연산자로서 조건문을 빠져 나간다.</li>
+</ol>
+</li>
+<li><ol start="9">
+<li>console.log(i)에 i 값 1이 콘솔로 출력된다.</li>
+</ol>
+</li>
+<li><ol start="10">
+<li>코드 블록이 실행이 종료되면서 증감식 i++가 실행되어 i = 2이된다.</li>
+</ol>
+</li>
+<li><ol start="11">
+<li>다시 조건문으로 돌아간다.</li>
+</ol>
+</li>
+<li><ol start="12">
+<li>i(2) &lt; 2의 조건에 false.</li>
+</ol>
+</li>
+<li><ol start="13">
+<li>반복문이 종료된다.</li>
+</ol>
+</li>
+</ul>
+<p>for문은 중첩 사용이 가능하다</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">6</span>; i++) &#123;</span><br><span class="line">  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> j = <span class="hljs-number">1</span>; j &lt;= <span class="hljs-number">6</span>; j++) &#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (i + j == <span class="hljs-number">6</span>) &#123;</span><br><span class="line">      <span class="hljs-comment">// i + j 값이 나옴</span></span><br><span class="line">      <span class="hljs-built_in">console</span>.log(i + j); <span class="hljs-comment">// =&gt; 6</span></span><br><span class="line">      <span class="hljs-comment">// i ,j 값을 배열에 넣어서 경우에 수를 보여줌</span></span><br><span class="line">      <span class="hljs-built_in">console</span>.log([i + j]); <span class="hljs-comment">// =&gt; [1,5], [2,4], [3,3]...</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-2-while-문"><a href="#3-2-while-문" class="headerlink" title="3.2 while 문"></a>3.2 while 문</h4><p>주어진 조건에 평가가 참이면 실행, 거짓이면 종료 하지만, 불리언 값이 아니면 강제로 변환하여 논리적 참, 거짓으로 구별한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> count = <span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// count가 3보다 작을때 까지만 실행.</span></span><br><span class="line"><span class="hljs-keyword">while</span> (count &lt;= <span class="hljs-number">3.5</span>) &#123;</span><br><span class="line">  count++;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(count);</span><br><span class="line">  <span class="hljs-keyword">if</span> (count == <span class="hljs-number">4</span>) &#123;</span><br><span class="line">    <span class="hljs-keyword">break</span>;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(count);</span><br><span class="line">  &#125;</span><br><span class="line">&#125; <span class="hljs-comment">// =&gt; 0,1,2,3,4</span></span><br></pre></td></tr></table></figure>
+<p>while의 조건으로 3.5를 주었지만, if문으로 4라는 값을 break 걸었으므로 마지막 값은 4가 나온다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> count = <span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// count가 3보다 작을때 까지만 실행.</span></span><br><span class="line"><span class="hljs-keyword">while</span> (count &lt;= <span class="hljs-number">3.5</span>) &#123;</span><br><span class="line">  count++;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(count);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>위에 if 문에 브레이크가 4에서 값을 끊어주었다고 생각했지만, console.log가 증가 연산자(++) 뒤에 위치해서 발생한 문제었다. count 값 3이 whlie 문을 돌고 마지막으로 증가 연산자를 통해 최종적인 값이 4로 도출된다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> count = <span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// count가 3보다 작을때 까지만 실행.</span></span><br><span class="line"><span class="hljs-keyword">while</span> (count &lt;= <span class="hljs-number">3.5</span>) &#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(count);</span><br><span class="line">  count++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>즉 console.log를 증가 연산자 앞에 써주어야 원하는 값을 반환 받을수 있다.</p>
+<h4 id="3-3-do…while-문"><a href="#3-3-do…while-문" class="headerlink" title="3.3 do…while 문"></a>3.3 do…while 문</h4><p>코드 블록을 먼저 실행하고 조건식을 평가한다. 즉 코드틑 무조건 한번 이상 실행이된다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> count = <span class="hljs-number">0</span>;</span><br><span class="line"><span class="hljs-comment">// count가 3보다 작을때 까지 반복 실행해라</span></span><br><span class="line"><span class="hljs-keyword">do</span> &#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(count);</span><br><span class="line">  count++;</span><br><span class="line">&#125; <span class="hljs-keyword">while</span> (count &lt; <span class="hljs-number">3</span>); <span class="hljs-comment">// =&gt; 0,1,2</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-Break-문"><a href="#4-Break-문" class="headerlink" title="4. Break 문"></a>4. Break 문</h4><p>블록 코드는 모드 제어문 환경에서 코드 탈출을 할 수 없다. 레이블 문, 반복문, switch 문의 코드 블록을 탈출한다. 코드 블록 이외에 break 문을 사용하면 syntaxError(문법에러)가 발생한다.</p>
+<h4 id="5-Continue-문"><a href="#5-Continue-문" class="headerlink" title="5. Continue 문"></a>5. Continue 문</h4><p>반복문의 코드 블록 실행을 현 지점에서 중단하고 반복문의 증감식으로 이동한다.</p>
 
-<p>if, else는 2번 이상 사용이 불가능하지만 else if는 여러번 사용이 가능하다. 단 if문 안에 if는 사용이 가능하고, if가 끝난후 다음에 새로운 if문을 시작해야한다. </p>
-<p><pre><br>var num = 2;<br>var kind;</pre></p>
-<p>//if문<br>if (num &gt; 0){<br>  kind = ‘양수’; //음수를 구별할 수 없다<br>}<br>if (num &lt; 0){<br>  kind = ‘음수’; //양수를 구별할 수 없다<br>}<br>console.log(kind)</p>
-<p>//if..else문<br>if (num &gt; 0){<br>  kind = ‘양수’; //음수를 구별할 수 없다<br>} else {<br>  kind = ‘음수’: // 0은 음수가 안니다.<br>}<br>console.log(kind) //양수</p>
-<p>//if…else if문<br>if (num &gt; 0){<br>  kind = ‘ 양수’;<br>} else if (num &lt; 0){<br>  kind = ‘음수’;<br>} else<br>  kind = ‘영’;<br>}<br>console.log(kind) //양수<br></p></pre><p></p>
-<h4 id="2-2-switch-문"><a href="#2-2-switch-문" class="headerlink" title="2.2. switch 문"></a>2.2. switch 문</h4><h4 id="3-반복문"><a href="#3-반복문" class="headerlink" title="3. 반복문"></a>3. 반복문</h4><h4 id="3-1-for-문"><a href="#3-1-for-문" class="headerlink" title="3.1 for 문"></a>3.1 for 문</h4><h4 id="3-2-while-문"><a href="#3-2-while-문" class="headerlink" title="3.2 while 문"></a>3.2 while 문</h4><h4 id="3-3-do…while-문"><a href="#3-3-do…while-문" class="headerlink" title="3.3 do…while 문"></a>3.3 do…while 문</h4><h4 id="4-Break-문"><a href="#4-Break-문" class="headerlink" title="4. Break 문"></a>4. Break 문</h4><h4 id="5-Continue-문"><a href="#5-Continue-문" class="headerlink" title="5. Continue 문"></a>5. Continue 문</h4>
         </div>
         
         
@@ -441,7 +527,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">22</span>
+                <span class="level-item tag">26</span>
             </span>
         </a></li>
             </ul>
@@ -480,7 +566,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-05T02:04:49.000Z">2019-05-05</time></div>
                     <a href="/2019/05/05/TIL-190505/" class="has-link-black-ter is-size-6">TIL-190505</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
                 </div>
             </div>
@@ -499,7 +585,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-04T02:04:30.000Z">2019-05-04</time></div>
                     <a href="/2019/05/04/TIL-190504/" class="has-link-black-ter is-size-6">TIL-190504</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
                 </div>
             </div>
@@ -518,7 +604,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-03T02:04:14.000Z">2019-05-03</time></div>
                     <a href="/2019/05/03/TIL-190503/" class="has-link-black-ter is-size-6">TIL-190503</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
                 </div>
             </div>
@@ -537,7 +623,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-02T02:03:43.000Z">2019-05-02</time></div>
                     <a href="/2019/05/02/TIL-190502/" class="has-link-black-ter is-size-6">TIL-190502</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
                 </div>
             </div>

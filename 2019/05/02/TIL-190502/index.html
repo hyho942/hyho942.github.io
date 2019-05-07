@@ -16,7 +16,7 @@
 <meta property="og:description" content="4일차 (0502) - JavascriptJavascript - What I learn… 연산자">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-05-02T04:57:24.718Z">
+<meta property="og:updated_time" content="2019-05-07T04:24:17.818Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL-190502">
 <meta name="twitter:description" content="4일차 (0502) - JavascriptJavascript - What I learn… 연산자">
@@ -147,11 +147,15 @@
             <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-05-02T02:03:43.000Z">2019-05-02</time>
                 
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                </div>
+                
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    7 minutes read (About 1117 words)
+                    8 minutes read (About 1152 words)
                 </span>
                 
                 
@@ -178,32 +182,42 @@ console.log(x + 30); // 40
 </pre>
 
 <p>표현식은 표현식을 결합해 새로운 값을 만들어 내는것이 가장 일반적이다.</p>
-<h4 id="2-문과-표현식"><a href="#2-문과-표현식" class="headerlink" title="2. 문과 표현식"></a>2. 문과 표현식</h4><p>문(statement)은 하나 이상의 표현식과 키워드의 조합으로 구성된 자바스크립트 엔진에게 내리는 명령이다. 문이 실행이 된다는 것을 명령이 시작되고, 문의 집합을 순서에 맞게 나열한 것을 프로그램이라고 부른다. </p>
+<h4 id="2-문과-표현식"><a href="#2-문과-표현식" class="headerlink" title="2. 문과 표현식"></a>2. 문과 표현식</h4><p>문(statement)은 하나 이상의 표현식과 키워드의 조합으로 구성된 자바스크립트 엔진에게 내리는 명령이다. 문이 실행이 된다는 것을 명령이 시작되고, 문의 집합을 순서에 맞게 나열한 것을 프로그램이라고 부른다.</p>
 <ul>
 <li>자바스크립트의 모든 코드는 문 또는 표현식이다. 표현식의 역할은 값을 생성하는 것이다. 문의 역할은 표현식으로 생성한 값을 자바스크립트에 명령(문에 대표적 특징)을 내리는 것이다.</li>
 </ul>
-<p>문은 구성 뒤에 세미콜른(;)으로 끝나며, 단 코드 블록{…}뒤에는 세미콜론을 붙이지 않는다. </p>
+<p>문은 구성 뒤에 세미콜른(;)으로 끝나며, 단 코드 블록{…}뒤에는 세미콜론을 붙이지 않는다.</p>
 <blockquote>
-<p>세미콜론 자동 삽입 기능(ASI, automatic semicolon insertion)<br>문의 끝에는 세미콜론을 옵션으로 본다. 자바스크립트 엔진에는 세미콜론을 자동으로 붙여주지만, 개발자의 예측과 의도에 다른 경우도 간혹 있다. </p>
+<p>세미콜론 자동 삽입 기능(ASI, automatic semicolon insertion)<br>문의 끝에는 세미콜론을 옵션으로 본다. 자바스크립트 엔진에는 세미콜론을 자동으로 붙여주지만, 개발자의 예측과 의도에 다른 경우도 간혹 있다.</p>
 </blockquote>
-<h4 id="3-표현식인-문과-표현식이-아닌-문"><a href="#3-표현식인-문과-표현식이-아닌-문" class="headerlink" title="3. 표현식인 문과 표현식이 아닌 문"></a>3. 표현식인 문과 표현식이 아닌 문</h4><p>표현식은 값이 평가될 수 있는지 없는지에 따라 결정된다. 즉 선언문은 표현식이될 수 없지만, 할당문은 값을 평가할 수 있으므로 자체적으로 표현문에 의미가 성립한다. </p>
+<h4 id="3-표현식인-문과-표현식이-아닌-문"><a href="#3-표현식인-문과-표현식이-아닌-문" class="headerlink" title="3. 표현식인 문과 표현식이 아닌 문"></a>3. 표현식인 문과 표현식이 아닌 문</h4><p>표현식은 값이 평가될 수 있는지 없는지에 따라 결정된다. 즉 선언문은 표현식이될 수 없지만, 할당문은 값을 평가할 수 있으므로 자체적으로 표현문에 의미가 성립한다.</p>
 <p>표현문이 맞는지 의문이 든다면, 변수에 할당해 보는 것이다. 즉 표현문은 값을 나타내므로 변수에 할당이 가능하다.</p>
-<p><pre><br>// 변수 선언문은 표현식이 아닌 문이다.<br>var x ;<br>// 할당문 자체가 표현식이지만 완전한 문이기도 하다. 즉, 할당문은 표현식인 문이다.<br>x = 100;<br>// 표현식이 아닌 문은 값처럼 사용할 수 없다.(할당문)<br>var foo = var x; // SyntaxError: Unexpected token var<br></pre><br>할당문 자체를 값으로 사용이 가능하다.</p>
+<pre>
+// 변수 선언문은 표현식이 아닌 문이다.
+var x ;
+// 할당문 자체가 표현식이지만 완전한 문이기도 하다. 즉, 할당문은 표현식인 문이다.
+x = 100;
+// 표현식이 아닌 문은 값처럼 사용할 수 없다.(할당문)
+var foo = var x; // SyntaxError: Unexpected token var
+</pre>
+
+<p>할당문 자체를 값으로 사용이 가능하다.</p>
 <blockquote>
 <p>완료 값 (Completion value)<br>크롬 개발자 도구는 표현식이 아닌 문은 언제나 undefined를 출력한다. 완료 값은 변수에 할당할 수 없다.</p>
 </blockquote>
 <h4 id="4-연산자-Operator-란"><a href="#4-연산자-Operator-란" class="headerlink" title="4. 연산자(Operator)란?"></a>4. 연산자(Operator)란?</h4><p>하나 이상의 표현식을 대상으로 산술, 할당, 비교, 논리, 타입 연산(operation)등을 수행해 하나의 값을 만든다. 연산의 대상을 피연산자(Operand)라 하며, 피연산자도 평가가 가능하다.</p>
 <h4 id="5-산술-연산자-Arithmetic-Operator-란"><a href="#5-산술-연산자-Arithmetic-Operator-란" class="headerlink" title="5. 산술 연산자(Arithmetic Operator)란?"></a>5. 산술 연산자(Arithmetic Operator)란?</h4><p>수학적 계산으로 새로운 숫자값을 만드며, 산술 연산이 불가능한 경우 NaN을 반환한다. (산술 연산자와 피연산자의 개수에 따라 이항 산술 연산자와 단항 산술 연산자로 구분한다.)</p>
-<h4 id="5-1-이항-산술-연산자"><a href="#5-1-이항-산술-연산자" class="headerlink" title="5.1. 이항 산술 연산자"></a>5.1. 이항 산술 연산자</h4><p>2개의 피연산자를 산술한다. 이항 연산자는 피연산자의 값을 변경하는 부수 효과(side effect)가 없다. 즉 항상 새로운 값을 만들어 낸다. </p>
+<h4 id="5-1-이항-산술-연산자"><a href="#5-1-이항-산술-연산자" class="headerlink" title="5.1. 이항 산술 연산자"></a>5.1. 이항 산술 연산자</h4><p>2개의 피연산자를 산술한다. 이항 연산자는 피연산자의 값을 변경하는 부수 효과(side effect)가 없다. 즉 항상 새로운 값을 만들어 낸다.</p>
 <img src="/2019/05/02/TIL-190502/effect.jpg" title="설명">
-<h4 id="5-2-단항-Unary-산술-연산자"><a href="#5-2-단항-Unary-산술-연산자" class="headerlink" title="5.2. 단항(Unary) 산술 연산자"></a>5.2. 단항(Unary) 산술 연산자</h4><p>1개의 피연산자를 산술한다. 단항 연산자는 증가/감소(++/–)로 피연산자의 값을 변경하는 부수 효과가 있다. </p>
+<h4 id="5-2-단항-Unary-산술-연산자"><a href="#5-2-단항-Unary-산술-연산자" class="headerlink" title="5.2. 단항(Unary) 산술 연산자"></a>5.2. 단항(Unary) 산술 연산자</h4><p>1개의 피연산자를 산술한다. 단항 연산자는 증가/감소(++/–)로 피연산자의 값을 변경하는 부수 효과가 있다.</p>
 <img src="/2019/05/02/TIL-190502/unary.jpg" title="설명">
 <p>위치에 따라 의미가 달라진다</p>
 <ul>
 <li>전위 증가/감소<br>(Prefix increment / decrement operator) 피연산자의 값을 증가 / 감소 시킨후, 다른 연산을 수행.</li>
 <li>후위 증가/감소<br>(Postfix increment / decrement operator) 먼저 다른 연산 실행 후 피연산자의 값을 증가 / 감소.</li>
 </ul>
-<h4 id="5-3-문자열-연결-연산자"><a href="#5-3-문자열-연결-연산자" class="headerlink" title="5.3. 문자열 연결 연산자"></a>5.3. 문자열 연결 연산자</h4><h4 id="6-할당-연산자"><a href="#6-할당-연산자" class="headerlink" title="6. 할당 연산자"></a>6. 할당 연산자</h4><h4 id="7-비교-연산자"><a href="#7-비교-연산자" class="headerlink" title="7. 비교 연산자"></a>7. 비교 연산자</h4><h4 id="7-1-동등-일치-비교-연산자"><a href="#7-1-동등-일치-비교-연산자" class="headerlink" title="7.1. 동등 / 일치 비교 연산자"></a>7.1. 동등 / 일치 비교 연산자</h4><h4 id="7-2-대소-관계-비교-연산자"><a href="#7-2-대소-관계-비교-연산자" class="headerlink" title="7.2 대소 관계 비교 연산자"></a>7.2 대소 관계 비교 연산자</h4><h4 id="8-삼항-조건-연산자"><a href="#8-삼항-조건-연산자" class="headerlink" title="8. 삼항 조건 연산자"></a>8. 삼항 조건 연산자</h4><h4 id="9-논리-연산자"><a href="#9-논리-연산자" class="headerlink" title="9. 논리 연산자"></a>9. 논리 연산자</h4><h4 id="10-쉼표-연산자"><a href="#10-쉼표-연산자" class="headerlink" title="10. 쉼표 연산자"></a>10. 쉼표 연산자</h4><h4 id="11-그룹-연산자"><a href="#11-그룹-연산자" class="headerlink" title="11. 그룹 연산자"></a>11. 그룹 연산자</h4><h4 id="12-Typeof-연산자"><a href="#12-Typeof-연산자" class="headerlink" title="12. Typeof 연산자"></a>12. Typeof 연산자</h4>
+<h4 id="5-3-문자열-연결-연산자"><a href="#5-3-문자열-연결-연산자" class="headerlink" title="5.3. 문자열 연결 연산자"></a>5.3. 문자열 연결 연산자</h4><h4 id="6-할당-연산자"><a href="#6-할당-연산자" class="headerlink" title="6. 할당 연산자"></a>6. 할당 연산자</h4><h4 id="7-비교-연산자"><a href="#7-비교-연산자" class="headerlink" title="7. 비교 연산자"></a>7. 비교 연산자</h4><h4 id="7-1-동등-일치-비교-연산자"><a href="#7-1-동등-일치-비교-연산자" class="headerlink" title="7.1. 동등 / 일치 비교 연산자"></a>7.1. 동등 / 일치 비교 연산자</h4><h4 id="7-2-대소-관계-비교-연산자"><a href="#7-2-대소-관계-비교-연산자" class="headerlink" title="7.2 대소 관계 비교 연산자"></a>7.2 대소 관계 비교 연산자</h4><h4 id="8-삼항-조건-연산자"><a href="#8-삼항-조건-연산자" class="headerlink" title="8. 삼항 조건 연산자"></a>8. 삼항 조건 연산자</h4><h4 id="9-논리-연산자"><a href="#9-논리-연산자" class="headerlink" title="9. 논리 연산자"></a>9. 논리 연산자</h4><h4 id="10-쉼표-연산자"><a href="#10-쉼표-연산자" class="headerlink" title="10. 쉼표 연산자"></a>10. 쉼표 연산자</h4><h4 id="11-그룹-연산자"><a href="#11-그룹-연산자" class="headerlink" title="11. 그룹 연산자"></a>11. 그룹 연산자</h4><h4 id="12-Typeof-연산자"><a href="#12-Typeof-연산자" class="headerlink" title="12. Typeof 연산자"></a>12. Typeof 연산자</h4><p>함수가 아니라 연산자로서 타입을 알고 싶은 표현식(값으로 평가될 수 있는)이 와야 한다.</p>
+
         </div>
         
         
@@ -461,7 +475,7 @@ console.log(x + 30); // 40
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">22</span>
+                <span class="level-item tag">26</span>
             </span>
         </a></li>
             </ul>
@@ -500,7 +514,7 @@ console.log(x + 30); // 40
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-05T02:04:49.000Z">2019-05-05</time></div>
                     <a href="/2019/05/05/TIL-190505/" class="has-link-black-ter is-size-6">TIL-190505</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
                 </div>
             </div>
@@ -519,7 +533,7 @@ console.log(x + 30); // 40
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-04T02:04:30.000Z">2019-05-04</time></div>
                     <a href="/2019/05/04/TIL-190504/" class="has-link-black-ter is-size-6">TIL-190504</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
                 </div>
             </div>
@@ -538,7 +552,7 @@ console.log(x + 30); // 40
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-03T02:04:14.000Z">2019-05-03</time></div>
                     <a href="/2019/05/03/TIL-190503/" class="has-link-black-ter is-size-6">TIL-190503</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
                 </div>
             </div>
@@ -557,7 +571,7 @@ console.log(x + 30); // 40
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-02T02:03:43.000Z">2019-05-02</time></div>
                     <a href="/2019/05/02/TIL-190502/" class="has-link-black-ter is-size-6">TIL-190502</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
                 </div>
             </div>
