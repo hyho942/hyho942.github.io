@@ -16,7 +16,7 @@
 <meta property="og:description" content="7일차 (0505) - JavascriptJavascript - What I learn… 객체 리터럴">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-05-07T04:08:21.202Z">
+<meta property="og:updated_time" content="2019-05-07T08:57:37.135Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL-190505">
 <meta name="twitter:description" content="7일차 (0505) - JavascriptJavascript - What I learn… 객체 리터럴">
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 106 words)
+                    2 minutes read (About 235 words)
                 </span>
                 
                 
@@ -173,7 +173,11 @@
 <a id="more"></a>
 </li>
 </ul>
-<h2 id="객체-리터럴"><a href="#객체-리터럴" class="headerlink" title="객체 리터럴"></a>객체 리터럴</h2><h4 id="1-객체란"><a href="#1-객체란" class="headerlink" title="1. 객체란"></a>1. 객체란</h4><h4 id="2-객체-리터럴-의한-객체-생성"><a href="#2-객체-리터럴-의한-객체-생성" class="headerlink" title="2. 객체 리터럴 의한 객체 생성"></a>2. 객체 리터럴 의한 객체 생성</h4><h4 id="3-프로퍼티"><a href="#3-프로퍼티" class="headerlink" title="3. 프로퍼티"></a>3. 프로퍼티</h4><h4 id="4-메소드"><a href="#4-메소드" class="headerlink" title="4. 메소드"></a>4. 메소드</h4><h4 id="5-프로퍼티-접근"><a href="#5-프로퍼티-접근" class="headerlink" title="5. 프로퍼티 접근"></a>5. 프로퍼티 접근</h4><h4 id="6-프로퍼티-값-갱신"><a href="#6-프로퍼티-값-갱신" class="headerlink" title="6. 프로퍼티 값 갱신"></a>6. 프로퍼티 값 갱신</h4><h4 id="7-프로퍼티-동적-생성"><a href="#7-프로퍼티-동적-생성" class="headerlink" title="7. 프로퍼티 동적 생성"></a>7. 프로퍼티 동적 생성</h4><h4 id="8-프로퍼티-삭제"><a href="#8-프로퍼티-삭제" class="headerlink" title="8. 프로퍼티 삭제"></a>8. 프로퍼티 삭제</h4><h4 id="9-ES6에서-추가된-객체-리터럴의-확장-기능"><a href="#9-ES6에서-추가된-객체-리터럴의-확장-기능" class="headerlink" title="9. ES6에서 추가된 객체 리터럴의 확장 기능"></a>9. ES6에서 추가된 객체 리터럴의 확장 기능</h4><h4 id="9-1-프로퍼티-축약-표현"><a href="#9-1-프로퍼티-축약-표현" class="headerlink" title="9.1 프로퍼티 축약 표현"></a>9.1 프로퍼티 축약 표현</h4><h4 id="9-2-프로퍼티-키-동적-생성"><a href="#9-2-프로퍼티-키-동적-생성" class="headerlink" title="9.2 프로퍼티 키 동적 생성"></a>9.2 프로퍼티 키 동적 생성</h4><h4 id="9-3-메소드-축약-표현"><a href="#9-3-메소드-축약-표현" class="headerlink" title="9.3 메소드 축약 표현"></a>9.3 메소드 축약 표현</h4>
+<h2 id="객체-리터럴"><a href="#객체-리터럴" class="headerlink" title="객체 리터럴"></a>객체 리터럴</h2><h4 id="1-객체란"><a href="#1-객체란" class="headerlink" title="1. 객체란"></a>1. 객체란</h4><p>자바스크립트는 객체 지향 프로그래밍 언어이다. 즉 자바스크립트는 원시 값 제외한 나머지(함수, 배열, 정규표현식 등) 값들은 모두이 객체이다.</p>
+<p>원시 타입은 단 하나의 값만 가지며,</p>
+<h4 id="2-객체-리터럴-의한-객체-생성"><a href="#2-객체-리터럴-의한-객체-생성" class="headerlink" title="2. 객체 리터럴 의한 객체 생성"></a>2. 객체 리터럴 의한 객체 생성</h4><h4 id="3-프로퍼티"><a href="#3-프로퍼티" class="headerlink" title="3. 프로퍼티"></a>3. 프로퍼티</h4><h4 id="4-메소드"><a href="#4-메소드" class="headerlink" title="4. 메소드"></a>4. 메소드</h4><h4 id="5-프로퍼티-접근"><a href="#5-프로퍼티-접근" class="headerlink" title="5. 프로퍼티 접근"></a>5. 프로퍼티 접근</h4><h4 id="6-프로퍼티-값-갱신"><a href="#6-프로퍼티-값-갱신" class="headerlink" title="6. 프로퍼티 값 갱신"></a>6. 프로퍼티 값 갱신</h4><h4 id="7-프로퍼티-동적-생성"><a href="#7-프로퍼티-동적-생성" class="headerlink" title="7. 프로퍼티 동적 생성"></a>7. 프로퍼티 동적 생성</h4><p>존재하지 않는 프로퍼티 값을 할당하면 프로퍼티가 동적으로 값을 추가한다. 이때 프로퍼티는 자유롭게 추가, 제거할 수 있다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> item = &#123;</span><br><span class="line">  name: <span class="hljs-string">"pen"</span></span><br><span class="line">&#125;;</span><br><span class="line">item.count = <span class="hljs-string">"two"</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="8-프로퍼티-삭제"><a href="#8-프로퍼티-삭제" class="headerlink" title="8. 프로퍼티 삭제"></a>8. 프로퍼티 삭제</h4><h4 id="9-ES6에서-추가된-객체-리터럴의-확장-기능"><a href="#9-ES6에서-추가된-객체-리터럴의-확장-기능" class="headerlink" title="9. ES6에서 추가된 객체 리터럴의 확장 기능"></a>9. ES6에서 추가된 객체 리터럴의 확장 기능</h4><h4 id="9-1-프로퍼티-축약-표현"><a href="#9-1-프로퍼티-축약-표현" class="headerlink" title="9.1 프로퍼티 축약 표현"></a>9.1 프로퍼티 축약 표현</h4><h4 id="9-2-프로퍼티-키-동적-생성"><a href="#9-2-프로퍼티-키-동적-생성" class="headerlink" title="9.2 프로퍼티 키 동적 생성"></a>9.2 프로퍼티 키 동적 생성</h4><h4 id="9-3-메소드-축약-표현"><a href="#9-3-메소드-축약-표현" class="headerlink" title="9.3 메소드 축약 표현"></a>9.3 메소드 축약 표현</h4>
         </div>
         
         
@@ -221,6 +225,13 @@
 
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/05/06/TIL-190506/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">TIL-190506</span>
+            </a>
+        </div>
         
         
         <div class="level-end">
@@ -277,7 +288,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        30
+                        32
                     </p>
                 </div>
             </div>
@@ -424,7 +435,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">26</span>
+                <span class="level-item tag">28</span>
             </span>
         </a></li>
             </ul>
@@ -449,6 +460,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/07/TIL-190507/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190507">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-07T12:38:48.000Z">2019-05-07</time></div>
+                    <a href="/2019/05/07/TIL-190507/" class="has-link-black-ter is-size-6">TIL-190507</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/06/TIL-190506/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190506">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-06T12:38:25.000Z">2019-05-06</time></div>
+                    <a href="/2019/05/06/TIL-190506/" class="has-link-black-ter is-size-6">TIL-190506</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -507,44 +556,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/02/TIL-190502/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190502">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-02T02:03:43.000Z">2019-05-02</time></div>
-                    <a href="/2019/05/02/TIL-190502/" class="has-link-black-ter is-size-6">TIL-190502</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/01/TIL-190501/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190501">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-01T09:43:33.000Z">2019-05-01</time></div>
-                    <a href="/2019/05/01/TIL-190501/" class="has-link-black-ter is-size-6">TIL-190501</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -563,7 +574,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
