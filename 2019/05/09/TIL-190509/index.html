@@ -16,7 +16,7 @@
 <meta property="og:description" content="11일차 (0509) - JavascriptJavascript - What I learn… 전역 변수의 문제점">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-05-09T05:05:22.896Z">
+<meta property="og:updated_time" content="2019-05-09T05:37:56.695Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL-190509">
 <meta name="twitter:description" content="11일차 (0509) - JavascriptJavascript - What I learn… 전역 변수의 문제점">
@@ -151,7 +151,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 881 words)
+                    8 minutes read (About 1157 words)
                 </span>
                 
                 
@@ -194,7 +194,18 @@
 <h4 id="3-1-즉시-실행-함수"><a href="#3-1-즉시-실행-함수" class="headerlink" title="3.1 즉시 실행 함수"></a>3.1 즉시 실행 함수</h4><p>함수 정의와 동시에 단 한번만 호출되는 함수를 말한다. 모든 코드는 즉시 시행 함수로 만들수 있고, 이 때 함수내에 모든 변수는 해당 함수에 지역 변수가 된다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">var</span> foo = <span class="hljs-number">10</span>; <span class="hljs-comment">// 즉시 실행 함수의 지역 변수</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(foo); <span class="hljs-comment">// =&gt; ReferenceError: foo is not defined</span></span><br></pre></td></tr></table></figure>
 <p>이러한 방법은 전역 변수 생성을 막는 장점을 가지고 있다.</p>
-<h4 id="3-2-네임-스페이스-객체"><a href="#3-2-네임-스페이스-객체" class="headerlink" title="3.2 네임 스페이스 객체"></a>3.2 네임 스페이스 객체</h4><h4 id="3-3-모듈-패턴"><a href="#3-3-모듈-패턴" class="headerlink" title="3.3 모듈 패턴"></a>3.3 모듈 패턴</h4><h4 id="3-4-ES6-모듈"><a href="#3-4-ES6-모듈" class="headerlink" title="3.4 ES6 모듈"></a>3.4 ES6 모듈</h4>
+<h4 id="3-2-네임-스페이스-객체"><a href="#3-2-네임-스페이스-객체" class="headerlink" title="3.2 네임 스페이스 객체"></a>3.2 네임 스페이스 객체</h4><p>전역 변수처럼 사용하고 싶은 변수를 프로퍼티로 추가할 수 있는 네임 스페이스(전역) 객체를 생성한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> MYSPACE = &#123;&#125;; <span class="hljs-comment">// 네임 스페이스 객체</span></span><br><span class="line">MYSPACE.info = <span class="hljs-string">"lee"</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(MYSPACE.name);</span><br></pre></td></tr></table></figure>
+<p>네임 스페이스 객체 안에 또 다른 프로퍼티를 추가하여 계층을 구성할 수 있다</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> MYSPACE = &#123;&#125;; <span class="hljs-comment">// 네임 스페이스 객체</span></span><br><span class="line">MYSPACE.info = &#123;</span><br><span class="line">  name: <span class="hljs-string">"lee"</span>,</span><br><span class="line">  address: <span class="hljs-string">"Soeul"</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(MYSPACE.info.name); <span class="hljs-comment">// lee</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-3-모듈-패턴"><a href="#3-3-모듈-패턴" class="headerlink" title="3.3 모듈 패턴"></a>3.3 모듈 패턴</h4><p>클로저를 기반으로 클래스 형태로 관련된 변수, 함수를 모아 실행 함수로 감싸는 모듈을 만든다. 이는 전역 변수 억제, 캡슐화를 구현할 수 있다.</p>
+<blockquote>
+<p>캡슐화<br>외부로 정보를 노출 시키지 않는 정보 은닉(information hiding)이라고도 한다. 이것은 외부로 부터 제한된 접근 권한을 제공하여, 내부를 보호하는 가능을 한다.</p>
+</blockquote>
+<ul>
+<li>자바스크립트는 public, private, protected등 접근은 제한자를 제공하지는 않지만, 전역 네일 스페이스의 오염을 막는 기능에 일부만 지원한다.</li>
+</ul>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
