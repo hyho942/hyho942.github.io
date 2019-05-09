@@ -16,7 +16,7 @@
 <meta property="og:description" content="9일차 (0507) - JavascriptJavascript - What I learn… 함수">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-05-08T01:50:34.182Z">
+<meta property="og:updated_time" content="2019-05-08T08:57:15.305Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL-190507">
 <meta name="twitter:description" content="9일차 (0507) - JavascriptJavascript - What I learn… 함수">
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 132 words)
+                    4 minutes read (About 608 words)
                 </span>
                 
                 
@@ -173,7 +173,37 @@
 <a id="more"></a>
 </li>
 </ul>
-<h2 id="함수"><a href="#함수" class="headerlink" title="함수"></a>함수</h2><h4 id="1-함수란"><a href="#1-함수란" class="headerlink" title="1. 함수란?"></a>1. 함수란?</h4><h4 id="2-함수의-사용-이유"><a href="#2-함수의-사용-이유" class="headerlink" title="2. 함수의 사용 이유"></a>2. 함수의 사용 이유</h4><h4 id="3-함수-리터럴"><a href="#3-함수-리터럴" class="headerlink" title="3. 함수 리터럴"></a>3. 함수 리터럴</h4><h4 id="4-함수-정의"><a href="#4-함수-정의" class="headerlink" title="4. 함수 정의"></a>4. 함수 정의</h4><h4 id="4-1-함수-선언문"><a href="#4-1-함수-선언문" class="headerlink" title="4.1 함수 선언문"></a>4.1 함수 선언문</h4><h4 id="4-2-함수-표현식"><a href="#4-2-함수-표현식" class="headerlink" title="4.2 함수 표현식"></a>4.2 함수 표현식</h4><h4 id="4-3-함수-생성-시점과-함수-호이스팅"><a href="#4-3-함수-생성-시점과-함수-호이스팅" class="headerlink" title="4.3 함수 생성 시점과 함수 호이스팅"></a>4.3 함수 생성 시점과 함수 호이스팅</h4><h4 id="4-4-Function-생성자-함수"><a href="#4-4-Function-생성자-함수" class="headerlink" title="4.4 Function 생성자 함수"></a>4.4 Function 생성자 함수</h4><h4 id="4-5-화살표-함수"><a href="#4-5-화살표-함수" class="headerlink" title="4.5 화살표 함수"></a>4.5 화살표 함수</h4><h4 id="5-함수-호출"><a href="#5-함수-호출" class="headerlink" title="5. 함수 호출"></a>5. 함수 호출</h4><h4 id="6-매개변수와-인수"><a href="#6-매개변수와-인수" class="headerlink" title="6. 매개변수와 인수"></a>6. 매개변수와 인수</h4><h4 id="7-인수-확인"><a href="#7-인수-확인" class="headerlink" title="7. 인수 확인"></a>7. 인수 확인</h4><h4 id="8-매개변수의-개수"><a href="#8-매개변수의-개수" class="headerlink" title="8. 매개변수의 개수"></a>8. 매개변수의 개수</h4><h4 id="9-외부-상태의-변경과-함수형-프로그래밍"><a href="#9-외부-상태의-변경과-함수형-프로그래밍" class="headerlink" title="9. 외부 상태의 변경과 함수형 프로그래밍"></a>9. 외부 상태의 변경과 함수형 프로그래밍</h4><h4 id="10-반환문"><a href="#10-반환문" class="headerlink" title="10. 반환문"></a>10. 반환문</h4><h4 id="11-다양한-함수의-형태"><a href="#11-다양한-함수의-형태" class="headerlink" title="11. 다양한 함수의 형태"></a>11. 다양한 함수의 형태</h4><h4 id="11-1-즉시실행함수"><a href="#11-1-즉시실행함수" class="headerlink" title="11.1 즉시실행함수"></a>11.1 즉시실행함수</h4><h4 id="11-2-재귀-함수"><a href="#11-2-재귀-함수" class="headerlink" title="11.2 재귀 함수"></a>11.2 재귀 함수</h4><h4 id="11-3-중첩-함수"><a href="#11-3-중첩-함수" class="headerlink" title="11.3 중첩 함수"></a>11.3 중첩 함수</h4><h4 id="11-4-콜백-함수"><a href="#11-4-콜백-함수" class="headerlink" title="11.4 콜백 함수"></a>11.4 콜백 함수</h4>
+<h2 id="함수"><a href="#함수" class="headerlink" title="함수"></a>함수</h2><h4 id="1-함수란"><a href="#1-함수란" class="headerlink" title="1. 함수란?"></a>1. 함수란?</h4><p>입력(input)을 받아서 출력(output)을 내보내는 과정을 만한다.</p>
+<p>함수는 정의만으로 작동하지 않고, 호출을 해야 작동한다.</p>
+<h4 id="2-함수의-사용-이유"><a href="#2-함수의-사용-이유" class="headerlink" title="2. 함수의 사용 이유"></a>2. 함수의 사용 이유</h4><p>함수는 재사용을 재사용하는 것이 효율적이다. 함수를 중복 사용하지 않거나 동일한 코드를 여러번 쓸경우 유지보수가 힘들고 실수가 일어날 경우 에러를 줄일수 있다, 즉 신뢰성을 확보할 수있다.</p>
+<p>함수는 변수 이름처럼 이름(식별자)을 붙일 수 있다. 함수는 가독성을 고려하여 함수 식별자에 역할을 잘 설명하면서 적절한 이름을 붙여야 한다.</p>
+<h4 id="3-함수-리터럴"><a href="#3-함수-리터럴" class="headerlink" title="3. 함수 리터럴"></a>3. 함수 리터럴</h4><h4 id="4-함수-정의"><a href="#4-함수-정의" class="headerlink" title="4. 함수 정의"></a>4. 함수 정의</h4><ul>
+<li>함수 선언문 (Function Declaration/Function Statement)</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>함수 표현식(Function Expression)</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>= 변수 호이스팅, 함수 호이스팅을 한다.</p>
+<ul>
+<li>Function 생성자 함수(Function Constructor)</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-string">"x"</span>, <span class="hljs-string">"y"</span>, <span class="hljs-string">"return x + y"</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>화살표 함수 (Arrow Function): ES6</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-function">(<span class="hljs-params">x, y</span>) =&gt;</span> x + y;</span><br></pre></td></tr></table></figure>
+<h4 id="4-1-함수-선언문"><a href="#4-1-함수-선언문" class="headerlink" title="4.1 함수 선언문"></a>4.1 함수 선언문</h4><p>함수 호이스팅 o</p>
+<h4 id="4-2-함수-표현식"><a href="#4-2-함수-표현식" class="headerlink" title="4.2 함수 표현식"></a>4.2 함수 표현식</h4><p>자바스크립트의 함수는 일급 객체이다. 변수 선언 + 변수 할당으로 구성되어 있다.</p>
+<p>변수 선언과 초기화 단계가 한번에 된다.</p>
+<p>함수 호이스팅 x</p>
+<h4 id="4-3-함수-생성-시점과-함수-호이스팅"><a href="#4-3-함수-생성-시점과-함수-호이스팅" class="headerlink" title="4.3 함수 생성 시점과 함수 호이스팅"></a>4.3 함수 생성 시점과 함수 호이스팅</h4><h4 id="4-4-Function-생성자-함수"><a href="#4-4-Function-생성자-함수" class="headerlink" title="4.4 Function 생성자 함수"></a>4.4 Function 생성자 함수</h4><h4 id="4-5-화살표-함수"><a href="#4-5-화살표-함수" class="headerlink" title="4.5 화살표 함수"></a>4.5 화살표 함수</h4><h4 id="5-함수-호출"><a href="#5-함수-호출" class="headerlink" title="5. 함수 호출"></a>5. 함수 호출</h4><h4 id="6-매개변수와-인수"><a href="#6-매개변수와-인수" class="headerlink" title="6. 매개변수와 인수"></a>6. 매개변수와 인수</h4><p>인수: argument = 함수 바깥에 존재<br>인자: parameter = 매개변수 =함수를 받아주는 것으로 함수 내부와 외부를 연결하는 인터페이스이다 여기서 파라미터는 스코프가 함수 내부에 있다.</p>
+<h4 id="7-인수-확인"><a href="#7-인수-확인" class="headerlink" title="7. 인수 확인"></a>7. 인수 확인</h4><h4 id="8-매개변수의-개수"><a href="#8-매개변수의-개수" class="headerlink" title="8. 매개변수의 개수"></a>8. 매개변수의 개수</h4><h4 id="9-외부-상태의-변경과-함수형-프로그래밍"><a href="#9-외부-상태의-변경과-함수형-프로그래밍" class="headerlink" title="9. 외부 상태의 변경과 함수형 프로그래밍"></a>9. 외부 상태의 변경과 함수형 프로그래밍</h4><h4 id="10-반환문"><a href="#10-반환문" class="headerlink" title="10. 반환문"></a>10. 반환문</h4><h4 id="11-다양한-함수의-형태"><a href="#11-다양한-함수의-형태" class="headerlink" title="11. 다양한 함수의 형태"></a>11. 다양한 함수의 형태</h4><h4 id="11-1-즉시실행함수"><a href="#11-1-즉시실행함수" class="headerlink" title="11.1 즉시실행함수"></a>11.1 즉시실행함수</h4><p>단한번만 호출이 간능하다.</p>
+<p>인위적인 스코프를 만들때/ 클로저를 만들때 사용</p>
+<h4 id="11-2-재귀-함수-recursive-function"><a href="#11-2-재귀-함수-recursive-function" class="headerlink" title="11.2 재귀 함수 (recursive function)"></a>11.2 재귀 함수 (recursive function)</h4><p>함수 내부에서 자신을 호출하는 방식. factorial()로 호출한다.</p>
+<h4 id="11-3-중첩-함수-nested-function"><a href="#11-3-중첩-함수-nested-function" class="headerlink" title="11.3 중첩 함수 (nested function)"></a>11.3 중첩 함수 (nested function)</h4><p>내부 함수(Inner function)이라고 불리기도 한다. 외부 함수에 존재하고, 외부에서 소멸 된다.</p>
+<h4 id="11-4-콜백-함수"><a href="#11-4-콜백-함수" class="headerlink" title="11.4 콜백 함수"></a>11.4 콜백 함수</h4>
         </div>
         
         
