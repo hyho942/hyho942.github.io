@@ -16,7 +16,7 @@
 <meta property="og:description" content="11일차 (0509) - JavascriptJavascript - What I learn… 전역 변수의 문제점">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-05-10T00:46:10.424Z">
+<meta property="og:updated_time" content="2019-05-10T05:27:17.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL-190509">
 <meta name="twitter:description" content="11일차 (0509) - JavascriptJavascript - What I learn… 전역 변수의 문제점">
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    8 minutes read (About 1157 words)
+                    8 minutes read (About 1211 words)
                 </span>
                 
                 
@@ -196,6 +196,7 @@
 <h5 id="네임-스페이스-오염"><a href="#네임-스페이스-오염" class="headerlink" title="네임 스페이스 오염"></a>네임 스페이스 오염</h5><p>다른 파일 내에서 같은 이름에 변수나 함수가 같은 스코프 내에 존재할 경우 예상치 못한 결과를 가져올 수 있다.</p>
 <h4 id="3-전역-변수-사용-억제-방법"><a href="#3-전역-변수-사용-억제-방법" class="headerlink" title="3. 전역 변수 사용 억제 방법"></a>3. 전역 변수 사용 억제 방법</h4><p>변수의 특별한 이유와 목적이 불분명할 때 가급적 지역 변수를 사용한다.</p>
 <h4 id="3-1-즉시-실행-함수"><a href="#3-1-즉시-실행-함수" class="headerlink" title="3.1 즉시 실행 함수"></a>3.1 즉시 실행 함수</h4><p>함수 정의와 동시에 단 한번만 호출되는 함수를 말한다. 모든 코드는 즉시 시행 함수로 만들수 있고, 이 때 함수내에 모든 변수는 해당 함수에 지역 변수가 된다.</p>
+<p>가장 많이 사용하는 방식으로 기본적인(심플한) 함수를 구현할 때 사용하면 좋다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">var</span> foo = <span class="hljs-number">10</span>; <span class="hljs-comment">// 즉시 실행 함수의 지역 변수</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(foo); <span class="hljs-comment">// =&gt; ReferenceError: foo is not defined</span></span><br></pre></td></tr></table></figure>
 <p>이러한 방법은 전역 변수 생성을 막는 장점을 가지고 있다.</p>
 <h4 id="3-2-네임-스페이스-객체"><a href="#3-2-네임-스페이스-객체" class="headerlink" title="3.2 네임 스페이스 객체"></a>3.2 네임 스페이스 객체</h4><p>전역 변수처럼 사용하고 싶은 변수를 프로퍼티로 추가할 수 있는 네임 스페이스(전역) 객체를 생성한다.</p>
@@ -207,7 +208,7 @@
 <p>캡슐화<br>외부로 정보를 노출 시키지 않는 정보 은닉(information hiding)이라고도 한다. 이것은 외부로 부터 제한된 접근 권한을 제공하여, 내부를 보호하는 가능을 한다.</p>
 </blockquote>
 <ul>
-<li>자바스크립트는 public, private, protected등 접근은 제한자를 제공하지는 않지만, 전역 네일 스페이스의 오염을 막는 기능에 일부만 지원한다.</li>
+<li>자바스크립트는 public, private, protected등 접근은 제한자를 제공하지는 않지만, 전역 네일 스페이스의 오염을 막는 기능에 일부만 지원한다. 단 자바스크립트는 클로저로 프라빗 기능을 대신한다.</li>
 </ul>
 
         </div>
@@ -320,7 +321,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        35
+                        37
                     </p>
                 </div>
             </div>
@@ -467,7 +468,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">31</span>
+                <span class="level-item tag">33</span>
             </span>
         </a></li>
             </ul>
@@ -492,6 +493,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/TIL-190512/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190512">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T06:44:15.000Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/TIL-190512/" class="has-link-black-ter is-size-6">TIL-190512</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/11/TIL-190511/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190511">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-11T06:43:55.000Z">2019-05-11</time></div>
+                    <a href="/2019/05/11/TIL-190511/" class="has-link-black-ter is-size-6">TIL-190511</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -550,44 +589,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/07/TIL-190507/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190507">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-07T12:38:48.000Z">2019-05-07</time></div>
-                    <a href="/2019/05/07/TIL-190507/" class="has-link-black-ter is-size-6">TIL-190507</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/06/TIL-190506/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190506">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-06T12:38:25.000Z">2019-05-06</time></div>
-                    <a href="/2019/05/06/TIL-190506/" class="has-link-black-ter is-size-6">TIL-190506</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -606,7 +607,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
