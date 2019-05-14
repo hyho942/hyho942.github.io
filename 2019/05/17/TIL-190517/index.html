@@ -16,7 +16,7 @@
 <meta property="og:description" content="19일차 (0517) - JavascriptJavascript - What I learn… this">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-05-14T01:21:54.771Z">
+<meta property="og:updated_time" content="2019-05-14T09:13:34.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL-190517">
 <meta name="twitter:description" content="19일차 (0517) - JavascriptJavascript - What I learn… this">
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 10 words)
+                    2 minutes read (About 287 words)
                 </span>
                 
                 
@@ -173,7 +173,29 @@
 <a id="more"></a>
 </li>
 </ul>
-<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><h4 id="1-this-키워드"><a href="#1-this-키워드" class="headerlink" title="1. this 키워드"></a>1. this 키워드</h4><p>객체는 프로퍼티로 표현되는 상태 데이터와 메소드로 표현되는 논리적 단위의 복합적 자료 구조이다. (this)는 자신이 속한 객체를 가르키는 식별자를 참조할 수 있어야 한다. 객체 리터럴 방식으로 생성한 객체의 경우, 매소드 내부에서 자신이 속한 객체를 가르키는 식별자를 재귀적으로 참조할 수 있다.</p>
+<h4 id="2-함수-호출-방식과-this-바인딩"><a href="#2-함수-호출-방식과-this-바인딩" class="headerlink" title="2. 함수 호출 방식과 this 바인딩"></a>2. 함수 호출 방식과 this 바인딩</h4><p>랙시컬 스코프 (Lexical scope)는 상위 스코프를 결정하는 방식으로 함수를 평가하면서 상위 스코프를 결정한다.</p>
+<p>함수 호출 방식</p>
+<ul>
+<li><ol>
+<li>일반 함수 호출</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>메소드 호출</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>생성자 함수 호출</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>Function.prototype.apply/call/bind 메소드에 의한 간접 호출</li>
+</ol>
+</li>
+</ul>
+<h4 id="2-1-일반-함수-호출"><a href="#2-1-일반-함수-호출" class="headerlink" title="2.1. 일반 함수 호출"></a>2.1. 일반 함수 호출</h4><p>기본적으로 this에는 전역 객체(Global object)가 바인딩된다. (전역 함수, 중첩 함수 포함)</p>
+<h4 id="2-2-메소드-호출"><a href="#2-2-메소드-호출" class="headerlink" title="2.2. 메소드 호출"></a>2.2. 메소드 호출</h4><h4 id="2-3-생성자-함수-호출"><a href="#2-3-생성자-함수-호출" class="headerlink" title="2.3. 생성자 함수 호출"></a>2.3. 생성자 함수 호출</h4><h4 id="2-4-Function-prototype-apply-call-bind-메소드에-의한-간접-호출"><a href="#2-4-Function-prototype-apply-call-bind-메소드에-의한-간접-호출" class="headerlink" title="2.4. Function.prototype.apply/call/bind 메소드에 의한 간접 호출"></a>2.4. Function.prototype.apply/call/bind 메소드에 의한 간접 호출</h4>
         </div>
         
         
