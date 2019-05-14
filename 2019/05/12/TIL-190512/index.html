@@ -16,7 +16,7 @@
 <meta property="og:description" content="14일차 (0512) - JavascriptJavascript - What I learn… 생성자 함수에 의한 객체 생성">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-05-11T08:30:24.245Z">
+<meta property="og:updated_time" content="2019-05-14T01:14:53.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL-190512">
 <meta name="twitter:description" content="14일차 (0512) - JavascriptJavascript - What I learn… 생성자 함수에 의한 객체 생성">
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 501 words)
+                    5 minutes read (About 786 words)
                 </span>
                 
                 
@@ -173,26 +173,31 @@
 <a id="more"></a>
 </li>
 </ul>
-<h2 id="생성자-함수에-의한-객체-생성"><a href="#생성자-함수에-의한-객체-생성" class="headerlink" title="생성자 함수에 의한 객체 생성"></a>생성자 함수에 의한 객체 생성</h2><p>객체 리터럴 표기법은 간단한 객체 생성 방법중에 가장 일반적이다. 객체는 리터럴 표기법 이외에도 다양한 방법으로 생성할 수 있다</p>
+<h2 id="생성자-함수에-의한-객체-생성"><a href="#생성자-함수에-의한-객체-생성" class="headerlink" title="생성자 함수에 의한 객체 생성"></a>생성자 함수에 의한 객체 생성</h2><p>객체 리터럴 표기법은 간단한 객체 생성 방법중에 가장 일반적이다. 객체는 리터럴 표기법 이외에도 다양한 방법으로 생성할 수 있다ㄹ</p>
 <h4 id="1-Object-생성자-함수"><a href="#1-Object-생성자-함수" class="headerlink" title="1. Object 생성자 함수"></a>1. Object 생성자 함수</h4><p>자바스크립트에서 제공하는 기본적인 빌트인 함수 이다. new 연산자와 Object() 생성자 함수를 호출하면 빈 객체를 생성한다. Object 함수는 프로퍼티 또는 메소드를 추가하여 객체를 완성할 수 있다.</p>
 <blockquote>
 <p>빌트인 함수<br>Object, String, Number, Boolean, Function, Array, Data, RegExp 등의 생성자 함수를 제공한다.</p>
 </blockquote>
 <p>Object 함수는 인수에 따라 암묵적으로 객체를 바꾼다(형변환). 이러한 특징 때문에 특별한 이유를 제외하고 잘 사용하지 않는다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>(<span class="hljs-string">"hello"</span>); <span class="hljs-comment">// object보다, string, number를 사용한다.</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(obj, <span class="hljs-keyword">typeof</span> obj); <span class="hljs-comment">// =&gt; "hello"</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>new는 생략되어도 엔진에서 자동적으로 붙여준다.</li>
 </ul>
 <blockquote>
 <p>생성자(constructor) 함수란?<br>new 연사자와 함께 호출하여 객체(인스턴트)를 생성하는 함수.<br>생성자 함수에 의해 인스턴스 객체를 생성한다.</p>
 </blockquote>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>(<span class="hljs-string">"hello"</span>); <span class="hljs-comment">// object보다, string, number를 사용한다.</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(obj, <span class="hljs-keyword">typeof</span> obj); <span class="hljs-comment">// =&gt; "hello"</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>인스턴스(instance)<br>생성자도 함수도 객체이기 때문에 생성자 함수나 클래스가 생성한 객체를</p>
+<p>인스턴스(instance)<br>생성자도 함수도 객체이기 때문에 생성자 함수나 클래스가 생성한 객체를 인스턴스리고 한다. 인스턴스는 객체가 메모리에 저장되어 실제 존재하는 것</p>
 </blockquote>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> empty = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();</span><br></pre></td></tr></table></figure>
-<h4 id="2-생성자-함수"><a href="#2-생성자-함수" class="headerlink" title="2. 생성자 함수"></a>2. 생성자 함수</h4><h4 id="2-1-객체-리터럴에-의한-객체-생성-방식의-문제점"><a href="#2-1-객체-리터럴에-의한-객체-생성-방식의-문제점" class="headerlink" title="2.1 객체 리터럴에 의한 객체 생성 방식의 문제점"></a>2.1 객체 리터럴에 의한 객체 생성 방식의 문제점</h4><p>객체리터럴은 하나의 객체를 만드는 방법이다. 그렇지만 동일한 프로퍼티를 갖는 여러 객체를 생성할 수 없다.</p>
-<h4 id="2-2-생성자-함수에-의한-객체-생성-방식-장점"><a href="#2-2-생성자-함수에-의한-객체-생성-방식-장점" class="headerlink" title="2.2 생성자 함수에 의한 객체 생성 방식 장점"></a>2.2 생성자 함수에 의한 객체 생성 방식 장점</h4><h4 id="2-3-내부-메소드-Call-과-Constructor"><a href="#2-3-내부-메소드-Call-과-Constructor" class="headerlink" title="2.3 내부 메소드 [[Call]]과 [[Constructor]]"></a>2.3 내부 메소드 [[Call]]과 [[Constructor]]</h4><p>일반함수로 호출 =&gt; [[Call]]<br>new 연산자로 호출 =&gt; [[Constructor]]</p>
-<h4 id="2-4-constructor와-non-constructor의-구분"><a href="#2-4-constructor와-non-constructor의-구분" class="headerlink" title="2.4 constructor와 non-constructor의 구분"></a>2.4 constructor와 non-constructor의 구분</h4><h4 id="2-5-생성장-함수의-동작-방식"><a href="#2-5-생성장-함수의-동작-방식" class="headerlink" title="2.5 생성장 함수의 동작 방식"></a>2.5 생성장 함수의 동작 방식</h4><h4 id="2-6-new-연산자"><a href="#2-6-new-연산자" class="headerlink" title="2.6 new 연산자"></a>2.6 new 연산자</h4><h4 id="2-7-new-target"><a href="#2-7-new-target" class="headerlink" title="2.7 new.target"></a>2.7 new.target</h4>
+<h4 id="2-생성자-함수-constructor-function"><a href="#2-생성자-함수-constructor-function" class="headerlink" title="2. 생성자 함수 (constructor function)"></a>2. 생성자 함수 (constructor function)</h4><p>객체를 생성하기 위한 용도로 사용하는 것이 생성자 함수 이다</p>
+<h4 id="2-1-객체-리터럴에-의한-객체-생성-방식의-문제점"><a href="#2-1-객체-리터럴에-의한-객체-생성-방식의-문제점" class="headerlink" title="2.1 객체 리터럴에 의한 객체 생성 방식의 문제점"></a>2.1 객체 리터럴에 의한 객체 생성 방식의 문제점</h4><p>객체 리터럴은 하나의 객체를 만드는 방법이다. 그렇지만 동일한 프로퍼티를 갖는 여러 객체를 생성할 수 없다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> box1 = &#123;</span><br><span class="line">  width: <span class="hljs-number">10</span>,</span><br><span class="line">  getDiameter() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * <span class="hljs-keyword">this</span>.radius;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(circle1.getDiameter()); <span class="hljs-comment">// 10</span></span><br><span class="line"><span class="hljs-keyword">const</span> box2 = &#123;</span><br><span class="line">  width: <span class="hljs-number">20</span>,</span><br><span class="line">  getDiameter() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * <span class="hljs-keyword">this</span>.radius;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(circle2.getDiameter()); <span class="hljs-comment">// 20</span></span><br></pre></td></tr></table></figure>
+<p>객체는 프로퍼티를 통해 객체 고유의 상태(state)를 표현한다. 그리고 메소드를 통해 데이터 상태인 프로퍼티를 참조하고 조작하는 동장(behavior)을 표현한다.</p>
+<h4 id="2-2-생성자-함수에-의한-객체-생성-방식-장점"><a href="#2-2-생성자-함수에-의한-객체-생성-방식-장점" class="headerlink" title="2.2 생성자 함수에 의한 객체 생성 방식 장점"></a>2.2 생성자 함수에 의한 객체 생성 방식 장점</h4><h4 id="2-3-내부-메소드-Call-과-Constructor"><a href="#2-3-내부-메소드-Call-과-Constructor" class="headerlink" title="2.3 내부 메소드 [[Call]]과 [[Constructor]]"></a>2.3 내부 메소드 [[Call]]과 [[Constructor]]</h4><p>함수 메소드가 가지고 있는 내부 메소드<br>일반함수로 호출 =&gt; [[Call]]<br>new 연산자로 호출 =&gt; [[Constructor]] =&gt; 생성자 함수</p>
+<h4 id="2-4-constructor와-non-constructor의-구분"><a href="#2-4-constructor와-non-constructor의-구분" class="headerlink" title="2.4 constructor와 non-constructor의 구분"></a>2.4 constructor와 non-constructor의 구분</h4><p>=&gt; 함수은 생성자 함수로 호출 못한다</p>
+<h4 id="2-5-생성장-함수의-동작-방식"><a href="#2-5-생성장-함수의-동작-방식" class="headerlink" title="2.5 생성장 함수의 동작 방식"></a>2.5 생성장 함수의 동작 방식</h4><h4 id="2-6-new-연산자"><a href="#2-6-new-연산자" class="headerlink" title="2.6 new 연산자"></a>2.6 new 연산자</h4><h4 id="2-7-new-target"><a href="#2-7-new-target" class="headerlink" title="2.7 new.target"></a>2.7 new.target</h4><h1 id="수업"><a href="#수업" class="headerlink" title="수업"></a>수업</h1><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">person</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  <span class="hljs-comment">// 1. 빈 객체를 생성하고 this 에 바인딩</span></span><br><span class="line">  <span class="hljs-keyword">this</span>.name = <span class="hljs-string">"lee"</span>;</span><br><span class="line">  <span class="hljs-keyword">this</span>.sayHello = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`hello <span class="hljs-subst">$&#123;<span class="hljs-keyword">this</span>.name&#125;</span>!`</span>); <span class="hljs-comment">// this 함수가 호출 되었을때 실행</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">const</span> me = <span class="hljs-keyword">new</span> person();</span><br><span class="line"><span class="hljs-built_in">console</span>.log(me);</span><br><span class="line">me.sayHello(); <span class="hljs-comment">// hello lee!</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">person</span>(<span class="hljs-params">name</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-comment">// 1. 빈 객체를 생성하고 this 에 바인딩</span></span><br><span class="line">  <span class="hljs-keyword">this</span>.name = name;</span><br><span class="line">  <span class="hljs-keyword">this</span>.sayHello = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`hello <span class="hljs-subst">$&#123;<span class="hljs-keyword">this</span>.name&#125;</span>!`</span>); <span class="hljs-comment">// this 함수가 호출 되었을때 실행</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">const</span> me = <span class="hljs-keyword">new</span> person(<span class="hljs-string">"lee"</span>);</span><br><span class="line">me.sayHello(); <span class="hljs-comment">// hello lee!</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> you = <span class="hljs-keyword">new</span> person(<span class="hljs-string">"kim"</span>);</span><br><span class="line">you.sayHello(); <span class="hljs-comment">// hello kim!</span></span><br></pre></td></tr></table></figure>
+
         </div>
         
         
@@ -240,6 +245,13 @@
 
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/05/13/TIL-190513/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">TIL-190513</span>
+            </a>
+        </div>
         
         
         <div class="level-end">
@@ -296,7 +308,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        37
+                        42
                     </p>
                 </div>
             </div>
@@ -443,7 +455,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">33</span>
+                <span class="level-item tag">38</span>
             </span>
         </a></li>
             </ul>
@@ -471,16 +483,16 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/TIL-190512/" class="media-left">
+            <a href="/2019/05/17/TIL-190517/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190512">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190517">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T06:44:15.000Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/TIL-190512/" class="has-link-black-ter is-size-6">TIL-190512</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-17T01:21:17.000Z">2019-05-17</time></div>
+                    <a href="/2019/05/17/TIL-190517/" class="has-link-black-ter is-size-6">TIL-190517</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
@@ -490,16 +502,16 @@
         
         <article class="media">
             
-            <a href="/2019/05/11/TIL-190511/" class="media-left">
+            <a href="/2019/05/16/TIL-190516/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190511">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190516">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-11T06:43:55.000Z">2019-05-11</time></div>
-                    <a href="/2019/05/11/TIL-190511/" class="has-link-black-ter is-size-6">TIL-190511</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-16T01:19:32.000Z">2019-05-16</time></div>
+                    <a href="/2019/05/16/TIL-190516/" class="has-link-black-ter is-size-6">TIL-190516</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
@@ -509,16 +521,16 @@
         
         <article class="media">
             
-            <a href="/2019/05/10/TIL-190510/" class="media-left">
+            <a href="/2019/05/15/TIL-190515/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190510">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190515">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-10T05:39:54.000Z">2019-05-10</time></div>
-                    <a href="/2019/05/10/TIL-190510/" class="has-link-black-ter is-size-6">TIL-190510</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T01:17:51.000Z">2019-05-15</time></div>
+                    <a href="/2019/05/15/TIL-190515/" class="has-link-black-ter is-size-6">TIL-190515</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
@@ -528,16 +540,16 @@
         
         <article class="media">
             
-            <a href="/2019/05/09/TIL-190509/" class="media-left">
+            <a href="/2019/05/14/TIL-190514/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190509">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190514">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-09T01:58:30.000Z">2019-05-09</time></div>
-                    <a href="/2019/05/09/TIL-190509/" class="has-link-black-ter is-size-6">TIL-190509</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-14T09:38:14.000Z">2019-05-14</time></div>
+                    <a href="/2019/05/14/TIL-190514/" class="has-link-black-ter is-size-6">TIL-190514</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
@@ -547,16 +559,16 @@
         
         <article class="media">
             
-            <a href="/2019/05/08/TIL-190508/" class="media-left">
+            <a href="/2019/05/13/TIL-190513/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190508">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190513">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-08T01:44:22.000Z">2019-05-08</time></div>
-                    <a href="/2019/05/08/TIL-190508/" class="has-link-black-ter is-size-6">TIL-190508</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T09:36:27.000Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/TIL-190513/" class="has-link-black-ter is-size-6">TIL-190513</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
@@ -582,7 +594,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">12</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
