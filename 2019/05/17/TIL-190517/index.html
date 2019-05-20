@@ -16,7 +16,7 @@
 <meta property="og:description" content="19일차 (0517) - JavascriptJavascript - What I learn… this">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-05-14T09:13:34.085Z">
+<meta property="og:updated_time" content="2019-05-16T07:51:35.389Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL-190517">
 <meta name="twitter:description" content="19일차 (0517) - JavascriptJavascript - What I learn… this">
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 287 words)
+                    6 minutes read (About 904 words)
                 </span>
                 
                 
@@ -173,29 +173,47 @@
 <a id="more"></a>
 </li>
 </ul>
-<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><h4 id="1-this-키워드"><a href="#1-this-키워드" class="headerlink" title="1. this 키워드"></a>1. this 키워드</h4><p>객체는 프로퍼티로 표현되는 상태 데이터와 메소드로 표현되는 논리적 단위의 복합적 자료 구조이다. (this)는 자신이 속한 객체를 가르키는 식별자를 참조할 수 있어야 한다. 객체 리터럴 방식으로 생성한 객체의 경우, 매소드 내부에서 자신이 속한 객체를 가르키는 식별자를 재귀적으로 참조할 수 있다.</p>
-<h4 id="2-함수-호출-방식과-this-바인딩"><a href="#2-함수-호출-방식과-this-바인딩" class="headerlink" title="2. 함수 호출 방식과 this 바인딩"></a>2. 함수 호출 방식과 this 바인딩</h4><p>랙시컬 스코프 (Lexical scope)는 상위 스코프를 결정하는 방식으로 함수를 평가하면서 상위 스코프를 결정한다.</p>
-<p>함수 호출 방식</p>
+<hr>
+
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p><br></p>
+<h3 id="1-this-키워드"><a href="#1-this-키워드" class="headerlink" title="1. this 키워드"></a>1. this 키워드</h3><p>객체는 프로퍼티로 표현되는 상태 데이터와 메소드로 표현되는 논리적 단위의 복합적 자료 구조이다. (this)는 자신이 속한 객체를 가르키는 식별자를 참조할 수 있어야 한다. 즉 this는 객체의 프로퍼티, 메소드를 참조(호출)하기 위한 자기 참조 객체로 평가된다. 객체 리터럴 방식으로 생성한 객체의 경우, 매소드 내부에서 자신이 속한 객체를 가르키는 식별자를 재귀적으로 참조할 수 있다.</p>
+<p>this는 스코프(Scope) 유효범위가 없고 중첩 함수는 호출자의 this 값을 상속 받지 않는다. (this는 코드 어디든지 참조가 가능하다.)</p>
 <ul>
-<li><ol>
+<li>만약 중첩 함수가 메서드 형태로 호출되면, this 값은 해당 함수의 호출 대상이된다. (지역변수)</li>
+<li>만약 함수 형태로 호출되면, this 값은 global(window)를 가르킨다.</li>
+</ul>
+<p><br></p>
+<h3 id="2-함수-호출-방식과-this-바인딩"><a href="#2-함수-호출-방식과-this-바인딩" class="headerlink" title="2. 함수 호출 방식과 this 바인딩"></a>2. 함수 호출 방식과 this 바인딩</h3><p>this가 가르키는 값은 함수 호출 방식에 따라 바인딩될 객체가 동적으로 결정된다. 또한 엄격 모드(strict mode) 역시 바인딩에 영향을 준다. 엄격 모드가 적용된 함수 내부의 this에는 undefined 가 바인딩된다</p>
+<blockquote>
+<p>바인딩 (binding)<br>식별자와 값을 연결하는 과정을 의미한다. 즉 변수 할당에 의해 다른 값이 바인딩된다.</p>
+</blockquote>
+<blockquote>
+<p>Lexiacal scope와 this 바인딩 시기<br>랙시컬 스코프 (Lexical scope)는 상위 스코프를 결정하는 방식으로 함수 정의가 평가하면서 함수 객체가 생성되는 시점에 상위 스코프를 결정한다. 그러나 this는 함수가 호출되는 시점에 바인딩할 객체를 결정한다</p>
+</blockquote>
+<p>[함수 호출 방식]</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> foo = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.dir(<span class="hljs-keyword">this</span>); <span class="hljs-comment">// 자바스크립트 속성들을 출력합니다.</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ol>
 <li>일반 함수 호출</li>
 </ol>
-</li>
-<li><ol start="2">
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 일반적인 방식으로 foo를 호출.</span></span><br><span class="line"><span class="hljs-comment">// this는 전역 객체 window를 가르킨다.</span></span><br><span class="line">foo(); <span class="hljs-comment">// =&gt; window</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
 <li>메소드 호출</li>
 </ol>
-</li>
-<li><ol start="3">
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// foo 함수를 obj의 프로퍼티의 값으로 할당, 호출.</span></span><br><span class="line"><span class="hljs-comment">// this는 obj 메소드에 할당되어 호출된다.</span></span><br><span class="line"><span class="hljs-keyword">const</span> obj = &#123; foo &#125;;</span><br><span class="line">obj.foo(); <span class="hljs-comment">// obj</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
 <li>생성자 함수 호출</li>
 </ol>
-</li>
-<li><ol start="4">
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// foo 함수를 new 연산자와 함께 생성자 함수로 호출.</span></span><br><span class="line"><span class="hljs-comment">// this는 생성자 함수가 생성할 인스턴스 instance를 가르킨다.</span></span><br><span class="line"><span class="hljs-keyword">const</span> instance = <span class="hljs-keyword">new</span> foo(); <span class="hljs-comment">// instance</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
 <li>Function.prototype.apply/call/bind 메소드에 의한 간접 호출</li>
 </ol>
-</li>
-</ul>
-<h4 id="2-1-일반-함수-호출"><a href="#2-1-일반-함수-호출" class="headerlink" title="2.1. 일반 함수 호출"></a>2.1. 일반 함수 호출</h4><p>기본적으로 this에는 전역 객체(Global object)가 바인딩된다. (전역 함수, 중첩 함수 포함)</p>
-<h4 id="2-2-메소드-호출"><a href="#2-2-메소드-호출" class="headerlink" title="2.2. 메소드 호출"></a>2.2. 메소드 호출</h4><h4 id="2-3-생성자-함수-호출"><a href="#2-3-생성자-함수-호출" class="headerlink" title="2.3. 생성자 함수 호출"></a>2.3. 생성자 함수 호출</h4><h4 id="2-4-Function-prototype-apply-call-bind-메소드에-의한-간접-호출"><a href="#2-4-Function-prototype-apply-call-bind-메소드에-의한-간접-호출" class="headerlink" title="2.4. Function.prototype.apply/call/bind 메소드에 의한 간접 호출"></a>2.4. Function.prototype.apply/call/bind 메소드에 의한 간접 호출</h4>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// function.prototype.apply/call/bind 메소드에 의해 간접 호출</span></span><br><span class="line"><span class="hljs-comment">// this는 인수(argument)에 의해 결정된다.</span></span><br><span class="line"><span class="hljs-keyword">const</span> bar = &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">'lee'</span> &#125;;</span><br><span class="line"></span><br><span class="line">foo.call(a); <span class="hljs-comment">// a</span></span><br><span class="line">foo.apply(b); <span class="hljs-comment">// b</span></span><br><span class="line">foo.bind(c); <span class="hljs-comment">// c</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="2-1-일반-함수-호출"><a href="#2-1-일반-함수-호출" class="headerlink" title="2.1. 일반 함수 호출"></a>2.1. 일반 함수 호출</h3><p>기본적으로 this에는 전역 객체(Global object)가 바인딩된다. (전역 함수, 중첩 함수 포함). 메소드 내에서 정의한 중첩 함수도 일반 함수로 호출 되면 내부에 this 또한 전역 객체에 바인딩 된다.(콜백 함수도 일반 함수로 호출되면 결과는 같다)</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>); <span class="hljs-comment">// window</span></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">baa</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>); <span class="hljs-comment">// window</span></span><br><span class="line">  &#125;</span><br><span class="line">  bar();</span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+<p>콜백 함수에서 this와 프로퍼티 활용한 this 호출</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> value = <span class="hljs-number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> bar = &#123;</span><br><span class="line">  value: <span class="hljs-number">100</span>,</span><br><span class="line">  foo() &#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>); <span class="hljs-comment">// &#123;value: 100, foo: ƒ&#125;</span></span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.value); <span class="hljs-comment">// 100</span></span><br><span class="line">    <span class="hljs-comment">// 콜백 함수 내부의 this에는 전역 객체가 바인딩된다.</span></span><br><span class="line">    setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">      <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>); <span class="hljs-comment">// window</span></span><br><span class="line">      <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.value); <span class="hljs-comment">// 10</span></span><br><span class="line">    &#125;, <span class="hljs-number">100</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">bar.foo();</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-메소드-호출"><a href="#2-2-메소드-호출" class="headerlink" title="2.2. 메소드 호출"></a>2.2. 메소드 호출</h3><h3 id="2-3-생성자-함수-호출"><a href="#2-3-생성자-함수-호출" class="headerlink" title="2.3. 생성자 함수 호출"></a>2.3. 생성자 함수 호출</h3><h3 id="2-4-Function-prototype-apply-call-bind-메소드에-의한-간접-호출"><a href="#2-4-Function-prototype-apply-call-bind-메소드에-의한-간접-호출" class="headerlink" title="2.4. Function.prototype.apply/call/bind 메소드에 의한 간접 호출"></a>2.4. Function.prototype.apply/call/bind 메소드에 의한 간접 호출</h3>
         </div>
         
         
@@ -243,6 +261,13 @@
 
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/05/18/TIL-190518/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">TIL-190518</span>
+            </a>
+        </div>
         
         
         <div class="level-end">
@@ -299,7 +324,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        42
+                        47
                     </p>
                 </div>
             </div>
@@ -446,7 +471,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">38</span>
+                <span class="level-item tag">43</span>
             </span>
         </a></li>
             </ul>
@@ -474,16 +499,16 @@
         
         <article class="media">
             
-            <a href="/2019/05/17/TIL-190517/" class="media-left">
+            <a href="/2019/05/22/TIL-190522/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190517">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190522">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-17T01:21:17.000Z">2019-05-17</time></div>
-                    <a href="/2019/05/17/TIL-190517/" class="has-link-black-ter is-size-6">TIL-190517</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-22T07:27:34.000Z">2019-05-22</time></div>
+                    <a href="/2019/05/22/TIL-190522/" class="has-link-black-ter is-size-6">TIL-190522</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
@@ -493,16 +518,16 @@
         
         <article class="media">
             
-            <a href="/2019/05/16/TIL-190516/" class="media-left">
+            <a href="/2019/05/21/TIL-190521/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190516">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190521">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-16T01:19:32.000Z">2019-05-16</time></div>
-                    <a href="/2019/05/16/TIL-190516/" class="has-link-black-ter is-size-6">TIL-190516</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-21T04:09:32.000Z">2019-05-21</time></div>
+                    <a href="/2019/05/21/TIL-190521/" class="has-link-black-ter is-size-6">TIL-190521</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
@@ -512,16 +537,16 @@
         
         <article class="media">
             
-            <a href="/2019/05/15/TIL-190515/" class="media-left">
+            <a href="/2019/05/20/TIL-190520/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190515">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190520">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T01:17:51.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/TIL-190515/" class="has-link-black-ter is-size-6">TIL-190515</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-20T04:07:21.000Z">2019-05-20</time></div>
+                    <a href="/2019/05/20/TIL-190520/" class="has-link-black-ter is-size-6">TIL-190520</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
@@ -531,16 +556,16 @@
         
         <article class="media">
             
-            <a href="/2019/05/14/TIL-190514/" class="media-left">
+            <a href="/2019/05/19/TIL-190519/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190514">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190519">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-14T09:38:14.000Z">2019-05-14</time></div>
-                    <a href="/2019/05/14/TIL-190514/" class="has-link-black-ter is-size-6">TIL-190514</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-19T04:04:43.000Z">2019-05-19</time></div>
+                    <a href="/2019/05/19/TIL-190519/" class="has-link-black-ter is-size-6">TIL-190519</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
@@ -550,16 +575,16 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/TIL-190513/" class="media-left">
+            <a href="/2019/05/18/TIL-190518/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190513">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190518">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T09:36:27.000Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/TIL-190513/" class="has-link-black-ter is-size-6">TIL-190513</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-18T01:02:52.000Z">2019-05-18</time></div>
+                    <a href="/2019/05/18/TIL-190518/" class="has-link-black-ter is-size-6">TIL-190518</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
@@ -585,7 +610,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">17</span>
+                    <span class="level-item tag">22</span>
                 </span>
             </a>
         </li>

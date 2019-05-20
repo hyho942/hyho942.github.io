@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>TIL-190518 - Hexo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="20일차 (0518) - JavascriptJavascript - What I learn… Number 레퍼 객체 수학 상수와 함수를 위한 Math 객체 날짜와 시간을 위한 Date 객체 String 레퍼 객체">
+<meta name="keywords" content="Developer skill blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TIL-190518">
+<meta property="og:url" content="https://hyho942.github.io/2019/05/18/TIL-190518/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="20일차 (0518) - JavascriptJavascript - What I learn… Number 레퍼 객체 수학 상수와 함수를 위한 Math 객체 날짜와 시간을 위한 Date 객체 String 레퍼 객체">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
+<meta property="og:updated_time" content="2019-05-19T04:03:38.919Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TIL-190518">
+<meta name="twitter:description" content="20일차 (0518) - JavascriptJavascript - What I learn… Number 레퍼 객체 수학 상수와 함수를 위한 Math 객체 날짜와 시간을 위한 Date 객체 String 레퍼 객체">
+<meta name="twitter:image" content="https://hyho942.github.io/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/Hyun's_Logo.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="/link href=" https: fonts.googleapis.com css?family="Montserrat" ">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/Hyun's_Logo.png" alt="TIL-190518" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/hyho942">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-18T01:02:52.000Z">2019-05-18</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    11 minutes read (About 1587 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                TIL-190518
+            
+        </h1>
+        <div class="content">
+            <h2 id="20일차-0518-Javascript"><a href="#20일차-0518-Javascript" class="headerlink" title="20일차 (0518) - Javascript"></a>20일차 (0518) - Javascript</h2><h3 id="Javascript-What-I-learn…"><a href="#Javascript-What-I-learn…" class="headerlink" title="Javascript - What I learn…"></a>Javascript - What I learn…</h3><ul>
+<li>Number 레퍼 객체</li>
+<li>수학 상수와 함수를 위한 Math 객체</li>
+<li>날짜와 시간을 위한 Date 객체</li>
+<li><p>String 레퍼 객체</p>
+<a id="more"></a>
+</li>
+</ul>
+<h2 id="Number-레퍼-객체"><a href="#Number-레퍼-객체" class="headerlink" title="Number 레퍼 객체"></a>Number 레퍼 객체</h2><p>원시 타입 number를 다룰 때 유용한 프로퍼티와 메소드를 제공하는 래퍼(wrapper) 객체이다. 변수, 객체의 프로퍼티가 값을 숫자로 가지고 있다면, Number 객체의 프로퍼티와 메소드를 사용할 수 있다.</p>
+<p>원시 타입은 프로퍼티나 메소드를 호출할 때 연관된 wrapper 객체로 일시적으로 변환되어 프로토타입 객체를 공유하기 때문에 wrapper 객체의 메소드를 사용할 수 있다.</p>
+<h3 id="1-Number-Constructor"><a href="#1-Number-Constructor" class="headerlink" title="1. Number Constructor"></a>1. Number Constructor</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">new</span> <span class="hljs-built_in">Number</span>(value);</span><br></pre></td></tr></table></figure>
+<p>숫자 타입으로 변환하여 반환한다</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Number</span>(value);</span><br></pre></td></tr></table></figure>
+<p>new 연산자가 없다면, Number 객체가 아닌 원시 타입 숫자를 반환한다.</p>
+<p>숫자를 사용할 때는 원시 타입을 사용한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">123</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> y = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Number</span>(<span class="hljs-number">123</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x == y); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x === y); <span class="hljs-comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> x); <span class="hljs-comment">// number</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> y); <span class="hljs-comment">// object</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-Number-Property"><a href="#2-Number-Property" class="headerlink" title="2. Number Property"></a>2. Number Property</h3><p>정적(static) 프로퍼티로 number 객체를 생성할 필요가 없다.</p>
+<blockquote>
+<p>Number.propertyName</p>
+</blockquote>
+<h3 id="2-1-Number-EPSILON-ES6"><a href="#2-1-Number-EPSILON-ES6" class="headerlink" title="2.1 Number.EPSILON ES6"></a>2.1 Number.EPSILON ES6</h3><p>2.2204460492503130808472633361816E-16 = 2 <sup>-52</sup>으로써 무한소수에 가깝워서 2진법으로 계산하면 오차가 발생한다. 그래서 부동소수점 계산시 사용한다</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isEqual</span>(<span class="hljs-params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-comment">// a,b 값을 절대값으로 반환</span></span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.abs(a - b) &lt; <span class="hljs-built_in">Number</span>.EPSILON;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(isEqual(<span class="hljs-number">0.3</span>, <span class="hljs-number">0.3</span>)); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Number</span>.EPSILON); <span class="hljs-comment">// 2.220446049250313e-16</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-2-Number-MAX-VALUE-ES1"><a href="#2-2-Number-MAX-VALUE-ES1" class="headerlink" title="2.2 Number.MAX_VALUE ES1"></a>2.2 Number.MAX_VALUE ES1</h3><p>자바스크립에서 가장 큰 값을 반환한다(1.7976931348623157e+308). 단 맥스를 넘는 수는 infinity 이다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Number</span>.MAX_VALUE;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Number</span>.MAX_VALUE); <span class="hljs-comment">// 1.7976931348623157e+308</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-3-Number-MIN-VALUE-ES1"><a href="#2-3-Number-MIN-VALUE-ES1" class="headerlink" title="2.3 Number.MIN_VALUE ES1"></a>2.3 Number.MIN_VALUE ES1</h3><p>자바스크립에서 가장 작은 값을 반환한다(5e-324). 단 min에 가장 가까운(작은) 수는 0 이다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Number</span>.MIN_VALUE;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Number</span>.MIN_VALUE); <span class="hljs-comment">// 5e-324</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-4-Number-POSITIVE-INFINITY-ES1"><a href="#2-4-Number-POSITIVE-INFINITY-ES1" class="headerlink" title="2.4 Number.POSITIVE_INFINITY ES1"></a>2.4 Number.POSITIVE_INFINITY ES1</h3><p>양의 무한대를 반환한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> a = <span class="hljs-built_in">Number</span>.POSITIVE_INFINITY;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Number</span>.POSITIVE_INFINITY); <span class="hljs-comment">// Infinity</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-5-Number-NEGATIVE-INFINITY-ES1"><a href="#2-5-Number-NEGATIVE-INFINITY-ES1" class="headerlink" title="2.5 Number.NEGATIVE_INFINITY ES1"></a>2.5 Number.NEGATIVE_INFINITY ES1</h3><p>음의 무한대를 반홚한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> a = <span class="hljs-built_in">Number</span>.NEGATIVE_INFINITY;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Number</span>.NEGATIVE_INFINITY); <span class="hljs-comment">// -infinity</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-6-Number-NaN-ES1"><a href="#2-6-Number-NaN-ES1" class="headerlink" title="2.6 Number.NaN ES1"></a>2.6 Number.NaN ES1</h3><p>숫자가 아님을 나타낸다. Number.NaN은 window.NaN 프로퍼티와 같다</p>
+<h3 id="3-Number-Method"><a href="#3-Number-Method" class="headerlink" title="3. Number Method"></a>3. Number Method</h3><h3 id="3-1-Number-isFinite-testValue-number-gt-boolean-ES6"><a href="#3-1-Number-isFinite-testValue-number-gt-boolean-ES6" class="headerlink" title="3.1 Number.isFinite(testValue: number): =&gt; boolean ES6"></a>3.1 Number.isFinite(testValue: number): =&gt; boolean ES6</h3><p>매개변수에 전달된 값이 정상적인 유한수인지 검사한다. 결과는 bloolean으로 반환. 숫자가 아닌 argument가 주어지면 false를 반환한다. 암묵적 형변환 하지 않는다.</p>
+<h3 id="3-2-Number-isInteger-testValue-number-gt-boolean-ES6"><a href="#3-2-Number-isInteger-testValue-number-gt-boolean-ES6" class="headerlink" title="3.2 Number.isInteger(testValue: number): =&gt; boolean ES6"></a>3.2 Number.isInteger(testValue: number): =&gt; boolean ES6</h3><p>매개변수에 전달된 값이 정수(integer) 인지 검사한다. 결과는 bloolean으로 반환. 암묵적 형변환 하지 않는다.</p>
+<h3 id="3-3-Number-isNaN-testValue-number-gt-boolean-ES6"><a href="#3-3-Number-isNaN-testValue-number-gt-boolean-ES6" class="headerlink" title="3.3 Number.isNaN(testValue: number): =&gt; boolean ES6"></a>3.3 Number.isNaN(testValue: number): =&gt; boolean ES6</h3><p>매개변수에 전달된 값이 NaN인지 검사한다. 결과는 bloolean으로 반환. 숫자가 아닌 argument가 주어지면 false를 반환한다.</p>
+<h3 id="3-4-Number-isSafeInteger-testValue-number-gt-boolean-ES6"><a href="#3-4-Number-isSafeInteger-testValue-number-gt-boolean-ES6" class="headerlink" title="3.4 Number.isSafeInteger(testValue: number): =&gt; boolean ES6"></a>3.4 Number.isSafeInteger(testValue: number): =&gt; boolean ES6</h3><p>매개변수에 전달된 값이 안전한 정수값인지 검사한다. 결과는 bloolean으로 반환. -(2<sup>53</sup> - 1)와 2<sup>53</sup> - 1 사이에 정수값을 검사하고, 암묵적 형변환 하지 않는다.</p>
+<h3 id="3-5-Number-prototype-toExponential-fractionDigits-number-gt-string-ES3"><a href="#3-5-Number-prototype-toExponential-fractionDigits-number-gt-string-ES3" class="headerlink" title="3.5 Number.prototype.toExponential(fractionDigits?: number): =&gt; string ES3"></a>3.5 Number.prototype.toExponential(fractionDigits?: number): =&gt; string ES3</h3><p>대상을 지수 표기법으로 변환하여 문자열로 반환한다. 매우 큰 숫자를 표기할 때 사용하고, 10에 n승이 곱하는 형식으로 수를 나타낸다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="hljs-number">1.234e3</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="3-6-Number-prototype-toFixed-fractionDigits-number-gt-string-ES3"><a href="#3-6-Number-prototype-toFixed-fractionDigits-number-gt-string-ES3" class="headerlink" title="3.6 Number.prototype.toFixed(fractionDigits?: number): =&gt; string ES3"></a>3.6 Number.prototype.toFixed(fractionDigits?: number): =&gt; string ES3</h3><p>매개변수로 지정된 소숫점 자리를 반올림하여 문자열로 반환.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> numObj = <span class="hljs-number">12345.6789</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 소숫점 이하 6자리수 유효, 나머지 반올림</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(numObj.toFixed(<span class="hljs-number">6</span>)); <span class="hljs-comment">// '12345.678900'</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-7-Number-prototype-toPrecision-precision-number-gt-string-ES3"><a href="#3-7-Number-prototype-toPrecision-precision-number-gt-string-ES3" class="headerlink" title="3.7 Number.prototype.toPrecision(precision?: number): =&gt; string ES3"></a>3.7 Number.prototype.toPrecision(precision?: number): =&gt; string ES3</h3><p>매개 변수로 지정된 전체 자릿수까지 유효하도록 나머지 자릿수를 반올림하여 문자열 반환. (자릿수를 표현할 수 없는 경우 지수 표기법으로 결과 반환)</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> numObj = <span class="hljs-number">15345.6789</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 전체자리수 유효</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(numObj.toPrecision()); <span class="hljs-comment">// '12345.6789'</span></span><br><span class="line"><span class="hljs-comment">// 전체 2자리수 유효, 나머지 반올림</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(numObj.toPrecision(<span class="hljs-number">2</span>)); <span class="hljs-comment">// '1.5e+4'</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-8-Number-prototype-toString-radix-number-gt-string-ES1"><a href="#3-8-Number-prototype-toString-radix-number-gt-string-ES1" class="headerlink" title="3.8 Number.prototype.toString(radix?: number): =&gt; string ES1"></a>3.8 Number.prototype.toString(radix?: number): =&gt; string ES1</h3><p>숫자를 문자열로 반환</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log((<span class="hljs-number">17</span>).toString()); <span class="hljs-comment">// '17'</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log((<span class="hljs-number">17</span>).toString()); <span class="hljs-comment">// '17'</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-9-Number-prototype-valueOf-number-ES1"><a href="#3-9-Number-prototype-valueOf-number-ES1" class="headerlink" title="3.9 Number.prototype.valueOf(): number ES1"></a>3.9 Number.prototype.valueOf(): number ES1</h3><p>number 객체의 원시 타입 값(primitive value)을 반환한다.</p>
+<hr>
+
+<h2 id="수학-상수와-함수를-위한-Math-객체"><a href="#수학-상수와-함수를-위한-Math-객체" class="headerlink" title="수학 상수와 함수를 위한 Math 객체"></a>수학 상수와 함수를 위한 Math 객체</h2><h3 id="1-Math-Property"><a href="#1-Math-Property" class="headerlink" title="1. Math Property"></a>1. Math Property</h3><h3 id="1-1-Math-PI"><a href="#1-1-Math-PI" class="headerlink" title="1.1 Math.PI"></a>1.1 Math.PI</h3><p>PI 값 (π ≈ 3.141592653589793)을 반환한다.</p>
+<h3 id="2-Math-Method"><a href="#2-Math-Method" class="headerlink" title="2. Math Method"></a>2. Math Method</h3><h3 id="2-1-Math-abs-x-number-gt-number-ES1"><a href="#2-1-Math-abs-x-number-gt-number-ES1" class="headerlink" title="2.1 Math.abs(x: number): =&gt; number (ES1)"></a>2.1 Math.abs(x: number): =&gt; number (ES1)</h3><p>인수(argument)의 절댓값(absolute value)을 반환한다. 절댓값은 반드시 0 뽀는 양수.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Math</span>.abs();</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-Math-round-x-number-number-ES1"><a href="#2-2-Math-round-x-number-number-ES1" class="headerlink" title="2.2 Math.round(x: number): number (ES1)"></a>2.2 Math.round(x: number): number (ES1)</h3><p>인수(argument)의 소수점 이하를 반올림한 정수를 반환한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Math</span>.abs();</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-Math-ceil-x-number-number-ES1"><a href="#2-3-Math-ceil-x-number-number-ES1" class="headerlink" title="2.3 Math.ceil(x: number): number (ES1)"></a>2.3 Math.ceil(x: number): number (ES1)</h3><p>인수(argument)의 소수점 이하를 올림한 정수를 반환한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Math</span>.ceil(<span class="hljs-number">1.9999</span>); <span class="hljs-comment">//=&gt; 2</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.ceil(<span class="hljs-number">-1.9999</span>); <span class="hljs-comment">//=&gt; -1</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-4-Math-floor-x-number-number-ES1"><a href="#2-4-Math-floor-x-number-number-ES1" class="headerlink" title="2.4 Math.floor(x: number): number (ES1)"></a>2.4 Math.floor(x: number): number (ES1)</h3><p>인수(argument)의 소수점 이하를 내림한 정수를 반환한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Math</span>.ceil(<span class="hljs-number">1.9999</span>); <span class="hljs-comment">//=&gt; 1</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.ceil(<span class="hljs-number">-1.9999</span>); <span class="hljs-comment">//=&gt; -2</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-5-Math-sqrt-x-number-number-ES1"><a href="#2-5-Math-sqrt-x-number-number-ES1" class="headerlink" title="2.5 Math.sqrt(x: number): number (ES1)"></a>2.5 Math.sqrt(x: number): number (ES1)</h3><p>인수(argument)의 제곱근을 반환한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Math</span>.sqrt(<span class="hljs-number">9</span>); <span class="hljs-comment">//=&gt; 3</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.sqrt(<span class="hljs-number">-9</span>); <span class="hljs-comment">//=&gt; -NaN</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.sqrt(<span class="hljs-number">3</span>); <span class="hljs-comment">//=&gt; 1.7320508075688772</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-6-Math-random-number-ES1"><a href="#2-6-Math-random-number-ES1" class="headerlink" title="2.6 Math.random(): number (ES1)"></a>2.6 Math.random(): number (ES1)</h3><p>임의의 부동 소수점을 반환한다. 반환된 부동 소수점은 0 ~ 1 미만이다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Math</span>.random();</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 조건</span></span><br><span class="line"><span class="hljs-comment">// 1 ~ 100의 랜덤 정수</span></span><br><span class="line"><span class="hljs-comment">// Math.random 에서 1 ~ 10 랜덤 수에 100을 곱한다.</span></span><br><span class="line"><span class="hljs-comment">// 0 ~ 1에 랜덤수에 1을 더해, 1 이상에 랜덤 수로 만든다.</span></span><br><span class="line"><span class="hljs-comment">// random.floor로 소수점 수를 정수로 바꾼다</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> random = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">100</span> + <span class="hljs-number">1</span>);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(random);</span><br></pre></td></tr></table></figure>
+<h3 id="2-7-Math-pow-x-number-y-number-number-ES1"><a href="#2-7-Math-pow-x-number-y-number-number-ES1" class="headerlink" title="2.7 Math.pow(x: number, y: number): number (ES1)"></a>2.7 Math.pow(x: number, y: number): number (ES1)</h3><p>첫번째 인수(argument)를 밑(base), 두번째 인수를 지수(exponent)로 거듭제곱 반환한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Math</span>.pow(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>); <span class="hljs-comment">// 32</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.pow(<span class="hljs-number">2</span>); <span class="hljs-comment">// NaN</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-8-Math-max-…values-number-number-ES1"><a href="#2-8-Math-max-…values-number-number-ES1" class="headerlink" title="2.8 Math.max(…values: number[]): number (ES1)"></a>2.8 Math.max(…values: number[]): number (ES1)</h3><p>인수(argument) 중에서 가장 큰 수를 반환한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Math</span>.max(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>); <span class="hljs-comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//배열에 맥스 찾기</span></span><br><span class="line"><span class="hljs-keyword">const</span> arr = [<span class="hljs-number">55</span>, <span class="hljs-number">1</span>, <span class="hljs-number">12</span>, <span class="hljs-number">34</span>];</span><br><span class="line"><span class="hljs-keyword">const</span> maxValue = <span class="hljs-built_in">Math</span>.max.apply(<span class="hljs-literal">null</span>, arr);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(maxValue); <span class="hljs-comment">// 55</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// ES6</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.max(...arr); <span class="hljs-comment">// 55</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-9-Math-min-…values-number-number-ES1"><a href="#2-9-Math-min-…values-number-number-ES1" class="headerlink" title="2.9 Math.min(…values: number[]): number (ES1)"></a>2.9 Math.min(…values: number[]): number (ES1)</h3><hr>
+
+<h2 id="날짜와-시간을-위한-Date-객체"><a href="#날짜와-시간을-위한-Date-객체" class="headerlink" title="날짜와 시간을 위한 Date 객체"></a>날짜와 시간을 위한 Date 객체</h2><h3 id="1-Date-Constructor"><a href="#1-Date-Constructor" class="headerlink" title="1. Date Constructor"></a>1. Date Constructor</h3><h3 id="1-1-new-Date"><a href="#1-1-new-Date" class="headerlink" title="1.1 new Date()"></a>1.1 new Date()</h3><h3 id="1-2-new-Date-milliseconds"><a href="#1-2-new-Date-milliseconds" class="headerlink" title="1.2 new Date(milliseconds)"></a>1.2 new Date(milliseconds)</h3><h3 id="1-3-new-Date-dateString"><a href="#1-3-new-Date-dateString" class="headerlink" title="1.3 new Date(dateString)"></a>1.3 new Date(dateString)</h3><h3 id="1-4-new-Date-year-month-day-hour-minute-second-millisecond"><a href="#1-4-new-Date-year-month-day-hour-minute-second-millisecond" class="headerlink" title="1.4 new Date(year, month[, day, hour, minute, second, millisecond])"></a>1.4 new Date(year, month[, day, hour, minute, second, millisecond])</h3><h3 id="2-Date-Method"><a href="#2-Date-Method" class="headerlink" title="2. Date Method"></a>2. Date Method</h3><h3 id="2-1-Date-now"><a href="#2-1-Date-now" class="headerlink" title="2.1 Date.now()"></a>2.1 Date.now()</h3><h3 id="2-2-Date-parse"><a href="#2-2-Date-parse" class="headerlink" title="2.2 Date.parse()"></a>2.2 Date.parse()</h3><h3 id="2-3-Date-UTC"><a href="#2-3-Date-UTC" class="headerlink" title="2.3 Date.UTC()"></a>2.3 Date.UTC()</h3><h3 id="2-4-Date-prototype-getFullYear"><a href="#2-4-Date-prototype-getFullYear" class="headerlink" title="2.4 Date.prototype.getFullYear()"></a>2.4 Date.prototype.getFullYear()</h3><h3 id="2-5-Date-prototype-setFullYear"><a href="#2-5-Date-prototype-setFullYear" class="headerlink" title="2.5 Date.prototype.setFullYear()"></a>2.5 Date.prototype.setFullYear()</h3><h3 id="2-6-Date-prototype-getMonth"><a href="#2-6-Date-prototype-getMonth" class="headerlink" title="2.6 Date.prototype.getMonth()"></a>2.6 Date.prototype.getMonth()</h3><h3 id="2-7-Date-prototype-setMonth"><a href="#2-7-Date-prototype-setMonth" class="headerlink" title="2.7 Date.prototype.setMonth()"></a>2.7 Date.prototype.setMonth()</h3><h3 id="2-8-Date-prototype-getDate"><a href="#2-8-Date-prototype-getDate" class="headerlink" title="2.8 Date.prototype.getDate()"></a>2.8 Date.prototype.getDate()</h3><h3 id="2-9-Date-prototype-setDate"><a href="#2-9-Date-prototype-setDate" class="headerlink" title="2.9 Date.prototype.setDate()"></a>2.9 Date.prototype.setDate()</h3><h3 id="2-10-Date-prototype-getDay"><a href="#2-10-Date-prototype-getDay" class="headerlink" title="2.10 Date.prototype.getDay()"></a>2.10 Date.prototype.getDay()</h3><h3 id="2-11-Date-prototype-getHours"><a href="#2-11-Date-prototype-getHours" class="headerlink" title="2.11 Date.prototype.getHours()"></a>2.11 Date.prototype.getHours()</h3><h3 id="2-12-Date-prototype-setHours"><a href="#2-12-Date-prototype-setHours" class="headerlink" title="2.12 Date.prototype.setHours()"></a>2.12 Date.prototype.setHours()</h3><h3 id="2-13-Date-prototype-getMinutes"><a href="#2-13-Date-prototype-getMinutes" class="headerlink" title="2.13 Date.prototype.getMinutes()"></a>2.13 Date.prototype.getMinutes()</h3><h3 id="2-14-Date-prototype-setMinutes"><a href="#2-14-Date-prototype-setMinutes" class="headerlink" title="2.14 Date.prototype.setMinutes()"></a>2.14 Date.prototype.setMinutes()</h3><h3 id="2-15-Date-prototype-getSeconds"><a href="#2-15-Date-prototype-getSeconds" class="headerlink" title="2.15 Date.prototype.getSeconds()"></a>2.15 Date.prototype.getSeconds()</h3><h3 id="2-16-Date-prototype-setSeconds"><a href="#2-16-Date-prototype-setSeconds" class="headerlink" title="2.16 Date.prototype.setSeconds()"></a>2.16 Date.prototype.setSeconds()</h3><h3 id="2-17-Date-prototype-getMilliseconds"><a href="#2-17-Date-prototype-getMilliseconds" class="headerlink" title="2.17 Date.prototype.getMilliseconds()"></a>2.17 Date.prototype.getMilliseconds()</h3><h3 id="2-18-Date-prototype-setMilliseconds"><a href="#2-18-Date-prototype-setMilliseconds" class="headerlink" title="2.18 Date.prototype.setMilliseconds()"></a>2.18 Date.prototype.setMilliseconds()</h3><h3 id="2-19-Date-prototype-getTime"><a href="#2-19-Date-prototype-getTime" class="headerlink" title="2.19 Date.prototype.getTime()"></a>2.19 Date.prototype.getTime()</h3><h3 id="2-20-Date-prototype-setTime"><a href="#2-20-Date-prototype-setTime" class="headerlink" title="2.20 Date.prototype.setTime()"></a>2.20 Date.prototype.setTime()</h3><h3 id="2-21-Date-prototype-getTimezoneOffset"><a href="#2-21-Date-prototype-getTimezoneOffset" class="headerlink" title="2.21 Date.prototype.getTimezoneOffset()"></a>2.21 Date.prototype.getTimezoneOffset()</h3><h3 id="2-22-Date-prototype-toDateString"><a href="#2-22-Date-prototype-toDateString" class="headerlink" title="2.22 Date.prototype.toDateString()"></a>2.22 Date.prototype.toDateString()</h3><h3 id="2-23-Date-prototype-toTimeString"><a href="#2-23-Date-prototype-toTimeString" class="headerlink" title="2.23 Date.prototype.toTimeString()"></a>2.23 Date.prototype.toTimeString()</h3><h3 id="3-Date-Example"><a href="#3-Date-Example" class="headerlink" title="3. Date Example"></a>3. Date Example</h3><hr>
+
+<h2 id="String-레퍼-객체"><a href="#String-레퍼-객체" class="headerlink" title="String 레퍼 객체"></a>String 레퍼 객체</h2><h3 id="1-String-Constructor"><a href="#1-String-Constructor" class="headerlink" title="1. String Constructor"></a>1. String Constructor</h3><h3 id="2-String-Property"><a href="#2-String-Property" class="headerlink" title="2. String Property"></a>2. String Property</h3><h3 id="2-1-String-length"><a href="#2-1-String-length" class="headerlink" title="2.1 String.length"></a>2.1 String.length</h3><h3 id="3-String-Method"><a href="#3-String-Method" class="headerlink" title="3. String Method"></a>3. String Method</h3><h3 id="3-1-String-prototype-charAt-pos-number-string-ES1"><a href="#3-1-String-prototype-charAt-pos-number-string-ES1" class="headerlink" title="3.1 String.prototype.charAt(pos: number): string ES1"></a>3.1 String.prototype.charAt(pos: number): string ES1</h3><h3 id="3-2-String-prototype-concat-…strings-string-string-ES3"><a href="#3-2-String-prototype-concat-…strings-string-string-ES3" class="headerlink" title="3.2 String.prototype.concat(…strings: string[]): string ES3"></a>3.2 String.prototype.concat(…strings: string[]): string ES3</h3><h3 id="3-3-String-prototype-indexOf-searchString-string-fromIndex-0-number-ES1"><a href="#3-3-String-prototype-indexOf-searchString-string-fromIndex-0-number-ES1" class="headerlink" title="3.3 String.prototype.indexOf(searchString: string, fromIndex=0): number ES1"></a>3.3 String.prototype.indexOf(searchString: string, fromIndex=0): number ES1</h3><h3 id="3-4-String-prototype-lastIndexOf-searchString-string-fromIndex-this-length-1-number-ES1"><a href="#3-4-String-prototype-lastIndexOf-searchString-string-fromIndex-this-length-1-number-ES1" class="headerlink" title="3.4 String.prototype.lastIndexOf(searchString: string, fromIndex=this.length-1): number ES1"></a>3.4 String.prototype.lastIndexOf(searchString: string, fromIndex=this.length-1): number ES1</h3><h3 id="3-5-String-prototype-replace-searchValue-string-RegExp-replaceValue-string-string-ES3"><a href="#3-5-String-prototype-replace-searchValue-string-RegExp-replaceValue-string-string-ES3" class="headerlink" title="3.5 String.prototype.replace(searchValue: string | RegExp, replaceValue: string): string ES3"></a>3.5 String.prototype.replace(searchValue: string | RegExp, replaceValue: string): string ES3</h3><h3 id="3-6-String-prototype-split-separator-string-RegExp-limit-number-string-ES3"><a href="#3-6-String-prototype-split-separator-string-RegExp-limit-number-string-ES3" class="headerlink" title="3.6 String.prototype.split(separator: string | RegExp, limit?: number): string[] ES3"></a>3.6 String.prototype.split(separator: string | RegExp, limit?: number): string[] ES3</h3><h3 id="3-7-String-prototype-substring-start-number-end-this-length-string-ES3"><a href="#3-7-String-prototype-substring-start-number-end-this-length-string-ES3" class="headerlink" title="3.7 String.prototype.substring(start: number, end=this.length): string ES3"></a>3.7 String.prototype.substring(start: number, end=this.length): string ES3</h3><h3 id="3-8-String-prototype-toLowerCase-string-ES1"><a href="#3-8-String-prototype-toLowerCase-string-ES1" class="headerlink" title="3.8 String.prototype.toLowerCase(): string ES1"></a>3.8 String.prototype.toLowerCase(): string ES1</h3><h3 id="3-9-String-prototype-toUpperCase-string-ES1"><a href="#3-9-String-prototype-toUpperCase-string-ES1" class="headerlink" title="3.9 String.prototype.toUpperCase(): string ES1"></a>3.9 String.prototype.toUpperCase(): string ES1</h3><h3 id="3-10-String-prototype-trim-string-ES5"><a href="#3-10-String-prototype-trim-string-ES5" class="headerlink" title="3.10 String.prototype.trim(): string ES5"></a>3.10 String.prototype.trim(): string ES5</h3><h3 id="3-11-String-prototype-repeat-count-number-string-ES6"><a href="#3-11-String-prototype-repeat-count-number-string-ES6" class="headerlink" title="3.11 String.prototype.repeat(count: number): string ES6"></a>3.11 String.prototype.repeat(count: number): string ES6</h3>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<div class="notification is-danger">
+    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/05/19/TIL-190519/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">TIL-190519</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/05/17/TIL-190517/">
+                <span class="level-item">TIL-190517</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <img class="image is-128x128 has-mb-6" src="/images/Hyun&#39;s_Logo.png" alt="HYUN HO LEE">
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        HYUN HO LEE
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Hyho
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Seoul</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        47
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tag
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        1
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/hyho942" target="_blank">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/hyho942">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Facebook" href="https://www.facebook.com/lees.white.story">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="http://twitter.com">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Dribbble" href="http://dribbble.com">
+                
+                <i class="fab fa-dribbble"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hyho.io" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">UX Design Portfolio</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hyho.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/ppoffice" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">PPOffice</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Algorithm-Study/">
+            <span class="level-start">
+                <span class="level-item">Algorithm Study</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Project/">
+            <span class="level-start">
+                <span class="level-item">Project</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Project/drunk-code-협업-Project/">
+            <span class="level-start">
+                <span class="level-item">drunk_code 협업 Project</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/TIL/">
+            <span class="level-start">
+                <span class="level-item">TIL</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">43</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/html-web/" style="font-size: 10px;">html, web</a>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/22/TIL-190522/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190522">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-22T07:27:34.000Z">2019-05-22</time></div>
+                    <a href="/2019/05/22/TIL-190522/" class="has-link-black-ter is-size-6">TIL-190522</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/21/TIL-190521/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190521">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-21T04:09:32.000Z">2019-05-21</time></div>
+                    <a href="/2019/05/21/TIL-190521/" class="has-link-black-ter is-size-6">TIL-190521</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/20/TIL-190520/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190520">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-20T04:07:21.000Z">2019-05-20</time></div>
+                    <a href="/2019/05/20/TIL-190520/" class="has-link-black-ter is-size-6">TIL-190520</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/19/TIL-190519/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190519">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-19T04:04:43.000Z">2019-05-19</time></div>
+                    <a href="/2019/05/19/TIL-190519/" class="has-link-black-ter is-size-6">TIL-190519</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/18/TIL-190518/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TIL-190518">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-18T01:02:52.000Z">2019-05-18</time></div>
+                    <a href="/2019/05/18/TIL-190518/" class="has-link-black-ter is-size-6">TIL-190518</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">22</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">25</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/html-web/">
+                        <span class="tag">html, web</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/Hyun's_Logo.png" alt="TIL-190518" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 HYUN HO LEE&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
