@@ -2,20 +2,24 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Archives: 2019/4 - Hexo</title>
+<title>TIL-190523 - Hexo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="keywords" content="Developer skill blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://hyho942.github.io/archives/2019/04/page/2/index.html">
+    <meta name="description" content="25일차 (0523) - JavascriptJavascript - What I learn… 객체 리터럴 프로퍼티 기능 확장">
+<meta name="keywords" content="Developer skill blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TIL-190523">
+<meta property="og:url" content="https://hyho942.github.io/2019/05/23/TIL-190523/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="25일차 (0523) - JavascriptJavascript - What I learn… 객체 리터럴 프로퍼티 기능 확장">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
+<meta property="og:updated_time" content="2019-05-21T08:16:06.361Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="TIL-190523">
+<meta name="twitter:description" content="25일차 (0523) - JavascriptJavascript - What I learn… 객체 리터럴 프로퍼티 기능 확장">
 <meta name="twitter:image" content="https://hyho942.github.io/images/og_image.png">
 
 
@@ -90,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/Hyun's_Logo.png" alt="Hexo" height="28">
+                <img src="/images/Hyun's_Logo.png" alt="TIL-190523" height="28">
             
             </a>
         </div>
@@ -135,227 +139,123 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-23T06:57:35.000Z">2019-05-23</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 423 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                TIL-190523
+            
+        </h1>
+        <div class="content">
+            <h2 id="25일차-0523-Javascript"><a href="#25일차-0523-Javascript" class="headerlink" title="25일차 (0523) - Javascript"></a>25일차 (0523) - Javascript</h2><h3 id="Javascript-What-I-learn…"><a href="#Javascript-What-I-learn…" class="headerlink" title="Javascript - What I learn…"></a>Javascript - What I learn…</h3><ul>
+<li><p>객체 리터럴 프로퍼티 기능 확장</p>
+<a id="more"></a>
+</li>
+</ul>
+<hr>
 
-<div class="card widget">
+<h2 id="객체-리터럴-프로퍼티-기능-확장-Enhanced-Object-property"><a href="#객체-리터럴-프로퍼티-기능-확장-Enhanced-Object-property" class="headerlink" title="객체 리터럴 프로퍼티 기능 확장 (Enhanced Object property)"></a>객체 리터럴 프로퍼티 기능 확장 (Enhanced Object property)</h2><p><br></p>
+<h3 id="1-프로퍼티-축약-표현"><a href="#1-프로퍼티-축약-표현" class="headerlink" title="1. 프로퍼티 축약 표현"></a>1. 프로퍼티 축약 표현</h3><p>프로퍼티는 값으로 변수에 할당된 값일 수도 있으며 프로퍼티 이름과 값으로 구성된다.</p>
+<p>ES6에서는 프로퍼티의 이름을 생략해도 자동 생성된다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// ES5</span></span><br><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>,</span><br><span class="line">  y = <span class="hljs-number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> foo = &#123;</span><br><span class="line">  x: x,</span><br><span class="line">  y: y</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// ES6</span></span><br><span class="line"><span class="hljs-keyword">var</span> foo = &#123; x, y &#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(foo); <span class="hljs-comment">// &#123;x: 1, y: 2&#125;</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="2-프로퍼티-키-동적-생성"><a href="#2-프로퍼티-키-동적-생성" class="headerlink" title="2. 프로퍼티 키 동적 생성"></a>2. 프로퍼티 키 동적 생성</h3><p>문자열, 문자열로 반환 가능한 값을 표현식을 통해 동적으로 생성할 수 있다. ([]로 묶어야 한다)</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> item = <span class="hljs-string">'work'</span>;</span><br><span class="line"><span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//ES5</span></span><br><span class="line"><span class="hljs-comment">// 객체 리터럴 외부에서 []로 동적 생성한다.</span></span><br><span class="line"><span class="hljs-keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">obj[item + <span class="hljs-string">'-'</span> + ++i] = i;</span><br><span class="line">obj[item + <span class="hljs-string">'-'</span> + ++i] = i;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//ES6</span></span><br><span class="line"><span class="hljs-comment">// 객체 리터럴 내부에서 프로퍼티를 동적으로 생성할 수 있다.</span></span><br><span class="line"><span class="hljs-keyword">var</span> obj = &#123;</span><br><span class="line">  [<span class="hljs-string">`<span class="hljs-subst">$&#123;item&#125;</span>-<span class="hljs-subst">$&#123;++i&#125;</span>`</span>]: i,</span><br><span class="line">  [<span class="hljs-string">`<span class="hljs-subst">$&#123;item&#125;</span>-<span class="hljs-subst">$&#123;++i&#125;</span>`</span>]: i</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(obj); <span class="hljs-comment">// &#123;&#125;item-1: 1, item-2: 2&#125;</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="3-메소드-축약-표현"><a href="#3-메소드-축약-표현" class="headerlink" title="3. 메소드 축약 표현"></a>3. 메소드 축약 표현</h3><p>메소드 선언은 프로퍼티 값으로 함수 선언식을 할당한다</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//ES5</span></span><br><span class="line"><span class="hljs-keyword">var</span> item = &#123;</span><br><span class="line">  name: <span class="hljs-string">'pen'</span>,</span><br><span class="line">  alert: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'this is'</span> + <span class="hljs-keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//ES6</span></span><br><span class="line"><span class="hljs-comment">// 축약 표현으로 function을 생략할 수 있다.</span></span><br><span class="line"><span class="hljs-keyword">var</span> item = &#123;</span><br><span class="line">  name <span class="hljs-string">'pen'</span>,</span><br><span class="line">  alert()&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'this is'</span> + <span class="hljs-keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="4-proto-프로퍼티에-의한-상속"><a href="#4-proto-프로퍼티에-의한-상속" class="headerlink" title="4. _ proto _ 프로퍼티에 의한 상속"></a>4. _ <em>proto</em> _ 프로퍼티에 의한 상속</h3><p>ES6에서는 _ <em>proto</em> _를 직접 설정할 수 있다. 즉 객체 리터럴로 생성한 객체는 _ <em>proto</em> _으로 직접 바잉딩을 설정할 수 있다. 단 ES5에서는 Object.crete() 함수를 사용하여 객체 리터럴을 상속한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> upper = &#123;</span><br><span class="line">  name: <span class="hljs-string">'upper'</span>,</span><br><span class="line">  alert ()&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'this is'</span> + <span class="hljs-keyword">this</span>,name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//ES5</span></span><br><span class="line"><span class="hljs-keyword">var</span> lower = <span class="hljs-built_in">Object</span>.create(upper);</span><br><span class="line">lower.name = <span class="hljs-string">'child'</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//ES6</span></span><br><span class="line"><span class="hljs-keyword">var</span> lower = &#123;</span><br><span class="line">  _ _proto_ _: upper,</span><br><span class="line">  name: <span class="hljs-string">'lower'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">upper.alert(); <span class="hljs-comment">// this is upper</span></span><br><span class="line">lower.alert(); <span class="hljs-comment">// this is lower</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
     <div class="card-content">
-        <h3 class="tag is-link">
-        April 2019
-        </h3>
-        <div class="timeline">
-        
-            <article class="media">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-04-18T12:08:18.000Z">2019-04-18</time>
-                        <a href="/2019/04/18/TIL-190418/" class="has-link-black-ter is-size-6">TIL-190418</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
+</div>
+
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-04-17T12:03:54.000Z">2019-04-17</time>
-                        <a href="/2019/04/17/TIL-190417/" class="has-link-black-ter is-size-6">TIL-190417</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-04-16T11:53:31.000Z">2019-04-16</time>
-                        <a href="/2019/04/16/TIL-190416/" class="has-link-black-ter is-size-6">TIL-190416</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
+
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-04-15T11:50:32.000Z">2019-04-15</time>
-                        <a href="/2019/04/15/TIL-190415/" class="has-link-black-ter is-size-6">TIL-190415</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<div class="notification is-danger">
+    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
+</div>
+
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-04-12T11:49:18.000Z">2019-04-12</time>
-                        <a href="/2019/04/12/TIL-190412/" class="has-link-black-ter is-size-6">TIL-190412</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-04-11T11:44:23.000Z">2019-04-11</time>
-                        <a href="/2019/04/11/TIL-190411/" class="has-link-black-ter is-size-6">TIL-190411</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
+<div class="notification is-danger">
+    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
+</div>
+
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-04-10T05:53:57.000Z">2019-04-10</time>
-                        <a href="/2019/04/10/TIL-190410-html-markup-설계하기/" class="has-link-black-ter is-size-6">TIL-190410-html markup 설계하기 </a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-04-09T11:41:37.000Z">2019-04-09</time>
-                        <a href="/2019/04/09/TIL-190409/" class="has-link-black-ter is-size-6">TIL-190409</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-04-08T11:37:21.000Z">2019-04-08</time>
-                        <a href="/2019/04/08/TIL-190408/" class="has-link-black-ter is-size-6">TIL-190408</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-04-06T08:55:21.000Z">2019-04-06</time>
-                        <a href="/2019/04/06/TIL-190406-CSS-reset/" class="has-link-black-ter is-size-6">TIL-190406-CSS-reset</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
         </div>
     </div>
 </div>
 
 
 
-    
 <div class="card card-transparent">
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-        <div class="pagination-previous">
-            <a class="is-flex-grow has-text-black-ter" href="/archives/2019/04/">Previous</a>
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/05/24/TIL-190524/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">TIL-190524</span>
+            </a>
         </div>
-        <div class="pagination-next">
-            <a class="is-flex-grow has-text-black-ter" href="/archives/2019/04/page/3/">Next</a>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/05/22/TIL-190522/">
+                <span class="level-item">TIL-190522</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
         </div>
-        <ul class="pagination-list is-hidden-mobile">
-            
-            <li><a class="pagination-link has-text-black-ter" href="/archives/2019/04/">1</a></li>
-            
-            <li><a class="pagination-link is-current" href="/archives/2019/04/page/2/">2</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/archives/2019/04/page/3/">3</a></li>
-            
-        </ul>
-    </nav>
+        
+    </div>
 </div>
+
+
 </div>
                 
 
@@ -743,7 +643,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/Hyun's_Logo.png" alt="Hexo" height="28">
+                    <img src="/images/Hyun's_Logo.png" alt="TIL-190523" height="28">
                 
                 </a>
                 <p class="is-size-7">
