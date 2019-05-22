@@ -16,7 +16,7 @@
 <meta property="og:description" content="27일차 (0525) - JavascriptJavascript - What I learn… 클래스">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-05-21T09:43:50.514Z">
+<meta property="og:updated_time" content="2019-05-22T05:33:16.142Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL-190525">
 <meta name="twitter:description" content="27일차 (0525) - JavascriptJavascript - What I learn… 클래스">
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 75 words)
+                    4 minutes read (About 537 words)
                 </span>
                 
                 
@@ -173,7 +173,21 @@
 <a id="more"></a>
 </li>
 </ul>
-<h2 id="클래스-Class"><a href="#클래스-Class" class="headerlink" title="클래스 (Class)"></a>클래스 (Class)</h2><h3 id="1-클래스-정의-Class-Definition"><a href="#1-클래스-정의-Class-Definition" class="headerlink" title="1. 클래스 정의 (Class Definition)"></a>1. 클래스 정의 (Class Definition)</h3><h3 id="2-인스턴스의-생성"><a href="#2-인스턴스의-생성" class="headerlink" title="2. 인스턴스의 생성"></a>2. 인스턴스의 생성</h3><h3 id="3-constructor"><a href="#3-constructor" class="headerlink" title="3. constructor"></a>3. constructor</h3><h3 id="4-클래스-프로퍼티"><a href="#4-클래스-프로퍼티" class="headerlink" title="4. 클래스 프로퍼티"></a>4. 클래스 프로퍼티</h3><h3 id="5-호이스팅"><a href="#5-호이스팅" class="headerlink" title="5. 호이스팅"></a>5. 호이스팅</h3><h3 id="6-getter-setter"><a href="#6-getter-setter" class="headerlink" title="6. getter, setter"></a>6. getter, setter</h3><h3 id="6-1-getter"><a href="#6-1-getter" class="headerlink" title="6.1 getter"></a>6.1 getter</h3><h3 id="6-2-setter"><a href="#6-2-setter" class="headerlink" title="6.2 setter"></a>6.2 setter</h3><h3 id="7-정적-메소드"><a href="#7-정적-메소드" class="headerlink" title="7. 정적 메소드"></a>7. 정적 메소드</h3><h3 id="8-클래스-상속"><a href="#8-클래스-상속" class="headerlink" title="8. 클래스 상속"></a>8. 클래스 상속</h3><h3 id="8-1-extends-키워드"><a href="#8-1-extends-키워드" class="headerlink" title="8.1 extends 키워드"></a>8.1 extends 키워드</h3><h3 id="8-2-super-키워드"><a href="#8-2-super-키워드" class="headerlink" title="8.2 super 키워드"></a>8.2 super 키워드</h3><h3 id="8-3-static-메소드와-prototype-메소드의-상속"><a href="#8-3-static-메소드와-prototype-메소드의-상속" class="headerlink" title="8.3 static 메소드와 prototype 메소드의 상속"></a>8.3 static 메소드와 prototype 메소드의 상속</h3>
+<h2 id="클래스-Class"><a href="#클래스-Class" class="headerlink" title="클래스 (Class)"></a>클래스 (Class)</h2><h3 id="1-클래스-정의-Class-Definition"><a href="#1-클래스-정의-Class-Definition" class="headerlink" title="1. 클래스 정의 (Class Definition)"></a>1. 클래스 정의 (Class Definition)</h3><p>클래스는 클래스 이전에 참조할 수 없다. 그러나 호이스팅이 발생하는 것은 아니다. 클래스는 let, const 처럼 호이스팅이 보이지 않는다. 즉 일시적 사각지대(Temporal Dead Zone: TDZ)에 빠진다.</p>
+<h3 id="2-인스턴스의-생성"><a href="#2-인스턴스의-생성" class="headerlink" title="2. 인스턴스의 생성"></a>2. 인스턴스의 생성</h3><p>new 연산자와 같이 클래스 이름을 호출하면 클래스 인스턴스를 생성할 수 있다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">foo</span> </span>&#123;&#125;</span><br><span class="line"><span class="hljs-comment">// Foo는 클래스 이름이 아니라 constructor(생성자)이다.</span></span><br><span class="line"><span class="hljs-keyword">const</span> foo = <span class="hljs-keyword">new</span> Foo();</span><br></pre></td></tr></table></figure>
+<p>만약 new 연산자를 사용하지 않고 constructor를 호출하게 된다면, TypeError가 발생한다.</p>
+<h3 id="3-constructor"><a href="#3-constructor" class="headerlink" title="3. constructor"></a>3. constructor</h3><p>인스턴스를 생성하기 위한 메소드이다. constructor로 인스턴스가 생성되면 동시에 클래스 필드의 생성과 초기화를 실행한다.</p>
+<blockquote>
+<p>클래스 필드<br>클래스 내부에 캡슐화된 변수를 말한다. 즉 데이터 맴버, 맴버 변수라고 부른다. 클래스 필드는 생성자 함수에서 this에 추가된 프로퍼티를 가르키며, 인스턴스, 정적 프로퍼티가 될수 있다.</p>
+</blockquote>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Obj</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(item) &#123;</span><br><span class="line">    <span class="hljs-comment">//constructor는 생략이 가능하다</span></span><br><span class="line">    <span class="hljs-keyword">this</span>.item = item;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">let</span> newItem = <span class="hljs-keyword">new</span> Obj(<span class="hljs-string">'pen'</span>);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(newItem);</span><br></pre></td></tr></table></figure>
+<p>클래스 내부에는 한개의 constructor만 존재할 수 있다. 만약 두개 이상이 존대 한다면. SyntaxError를 발생한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> foo = <span class="hljs-keyword">new</span> Foo();</span><br><span class="line"><span class="hljs-built_in">console</span>.log(foo); <span class="hljs-comment">// Foo &#123;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 프로퍼티 동적 할당 및 초기화</span></span><br><span class="line">foo.name = [<span class="hljs-string">'lee'</span>, <span class="hljs-string">'hyun'</span>];</span><br><span class="line"><span class="hljs-built_in">console</span>.log(foo); <span class="hljs-comment">// Foo &#123; name: [ 'lee', 'hyun' ] &#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-클래스-필드"><a href="#4-클래스-필드" class="headerlink" title="4. 클래스 필드"></a>4. 클래스 필드</h3><p>클래스 내부에서는 메소드만 선언할 수 있다. 만약 클래스 필드(맴버 변수)를 선언하면 문법 에러(SyntaxError)가 발생한다.</p>
+<h3 id="5-호이스팅"><a href="#5-호이스팅" class="headerlink" title="5. 호이스팅"></a>5. 호이스팅</h3><h3 id="6-getter-setter"><a href="#6-getter-setter" class="headerlink" title="6. getter, setter"></a>6. getter, setter</h3><h3 id="6-1-getter"><a href="#6-1-getter" class="headerlink" title="6.1 getter"></a>6.1 getter</h3><h3 id="6-2-setter"><a href="#6-2-setter" class="headerlink" title="6.2 setter"></a>6.2 setter</h3><h3 id="7-정적-메소드"><a href="#7-정적-메소드" class="headerlink" title="7. 정적 메소드"></a>7. 정적 메소드</h3><h3 id="8-클래스-상속"><a href="#8-클래스-상속" class="headerlink" title="8. 클래스 상속"></a>8. 클래스 상속</h3><h3 id="8-1-extends-키워드"><a href="#8-1-extends-키워드" class="headerlink" title="8.1 extends 키워드"></a>8.1 extends 키워드</h3><p>upper 클래스에서 lower 클래스로 상속을 할 때 정의 한다.</p>
+<h3 id="8-2-super-키워드"><a href="#8-2-super-키워드" class="headerlink" title="8.2 super 키워드"></a>8.2 super 키워드</h3><p>부모의 클래스를 참조(reference)할 때 또는 부모의 클래스의 constructor를 호출할 때 사용.</p>
+<h3 id="8-3-static-메소드와-prototype-메소드의-상속"><a href="#8-3-static-메소드와-prototype-메소드의-상속" class="headerlink" title="8.3 static 메소드와 prototype 메소드의 상속"></a>8.3 static 메소드와 prototype 메소드의 상속</h3>
         </div>
         
         
