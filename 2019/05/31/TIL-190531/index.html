@@ -16,7 +16,7 @@
 <meta property="og:description" content="33일차 (0531) - Javascript 프로미스 (Promise)  Javascript - What I learn…">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyho942.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-05-30T06:22:56.446Z">
+<meta property="og:updated_time" content="2019-05-31T01:58:04.705Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL-190531">
 <meta name="twitter:description" content="33일차 (0531) - Javascript 프로미스 (Promise)  Javascript - What I learn…">
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 88 words)
+                    4 minutes read (About 555 words)
                 </span>
                 
                 
@@ -172,7 +172,44 @@
 <li>프로미스 (Promise)</li>
 </ul>
 <h3 id="Javascript-What-I-learn…"><a href="#Javascript-What-I-learn…" class="headerlink" title="Javascript - What I learn…"></a>Javascript - What I learn…</h3>  <a id="more"></a>
-<h3 id="1-프로미스란"><a href="#1-프로미스란" class="headerlink" title="1. 프로미스란?"></a>1. 프로미스란?</h3><h3 id="2-콜백-패턴의-단점"><a href="#2-콜백-패턴의-단점" class="headerlink" title="2. 콜백 패턴의 단점"></a>2. 콜백 패턴의 단점</h3><h3 id="2-1-콜백-헬"><a href="#2-1-콜백-헬" class="headerlink" title="2.1 콜백 헬"></a>2.1 콜백 헬</h3><h3 id="2-2-에러-처리의-한계"><a href="#2-2-에러-처리의-한계" class="headerlink" title="2.2 에러 처리의 한계"></a>2.2 에러 처리의 한계</h3><h3 id="3-프로미스의-생성"><a href="#3-프로미스의-생성" class="headerlink" title="3. 프로미스의 생성"></a>3. 프로미스의 생성</h3><h3 id="4-프로미스의-후속-처리-메소드"><a href="#4-프로미스의-후속-처리-메소드" class="headerlink" title="4. 프로미스의 후속 처리 메소드"></a>4. 프로미스의 후속 처리 메소드</h3><h3 id="5-프로미스의-에러-처리"><a href="#5-프로미스의-에러-처리" class="headerlink" title="5. 프로미스의 에러 처리"></a>5. 프로미스의 에러 처리</h3><h3 id="6-프로미스-체이닝"><a href="#6-프로미스-체이닝" class="headerlink" title="6. 프로미스 체이닝"></a>6. 프로미스 체이닝</h3><h3 id="7-프로미스의-정적-메소드"><a href="#7-프로미스의-정적-메소드" class="headerlink" title="7. 프로미스의 정적 메소드"></a>7. 프로미스의 정적 메소드</h3><h3 id="7-1-Promise-resolve-Promise-reject"><a href="#7-1-Promise-resolve-Promise-reject" class="headerlink" title="7.1 Promise.resolve/Promise.reject"></a>7.1 Promise.resolve/Promise.reject</h3><h3 id="7-2-Promise-all"><a href="#7-2-Promise-all" class="headerlink" title="7.2 Promise.all"></a>7.2 Promise.all</h3><h3 id="7-3-Promise-race"><a href="#7-3-Promise-race" class="headerlink" title="7.3 Promise.race"></a>7.3 Promise.race</h3>
+<h3 id="1-프로미스란"><a href="#1-프로미스란" class="headerlink" title="1. 프로미스란?"></a>1. 프로미스란?</h3><p>비동기 처리를 위해 하나의 패턴으로 콜백 함수를 사용한다. 그렇지만 콜백함수는 여러개의 로직을 한번에 처리하기 힘들고, 가독성이 떨어지고, 에러의 예외 처리가 곤란하다. 이런 단점을 해결하기 위해 ES6에서 만든 기능이 프로미스이다.</p>
+<p>프로미스는 주로 서버에서 받아온 데이터를 화면에 표시한다.</p>
+<h3 id="2-콜백-패턴의-단점"><a href="#2-콜백-패턴의-단점" class="headerlink" title="2. 콜백 패턴의 단점"></a>2. 콜백 패턴의 단점</h3><h3 id="2-1-콜백-헬"><a href="#2-1-콜백-헬" class="headerlink" title="2.1 콜백 헬"></a>2.1 콜백 헬</h3><p>자바스크립트는 비동기식 처리 모델은 병렬로 처리하여 다른 요청이 블로킹(blocking)되지 않는 장점이 있지만 여러개의 콜백 함수가 네스팅(Nesting)되어 복잡도가 높아지고 콜벡 헬(Callback Hell)이 발생한다. 즉 비동기 함수의 처리 결과를 가지고 다른 비동기 함수를 호출해야 할 때, 함수의 호출이 중복되고 복잡도가 높아지는 현상을 말한다.</p>
+<p>복잡도가 증가하면 실수 및 에로 발생률이 증가하며, 이에 따른 에러 처리가 힘들다.</p>
+<h3 id="2-2-에러-처리의-한계"><a href="#2-2-에러-처리의-한계" class="headerlink" title="2.2 에러 처리의 한계"></a>2.2 에러 처리의 한계</h3><p>콜백 함수내에서 발생한 예외를 캐치하지 못하며, 이런 에러를 처리하지 못하는 문제점은 매우 심각하다. 여기서 예외(Exception)는 호출자 방향으로 전파된다.</p>
+<h3 id="3-프로미스의-생성"><a href="#3-프로미스의-생성" class="headerlink" title="3. 프로미스의 생성"></a>3. 프로미스의 생성</h3><p>프로미스는 생성자 함수를 통해 인스턴스화 한다. 이때 함수는 비동기 작업을 위해 콜벡 함수를 인자로 받는다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">상태</th>
+<th style="text-align:left">의미</th>
+<th>구현</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Pending</td>
+<td style="text-align:left">비동기 처리가 진행중 (처리 X)</td>
+<td>resolve, reject 함수가 아직 호출 되지 않은 상태</td>
+</tr>
+<tr>
+<td style="text-align:left">Fulfilled</td>
+<td style="text-align:left">비동기 처리가 성공</td>
+<td>resolve 함수가 호출된 상태</td>
+</tr>
+<tr>
+<td style="text-align:left">Rejected</td>
+<td style="text-align:left">자원에 대한 행위의 내용</td>
+<td>HTTP Message Pay Load</td>
+</tr>
+<tr>
+<td style="text-align:left">Settled</td>
+<td style="text-align:left">자원에 대한 행위의 내용</td>
+<td>HTTP Message Pay Load</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-프로미스의-후속-처리-메소드"><a href="#4-프로미스의-후속-처리-메소드" class="headerlink" title="4. 프로미스의 후속 처리 메소드"></a>4. 프로미스의 후속 처리 메소드</h3><h3 id="5-프로미스의-에러-처리"><a href="#5-프로미스의-에러-처리" class="headerlink" title="5. 프로미스의 에러 처리"></a>5. 프로미스의 에러 처리</h3><h3 id="6-프로미스-체이닝"><a href="#6-프로미스-체이닝" class="headerlink" title="6. 프로미스 체이닝"></a>6. 프로미스 체이닝</h3><h3 id="7-프로미스의-정적-메소드"><a href="#7-프로미스의-정적-메소드" class="headerlink" title="7. 프로미스의 정적 메소드"></a>7. 프로미스의 정적 메소드</h3><h3 id="7-1-Promise-resolve-Promise-reject"><a href="#7-1-Promise-resolve-Promise-reject" class="headerlink" title="7.1 Promise.resolve/Promise.reject"></a>7.1 Promise.resolve/Promise.reject</h3><h3 id="7-2-Promise-all"><a href="#7-2-Promise-all" class="headerlink" title="7.2 Promise.all"></a>7.2 Promise.all</h3><h3 id="7-3-Promise-race"><a href="#7-3-Promise-race" class="headerlink" title="7.3 Promise.race"></a>7.3 Promise.race</h3>
         </div>
         
         
